@@ -1,0 +1,30 @@
+<p class="logo"><a href="http://pocoo.org/">
+  <img src="{{ pathto("_static/pocoo.png", 1) }}" /></a></p>
+
+<h3>下载</h3>
+{% if version.endswith('(hg)') %}
+<p>本文档仅限于版本 <b>{{ version }}</b>, 其它的暂未发布。</p>
+<p>你能够从
+  <a href="http://bitbucket.org/birkenfeld/sphinx/">获取Mercurial repo</a> 
+  或者从 <a href="http://pypi.python.org/pypi/Sphinx">Python
+    Package Index找到发布的版本</a>。</p>
+{% else %}
+<p>目前版本: <b>{{ version }}</b></p>
+<p>获得 Sphinx 从 <a href="http://pypi.python.org/pypi/Sphinx">Python Package
+Index</a>, 或者使用如下命令安装:</p>
+<pre>easy_install -U Sphinx</pre>
+<p>最新的 <a href="http://sphinx.pocoo.org/latest/">开发版本文档</a>
+也是可用的。</p>
+{% endif %}
+
+<h3>问题？ 建议？</h3>
+
+<p>请加入 <a href="http://groups.google.com/group/sphinx-dev">Google group</a>:</p>
+<form action="http://groups.google.com/group/sphinx-dev/boxsubscribe"
+      style="padding-left: 1em">
+  <input type="text" name="email" value="your@email"/>
+  <input type="submit" name="sub" value="Subscribe" />
+</form>
+<p>或者加入 在 FreeNode上的频道<tt>#pocoo</tt>.</p>
+<p>你可以新建或者加入
+  <a href="http://www.bitbucket.org/birkenfeld/sphinx/issues/">话题</a>.</p>

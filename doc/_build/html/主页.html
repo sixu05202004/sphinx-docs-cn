@@ -1,0 +1,177 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Overview &mdash; Sphinx 1.1.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.1.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Sphinx 1.1.3 documentation"
+          href="_static/opensearch.xml"/>
+    <link rel="top" title="Sphinx 1.1.3 documentation" href="index.html" />
+ 
+<style type="text/css">
+  table.right { float: right; margin-left: 20px; }
+  table.right td { border: 1px solid #ccc; }
+</style>
+
+  </head>
+  <body>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<img src="_static/sphinx.png" alt="Sphinx logo" />
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">Sphinx主页</a>&nbsp;|&nbsp;</li>
+        <li><a href="contents.html">文档</a>
+          &raquo;</li>
+ 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Welcome</h1>
+
+  <div class="quotebar">
+    <p><em>使用者说:</em></p>
+    <p>&ldquo;为这个伟大的工具而干杯，因为她让所有的程序员们<b>愿意</b>
+      编写文档！&rdquo;</p>
+  </div>
+
+  <p>
+    Sphinx是一个工具，她能够轻易地创建智慧和优雅的文档，她是出自Georg Brandl之手，在BSD许可证下授权。</p>
+  <p>她最初是为了新版的<a href="http://docs.python.org/">python文档</a>, 因此在python项目的文档具有完美的特性，但是同样支持c/c++,目前正在计划增加对其他的语言的支持。
+  理所当然，本页面也是使用Sphinx创造自reStructuredText格式源!Sphinx具有如下的特点：
+  </p>
+  <ul>
+    <li><b>输出格式：</b> 超文本标记语言 (包括Windows HTML帮助), LaTeX (可打印的PDF版本), 手册页, 纯文本</li>
+    <li><b>丰富的交叉引用:</b> 语义标记以及针对函数，类，引用，词汇表（术语）和类似的信息块的自动链接 </li>
+    <li><b>层次结构:</b> 简单的文本树定义，就能自动地链接到同层（兄弟姐妹）、上一层（父母）以及下一层（子女）的文本位置</li>
+    <li><b>自动生成目录:</b> 通用索引以及语言模块的目录</li>
+    <li><b>代码高亮:</b> 代码自动高亮，通过使用 <a
+      href="http://pygments.org">Pygments</a></li>
+    <li><b>扩展功能:</b> 自动测试的代码片段, 包括从Python模块（API文档）的文档字符串</li>
+  </ul>
+  <p>
+    Sphinx 使用 <a href="http://docutils.sf.net/rst.html">reStructuredText</a>
+    作为她的标记语言, 她的优点大部分是来自于reStructuredText 以及reStructuredText的解析和转换工具（套件）<a href="http://docutils.sf.net/">Docutils</a>的强大以及简单明了。
+  </p>
+
+  <h2>文档</h2>
+
+  <table class="contentstable" align="center" style="margin-left: 30px"><tr>
+    <td width="50%">
+      <p class="biglink"><a class="biglink" href="tutorial.html">初熟Sphinx</a><br/>
+         <span class="linkdescr">基本功能的概述</span></p>
+      <p class="biglink"><a class="biglink" href="contents.html">目录</a><br/>
+         <span class="linkdescr">全部的内容</span></p>
+    </td><td width="50%">
+      <p class="biglink"><a class="biglink" href="search.html">搜索页</a><br/>
+         <span class="linkdescr">搜索全文</span></p>
+      <p class="biglink"><a class="biglink" href="genindex.html">通用索引</a><br/>
+         <span class="linkdescr">所有的函数，类以及词条</span></p>
+    </td></tr>
+  </table>
+
+  <p>
+    你也能下载PDF格式的Sphinx文档：
+    一种PDF <a href="http://sphinx.pocoo.org/sphinx.pdf">版本</a> 是由LaTeX Sphinx生成， 另一种PDF
+     <a href="http://sphinx.pocoo.org/sphinx-rst2pdf.pdf">版本</a> 是由rst2pdf生成.
+  </p>
+
+  <h2>实例</h2>
+  <p> 用Sphinx生成文档的项目能够在
+    <a href="examples.html">Projects using Sphinx</a>上找到.
+  </p>
+  <p>
+    想要查看Sphinx源文件长得什么样的话，可以在除本欢迎页外的任何页面上使用&#8220;显示网页源代码&#8221;。
+  </p>
+
+  <p>你也许对这份十分不错
+    <a href="http://matplotlib.sourceforge.net/sampledoc/">教程</a>感兴趣，它是由matplotlib的开发者编写，是使用了Sphinx创建地自定义的文档。</p>
+
+
+  <h2>下载 Sphinx</h2>
+  <p>
+    Sphinx是一个可用的 <a
+    href="http://peak.telecommunity.com/DevCenter/EasyInstall">easy-install</a>包在 <a href="http://pypi.python.org/pypi/Sphinx">Python Package
+    Index</a>.
+  </p>
+  <p>源码能够在下面的地址中找到：
+    <tt>http://bitbucket.org/birkenfeld/sphinx/</tt>。</p>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">Sphinx主页</a>&nbsp;|&nbsp;</li>
+        <li><a href="contents.html">文档</a>
+          &raquo;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2007-2011, Georg Brandl.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
