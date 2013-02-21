@@ -13,7 +13,7 @@
 
 一个文档集合的根目录被称为 :term:`源目录`。:term:`源目录` 包含Sphinx配置文件 :file:`conf.py`，在配置文件里面可以配置Sphinx如何读取源文件以及如何生成文件等等各方面。 [#]_
 
-Sphinx提供了一个脚本:program:`sphinx-quickstart`，该脚本能够设置一个源目录以及通过几个简单的问答设置一个默认的配置文件:file:`conf.py`。只需要运行::
+Sphinx提供了一个脚本 :program:`sphinx-quickstart`，该脚本能够设置一个源目录以及通过几个简单的问答设置一个默认的配置文件 :file:`conf.py`。只需要运行::
 
    $ sphinx-quickstart
 
@@ -25,7 +25,7 @@ Sphinx提供的"API documentation"生成器称为 :program:`sphinx-apidoc`；更
 定义文档结构
 ---------------------------
 
-假设你已经执行了 :program:`sphinx-quickstart`。它创建了一个包含 :file:`conf.py以及主文件 :file:`index.rst`（如果你接受了默认选项）的文件夹。:term:`master document` 的主要作用是一个欢迎页面以及包含了树状内容表的“根”（或者 *toctree*）。
+假设你已经执行了 :program:`sphinx-quickstart`。它创建了一个包含 :file:`conf.py` 以及主文件 :file:`index.rst`  （如果你接受了默认选项）的文件夹。:term:`master document` 的主要作用是一个欢迎页面以及包含了树状内容表的“根”（或者 *toctree*）。
 
 连接多个文件到单个层次结构的文件的方式是Sphinx增强了reStructuredText的主要事情之一。
 
@@ -84,7 +84,7 @@ toctree指令（标识符）最初是空的，看起来像这样::
 
 |more| :ref:`invocation` 中列出了 :program:`sphinx-build` 所支持的选项。
 
-因为 :program:`sphinx-quickstart` 生成了 :file:`Makefile` 和 :file:`make.bat`文件，这些文件能够减少不少工作：有了它们你就可以运行 ::
+因为 :program:`sphinx-quickstart` 生成了 :file:`Makefile` 和 :file:`make.bat` 文件，这些文件能够减少不少工作：有了它们你就可以运行 ::
 
    $ make html
 
@@ -132,7 +132,7 @@ Sphinx提供了许多其他的指令（标识符）为了标识python对象的�
 
 这就是结果: 链接到 :func:`enumerate`.
 
-再次提醒，如果使用默认域，``py:``是可以不用添加的。不用关心真正包含 ``enumerate()`` 的文档的文件；Sphinx能够找到以及为它建立链接。
+再次提醒，如果使用默认域，``py:`` 是可以不用添加的。不用关心真正包含 ``enumerate()`` 的文档的文件；Sphinx能够找到以及为它建立链接。
 
 每个域对说明（签名）样式有着特点的规定，并格式化输出显得漂亮些，或者增加些特性如链接到参数类型，像在C/C++域。
 
@@ -144,9 +144,9 @@ Sphinx提供了许多其他的指令（标识符）为了标识python对象的�
 
 前面我们提到了 :file:`conf.py` 文件控制着Sphinx如何处理文档。该文件，作为Python源文件执行，你可以在文件中赋予的配置值。 对高级用户：因为文件是通过Sphinx执行，用户可以做一些不平凡的任务，像增加 :data:`sys.path` 的值或者导入一个模块找出记录文档的版本。
 
-你可能需要修改的配置值是已经通过 :program:`sphinx-quickstart` 写入到 :file:`conf.py` 中并且注释起来（使用标准python语法：``#``在行的开头）。如果要定制配置值而不是使用 :program:`sphinx-quickstart` 生成的值，只需要增加额外的赋值。
+你可能需要修改的配置值是已经通过 :program:`sphinx-quickstart` 写入到 :file:`conf.py` 中并且注释起来（使用标准python语法： ``#`` 在行的开头）。如果要定制配置值而不是使用 :program:`sphinx-quickstart` 生成的值，只需要增加额外的赋值。
 
-请记住，配置文件使用的是Python的字符串，数字，列表等语法。文件默认情况下是以UTF-8的格式保存，在文件的首行声明编码格式。如果需要使用non-ASCII格式，需要使用python的Unicode字符串*（像``project = u'Exposé'``）。
+请记住，配置文件使用的是Python的字符串，数字，列表等语法。文件默认情况下是以UTF-8的格式保存，在文件的首行声明编码格式。如果需要使用non-ASCII格式，需要使用python的Unicode字符串*（像 ``project = u'Exposé'``）。
 
 |more| 所有可用的配置值请参看 :ref:`build-config` 。
 
@@ -157,7 +157,7 @@ Autodoc
 
 在记录python源代码的时候，通常需要在源文件，文档字符串中加入大量的记录（文字）。Sphinx支持直接使用python自身模块的文档字符创通过使用称为"autodoc"的 :dfn:`extension`。（这个扩展是python的一个模块，为Sphinx项目提供额外的特性。） 
 
-为了能够使用autodoc，你需要通过在配置文件 :file:`conf.py` 中加入字符串``'sphinx.ext.autodoc'``到 :confval:`extensions` 列表中来激活。接着，你就有一些额外的指令（标识符）可以任由支配了。
+为了能够使用autodoc，你需要通过在配置文件 :file:`conf.py` 中加入字符串 ``'sphinx.ext.autodoc'`` 到 :confval:`extensions` 列表中来激活。接着，你就有一些额外的指令（标识符）可以任由支配了。
 
 例如，为了记录函数 ``io.open()``，从源文件中读取它的说明（签名）以及文档字符串，你可以这些写::
 

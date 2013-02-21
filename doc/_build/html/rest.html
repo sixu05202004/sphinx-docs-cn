@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>reStructuredText Primer &mdash; Sphinx 1.1.3 documentation</title>
+    <title>reStructuredText入门 &mdash; Sphinx 1.1.3 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -29,7 +29,7 @@
           title="Search within Sphinx 1.1.3 documentation"
           href="_static/opensearch.xml"/>
     <link rel="top" title="Sphinx 1.1.3 documentation" href="index.html" />
-    <link rel="next" title="Sphinx Markup Constructs" href="markup/index.html" />
+    <link rel="next" title="Sphinx标记结构" href="markup/index.html" />
     <link rel="prev" title="sphinx-build用法" href="invocation.html" />
  
 <style type="text/css">
@@ -53,7 +53,7 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="markup/index.html" title="Sphinx Markup Constructs"
+          <a href="markup/index.html" title="Sphinx标记结构"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="invocation.html" title="sphinx-build用法"
@@ -68,27 +68,27 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="contents.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">reStructuredText Primer</a><ul>
-<li><a class="reference internal" href="#paragraphs">Paragraphs</a></li>
-<li><a class="reference internal" href="#inline-markup">Inline markup</a></li>
-<li><a class="reference internal" href="#lists-and-quote-like-blocks">Lists and Quote-like blocks</a></li>
-<li><a class="reference internal" href="#source-code">Source Code</a></li>
-<li><a class="reference internal" href="#tables">Tables</a></li>
-<li><a class="reference internal" href="#hyperlinks">Hyperlinks</a><ul>
-<li><a class="reference internal" href="#external-links">External links</a></li>
-<li><a class="reference internal" href="#internal-links">Internal links</a></li>
+<li><a class="reference internal" href="#">reStructuredText入门</a><ul>
+<li><a class="reference internal" href="#id2">段落</a></li>
+<li><a class="reference internal" href="#inlinemarkup">行内标记</a></li>
+<li><a class="reference internal" href="#id4">列表和“类”引用块</a></li>
+<li><a class="reference internal" href="#id5">源代码</a></li>
+<li><a class="reference internal" href="#rst-tables">表格</a></li>
+<li><a class="reference internal" href="#id7">超链接</a><ul>
+<li><a class="reference internal" href="#id8">外部链接</a></li>
+<li><a class="reference internal" href="#id9">内部链接</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#sections">Sections</a></li>
-<li><a class="reference internal" href="#explicit-markup">Explicit Markup</a></li>
-<li><a class="reference internal" href="#directives">Directives</a></li>
-<li><a class="reference internal" href="#images">Images</a></li>
-<li><a class="reference internal" href="#footnotes">Footnotes</a></li>
-<li><a class="reference internal" href="#citations">Citations</a></li>
-<li><a class="reference internal" href="#substitutions">Substitutions</a></li>
-<li><a class="reference internal" href="#comments">Comments</a></li>
-<li><a class="reference internal" href="#source-encoding">Source encoding</a></li>
-<li><a class="reference internal" href="#gotchas">Gotchas</a></li>
+<li><a class="reference internal" href="#id10">章节</a></li>
+<li><a class="reference internal" href="#id11">显式标记</a></li>
+<li><a class="reference internal" href="#directives">指令（标识符）</a></li>
+<li><a class="reference internal" href="#id14">图片</a></li>
+<li><a class="reference internal" href="#id15">脚注</a></li>
+<li><a class="reference internal" href="#id16">引文</a></li>
+<li><a class="reference internal" href="#id17">替换</a></li>
+<li><a class="reference internal" href="#id18">评论</a></li>
+<li><a class="reference internal" href="#id19">源文件编码</a></li>
+<li><a class="reference internal" href="#id20">陷阱</a></li>
 </ul>
 </li>
 </ul>
@@ -98,7 +98,7 @@
                         title="previous chapter">sphinx-build用法</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="markup/index.html"
-                        title="next chapter">Sphinx Markup Constructs</a></p>
+                        title="next chapter">Sphinx标记结构</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/rest.txt"
@@ -125,64 +125,49 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="restructuredtext-primer">
-<span id="rst-primer"></span><h1>reStructuredText Primer<a class="headerlink" href="#restructuredtext-primer" title="Permalink to this headline">¶</a></h1>
-<p>This section is a brief introduction to reStructuredText (reST) concepts and
-syntax, intended to provide authors with enough information to author documents
-productively.  Since reST was designed to be a simple, unobtrusive markup
-language, this will not take too long.</p>
+  <div class="section" id="restructuredtext">
+<span id="rst-primer"></span><h1>reStructuredText入门<a class="headerlink" href="#restructuredtext" title="Permalink to this headline">¶</a></h1>
+<p>本节简要介绍了reStructuredText (reST)的概念和语法，旨在提供足够的信息来高效地编写文档。因为reST是一个简单的，不显眼的标记语言，这不会花费太长时间来入门。</p>
 <div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">The authoritative <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText User Documentation</a>.  The &#8220;ref&#8221; links in this
-document link to the description of the individual constructs in the reST
-reference.</p>
+<p class="last">权威的 <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText用户文档</a>。</p>
 </div>
-<div class="section" id="paragraphs">
-<h2>Paragraphs<a class="headerlink" href="#paragraphs" title="Permalink to this headline">¶</a></h2>
-<p>The paragraph (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#paragraphs">ref</a>) is the most basic block in a reST
-document.  Paragraphs are simply chunks of text separated by one or more blank
-lines.  As in Python, indentation is significant in reST, so all lines of the
-same paragraph must be left-aligned to the same level of indentation.</p>
+<div class="section" id="id2">
+<h2>段落<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>段落(<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#paragraphs">ref</a>)是reST文档中最基本的块。段落是由一个或多个空白行分离的简单的文本块。在Python中，缩进在reST中是具有重要意义，所以同一段落的所有行必须左对齐而且是同一级缩进。</p>
 </div>
-<div class="section" id="inline-markup">
-<span id="inlinemarkup"></span><h2>Inline markup<a class="headerlink" href="#inline-markup" title="Permalink to this headline">¶</a></h2>
-<p>The standard reST inline markup is quite simple: use</p>
+<div class="section" id="inlinemarkup">
+<span id="id3"></span><h2>行内标记<a class="headerlink" href="#inlinemarkup" title="Permalink to this headline">¶</a></h2>
+<p>注：因为找不到合适的词语来翻译role，所以没有翻译！</p>
+<p>标准的行内标记相当简单：使用</p>
 <ul class="simple">
-<li>one asterisk: <tt class="docutils literal"><span class="pre">*text*</span></tt> for emphasis (italics),</li>
-<li>two asterisks: <tt class="docutils literal"><span class="pre">**text**</span></tt> for strong emphasis (boldface), and</li>
-<li>backquotes: <tt class="docutils literal"><span class="pre">``text``</span></tt> for code samples.</li>
+<li>单星号： <tt class="docutils literal"><span class="pre">*text*</span></tt> 强调 (斜体),</li>
+<li>双星号： <tt class="docutils literal"><span class="pre">**text**</span></tt> 重点强调 (粗体)，以及</li>
+<li>反引号： <tt class="docutils literal"><span class="pre">``text``</span></tt> 代码示例。</li>
 </ul>
-<p>If asterisks or backquotes appear in running text and could be confused with
-inline markup delimiters, they have to be escaped with a backslash.</p>
-<p>Be aware of some restrictions of this markup:</p>
+<p>如果星号或反引号出​​现在文本会对行内标记分隔符引起混淆，他们必须用一个反斜杠进行转义。</p>
+<p>注意行内标记一些限制:</p>
 <ul class="simple">
-<li>it may not be nested,</li>
-<li>content may not start or end with whitespace: <tt class="docutils literal"><span class="pre">*</span> <span class="pre">text*</span></tt> is wrong,</li>
-<li>it must be separated from surrounding text by non-word characters.  Use a
-backslash escaped space to work around that: <tt class="docutils literal"><span class="pre">thisis\</span> <span class="pre">*one*\</span> <span class="pre">word</span></tt>.</li>
+<li>不能嵌套，</li>
+<li>文本不能以空格开始或者结束： <tt class="docutils literal"><span class="pre">*</span> <span class="pre">text*</span></tt> 是不正确的，</li>
+<li>必须由空格从周围的文本中分离出来。可以通过使用转义的空格来规避这个限制：thisis<em>one</em>word。</li>
 </ul>
-<p>These restrictions may be lifted in future versions of the docutils.</p>
-<p>reST also allows for custom &#8220;interpreted text roles&#8221;&#8217;, which signify that the
-enclosed text should be interpreted in a specific way.  Sphinx uses this to
-provide semantic markup and cross-referencing of identifiers, as described in
-the appropriate section.  The general syntax is <tt class="docutils literal"><span class="pre">:rolename:`content`</span></tt>.</p>
-<p>Standard reST provides the following roles:</p>
+<p>docutils以后的版本可能会取消上列出的这些限制。</p>
+<p>reST也允许自定义“文本解释role”，这就意味着所包含的文本应以一种特定的方式解释。Sphinx用它提供了语义标记和交叉引用的标识符。一般的语法格式是 <tt class="docutils literal"><span class="pre">:rolename:`content`</span></tt> 。</p>
+<p>标准的reST提供了如下些roles：</p>
 <ul class="simple">
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#emphasis">emphasis</a> &#8211; alternate spelling for <tt class="docutils literal"><span class="pre">*emphasis*</span></tt></li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#strong">strong</a> &#8211; alternate spelling for <tt class="docutils literal"><span class="pre">**strong**</span></tt></li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#literal">literal</a> &#8211; alternate spelling for <tt class="docutils literal"><span class="pre">``literal``</span></tt></li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#subscript">subscript</a> &#8211; subscript text</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#superscript">superscript</a> &#8211; superscript text</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#title-reference">title-reference</a> &#8211; for titles of books, periodicals, and other
-materials</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#emphasis">emphasis</a> &#8211; 来替代 <tt class="docutils literal"><span class="pre">*emphasis*</span></tt></li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#strong">strong</a> &#8211; 代替 <tt class="docutils literal"><span class="pre">**strong**</span></tt></li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#literal">literal</a> &#8211; 代替 <tt class="docutils literal"><span class="pre">``literal``</span></tt></li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#subscript">subscript</a> &#8211; 下标文本</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#superscript">superscript</a> &#8211; 上标文本</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html#title-reference">title-reference</a> &#8211; 书，期刊，以及其他材料的标题</li>
 </ul>
-<p>See <a class="reference internal" href="markup/inline.html#inline-markup"><em>Inline markup</em></a> for roles added by Sphinx.</p>
+<p>Sphinx添加的roles请见 <a class="reference internal" href="markup/inline.html#inline-markup"><em>Inline markup</em></a>。</p>
 </div>
-<div class="section" id="lists-and-quote-like-blocks">
-<h2>Lists and Quote-like blocks<a class="headerlink" href="#lists-and-quote-like-blocks" title="Permalink to this headline">¶</a></h2>
-<p>List markup (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#bullet-lists">ref</a>) is natural: just place an asterisk at
-the start of a paragraph and indent properly.  The same goes for numbered lists;
-they can also be autonumbered using a <tt class="docutils literal"><span class="pre">#</span></tt> sign:</p>
+<div class="section" id="id4">
+<h2>列表和“类”引用块<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>列表标记(<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#bullet-lists">ref</a>) 是自然的：只要在段落开头放置一个星号和缩进正常。带编号的列表同样适用；它们也可以自动编号通过使用标志 <tt class="docutils literal"><span class="pre">#</span></tt>:</p>
 <div class="highlight-rest"><div class="highlight"><pre><span class="m">*</span> This is a bulleted list.
 <span class="m">*</span> It has two items, the second
   item uses two lines.
@@ -194,8 +179,7 @@ they can also be autonumbered using a <tt class="docutils literal"><span class="
 <span class="m">#.</span> It has two items too.
 </pre></div>
 </div>
-<p>Nested lists are possible, but be aware that they must be separated from the
-parent list items by blank lines:</p>
+<p>嵌套列表是可能的，但要知道，它们必须由空行从父列表中分隔:</p>
 <div class="highlight-rest"><div class="highlight"><pre><span class="m">*</span> this is
 <span class="m">*</span> a list
 
@@ -205,7 +189,7 @@ parent list items by blank lines:</p>
 <span class="m">*</span> and here the parent list continues
 </pre></div>
 </div>
-<p>Definition lists (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#definition-lists">ref</a>) are created as follows:</p>
+<p>定义列表 (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#definition-lists">ref</a>) 的创建:</p>
 <div class="highlight-rest"><div class="highlight"><pre>term (up to a line of text)
    Definition of the term, which must be indented
 
@@ -215,16 +199,15 @@ next term
    Description.
 </pre></div>
 </div>
-<p>Note that the term cannot have more than one line of text.</p>
-<p>Quoted paragraphs (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#block-quotes">ref</a>) are created by just indenting
-them more than the surrounding paragraphs.</p>
-<p>Line blocks (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#line-blocks">ref</a>) are a way of preserving line breaks:</p>
+<p>请注意，<strong>term</strong> 不能有一个以上的文本行。</p>
+<p>引用段落(<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#block-quotes">ref</a>) 可以通过比周围的段落更缩进来创建。</p>
+<p>行块元素 (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#line-blocks">ref</a>) 是防止行被破坏的方式（保留行原样的方式）:</p>
 <div class="highlight-rest"><div class="highlight"><pre><span class="o">|</span> These lines are
 <span class="o">|</span> broken exactly like in
 <span class="o">|</span> the source file.
 </pre></div>
 </div>
-<p>There are also several more special blocks available:</p>
+<p>还有其它几个特殊的功能块:</p>
 <ul class="simple">
 <li>field lists (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#field-lists">ref</a>)</li>
 <li>option lists (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#option-lists">ref</a>)</li>
@@ -232,11 +215,9 @@ them more than the surrounding paragraphs.</p>
 <li>doctest blocks (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#doctest-blocks">ref</a>)</li>
 </ul>
 </div>
-<div class="section" id="source-code">
-<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
-<p>Literal code blocks (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#literal-blocks">ref</a>) are introduced by ending a
-paragraph with the special marker <tt class="docutils literal"><span class="pre">::</span></tt>.  The literal block must be indented
-(and, like all paragraphs, separated from the surrounding ones by blank lines):</p>
+<div class="section" id="id5">
+<h2>源代码<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>文字代码块(<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#literal-blocks">ref</a>)是在段尾加入特殊标记 <tt class="docutils literal"><span class="pre">::</span></tt> 引入的。文字代码块必须缩进（像所有的段落，是通过空行来分离的）:</p>
 <div class="highlight-rest"><div class="highlight"><pre>This is a normal text paragraph. The next paragraph is a code sample<span class="se">::</span>
 
 <span class="s">   It is not processed in any way, except</span>
@@ -247,21 +228,17 @@ paragraph with the special marker <tt class="docutils literal"><span class="pre"
 This is a normal text paragraph again.
 </pre></div>
 </div>
-<p>The handling of the <tt class="docutils literal"><span class="pre">::</span></tt> marker is smart:</p>
+<p><tt class="docutils literal"><span class="pre">::</span></tt> 标记的处理非常聪明:</p>
 <ul class="simple">
-<li>If it occurs as a paragraph of its own, that paragraph is completely left
-out of the document.</li>
-<li>If it is preceded by whitespace, the marker is removed.</li>
-<li>If it is preceded by non-whitespace, the marker is replaced by a single
-colon.</li>
+<li>如果出现在段落本身中，那么整个段落将会从文档中删除（也就是说不会出现在生成的文档中）。</li>
+<li>如果它前面的空白，标记将被删除。</li>
+<li>如果它的前面非空白，标记会被单个冒号取代。</li>
 </ul>
-<p>That way, the second sentence in the above example&#8217;s first paragraph would be
-rendered as &#8220;The next paragraph is a code sample:&#8221;.</p>
+<p>通过这种方式，上面第二句将呈现为 &#8220;The next paragraph is a code sample:&#8221;。</p>
 </div>
-<div class="section" id="tables">
-<span id="rst-tables"></span><h2>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
-<p>Two forms of tables are supported.  For <em>grid tables</em> (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#grid-tables">ref</a>), you have to &#8220;paint&#8221; the cell grid yourself.  They look like
-this:</p>
+<div class="section" id="rst-tables">
+<span id="id6"></span><h2>表格<a class="headerlink" href="#rst-tables" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx支持两种表格形式。对于 <em>格子表格</em> (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#grid-tables">ref</a>)，必须自己“画”自己的单元格。它们看起来像这样:</p>
 <div class="highlight-rest"><div class="highlight"><pre>+------------------------+------------+----------+----------+
 <span class="o">|</span> Header row, column 1   | Header 2   | Header 3 | Header 4 |
 <span class="o">|</span> (header rows optional) |            |          |          |
@@ -272,9 +249,7 @@ this:</p>
 +------------------------+------------+----------+----------+
 </pre></div>
 </div>
-<p><em>Simple tables</em> (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#simple-tables">ref</a>) are easier to write, but
-limited: they must contain more than one row, and the first column cannot
-contain multiple lines.  They look like this:</p>
+<p><em>简单表格</em> (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#simple-tables">ref</a>) 更容易书写，但是有限制：表格必须是两行以及以上，而且第一列不能包含多行。它们看起来像这样:</p>
 <div class="highlight-rest"><div class="highlight"><pre>=====  =====  =======
 A      B      A and B
 =====  =====  =======
@@ -286,39 +261,32 @@ True   True   True
 </pre></div>
 </div>
 </div>
-<div class="section" id="hyperlinks">
-<h2>Hyperlinks<a class="headerlink" href="#hyperlinks" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="external-links">
-<h3>External links<a class="headerlink" href="#external-links" title="Permalink to this headline">¶</a></h3>
-<p>Use <tt class="docutils literal"><span class="pre">`Link</span> <span class="pre">text</span> <span class="pre">&lt;http://example.com/&gt;`_</span></tt> for inline web links.  If the link
-text should be the web address, you don&#8217;t need special markup at all, the parser
-finds links and mail addresses in ordinary text.</p>
-<p>You can also separate the link and the target definition (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#hyperlink-targets">ref</a>), like this:</p>
+<div class="section" id="id7">
+<h2>超链接<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>外部链接<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>使用 <tt class="docutils literal"><span class="pre">`Link</span> <span class="pre">text</span> <span class="pre">&lt;http://example.com/&gt;`_</span></tt> 来实现内嵌的网页链接。如果链接文本是Web地址，你一点都不需要特殊标记，解析器可以识别在普通的文本的链接和邮件地址。</p>
+<p>你也可以把链接和目标定义(<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#hyperlink-targets">ref</a>)分开，像这样:</p>
 <div class="highlight-rest"><div class="highlight"><pre>This is a paragraph that contains <span class="s">`a link`_</span>.
 
 <span class="p">..</span> <span class="nt">_a link:</span> http://example.com/
 </pre></div>
 </div>
 </div>
-<div class="section" id="internal-links">
-<h3>Internal links<a class="headerlink" href="#internal-links" title="Permalink to this headline">¶</a></h3>
-<p>Internal linking is done via a special reST role provided by Sphinx, see the
-section on specific markup, <a class="reference internal" href="markup/inline.html#ref-role"><em>Cross-referencing arbitrary locations</em></a>.</p>
+<div class="section" id="id9">
+<h3>内部链接<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>内部链接是通过Sphinx提供的一个特殊的reST role来实现的，请看 <a class="reference internal" href="markup/inline.html#ref-role"><em>Cross-referencing arbitrary locations</em></a>.</p>
 </div>
 </div>
-<div class="section" id="sections">
-<h2>Sections<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h2>
-<p>Section headers (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#sections">ref</a>) are created by underlining (and
-optionally overlining) the section title with a punctuation character, at least
-as long as the text:</p>
+<div class="section" id="id10">
+<h2>章节<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>章节头 (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#sections">ref</a>) 是用特殊的标点符作为章节标题的下划线来创建的（上划线是可选的），只要文字:</p>
 <div class="highlight-rest"><div class="highlight"><pre><span class="gh">=================</span>
 <span class="gh">This is a heading</span>
 <span class="gh">=================</span>
 </pre></div>
 </div>
-<p>Normally, there are no heading levels assigned to certain characters as the
-structure is determined from the succession of headings.  However, for the
-Python documentation, this convention is used which you may follow:</p>
+<p>通常，没有特定的字符指定给标题级别，因为结构是用从继承的标题来确定的。对于python文档，本公约您可以按照：</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">#</span></tt> with overline, for parts</li>
 <li><tt class="docutils literal"><span class="pre">*</span></tt> with overline, for chapters</li>
@@ -327,91 +295,65 @@ Python documentation, this convention is used which you may follow:</p>
 <li><tt class="docutils literal"><span class="pre">^</span></tt>, for subsubsections</li>
 <li><tt class="docutils literal"><span class="pre">&quot;</span></tt>, for paragraphs</li>
 </ul>
-<p>Of course, you are free to use your own marker characters (see the reST
-documentation), and use a deeper nesting level, but keep in mind that most
-target formats (HTML, LaTeX) have a limited supported nesting depth.</p>
+<p>当然，您可以自由使用自己的标记字符（参看reST文档），并使用一个更深层次的嵌套级别，但请记住，大多数的目标格式（HTML，LaTeX）有限地支持嵌套深度。</p>
 </div>
-<div class="section" id="explicit-markup">
-<h2>Explicit Markup<a class="headerlink" href="#explicit-markup" title="Permalink to this headline">¶</a></h2>
-<p>&#8220;Explicit markup&#8221; (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#explicit-markup-blocks">ref</a>) is used in reST for
-most constructs that need special handling, such as footnotes,
-specially-highlighted paragraphs, comments, and generic directives.</p>
-<p>An explicit markup block begins with a line starting with <tt class="docutils literal"><span class="pre">..</span></tt> followed by
-whitespace and is terminated by the next paragraph at the same level of
-indentation.  (There needs to be a blank line between explicit markup and normal
-paragraphs.  This may all sound a bit complicated, but it is intuitive enough
-when you write it.)</p>
+<div class="section" id="id11">
+<h2>显式标记<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>&#8220;显式标记&#8221; (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#explicit-markup-blocks">ref</a>) 在reST中是用于需要进行特殊处理的结构，比如脚注，特别突出的段落，注释，和通用指令（标识符）。</p>
+<p>显式标记块的第一行是以 <tt class="docutils literal"><span class="pre">..</span></tt> 开始，接着是紧随着空格，被结束于同样层级缩进的下一段落。（显式标记和正常的段落之间需要有一个空行。当你写它的时候，可能听起来有点复杂，但它是直观的。）</p>
 </div>
 <div class="section" id="directives">
-<span id="id1"></span><h2>Directives<a class="headerlink" href="#directives" title="Permalink to this headline">¶</a></h2>
-<p>A directive (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#directives">ref</a>) is a generic block of explicit markup.
-Besides roles, it is one of the extension mechanisms of reST, and Sphinx makes
-heavy use of it.</p>
-<p>Docutils supports the following directives:</p>
-<ul>
-<li><p class="first">Admonitions: <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#attention">attention</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#caution">caution</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#danger">danger</a>,
+<span id="id12"></span><h2>指令（标识符）<a class="headerlink" href="#directives" title="Permalink to this headline">¶</a></h2>
+<p>指令或者标识符（<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#directives">ref</a>）是一个通用的显式标记块。除了roles，指令或者标识符是reST的扩展机制，Sphinx大量地使用了它。</p>
+<p>Docutils支持如下的指令（标识符）：</p>
+<ul class="simple">
+<li>警告: <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#attention">attention</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#caution">caution</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#danger">danger</a>,
 <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#error">error</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#hint">hint</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#important">important</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#note">note</a>,
-<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#tip">tip</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#warning">warning</a> and the generic <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonition">admonition</a>.
-(Most themes style only &#8220;note&#8221; and &#8220;warning&#8221; specially.)</p>
-</li>
-<li><p class="first">Images:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#image">image</a> (see also <a class="reference internal" href="#images">Images</a> below)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#figure">figure</a> (an image with caption and optional legend)</li>
+<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#tip">tip</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#warning">warning</a> 以及 <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonition">admonition</a>。</li>
+<li>图片:<ul>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#image">image</a> (请见下面的 <a href="#id22"><span class="problematic" id="id23">Images_</span></a> )</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#figure">figure</a> (带有标题和可选的图例的图片)</li>
 </ul>
 </li>
-<li><p class="first">Additional body elements:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#table-of-contents">contents</a> (a local, i.e. for the current file
-only, table of contents)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#container">container</a> (a container with a custom class, useful to generate an
-outer <tt class="docutils literal"><span class="pre">&lt;div&gt;</span></tt> in HTML)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#rubric">rubric</a> (a heading without relation to the document sectioning)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#topic">topic</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#sidebar">sidebar</a> (special highlighted body elements)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#parsed-literal">parsed-literal</a> (literal block that supports inline markup)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#epigraph">epigraph</a> (a block quote with optional attribution line)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#highlights">highlights</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#pull-quote">pull-quote</a> (block quotes with their own
-class attribute)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#compound">compound</a> (a compound paragraph)</li>
+<li>其它内容元素:<ul>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#table-of-contents">contents</a> （一个局部的，即只对当前文件的，内容表）</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#container">container</a> （具有特定类的容器，用于HTML生成 <tt class="docutils literal"><span class="pre">&lt;div&gt;</span></tt> ）</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#rubric">rubric</a> (一个与文件章节无关的标题)</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#topic">topic</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#sidebar">sidebar</a> (特别强调了内容元素)</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#parsed-literal">parsed-literal</a> (支持行内标记的文字块)</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#epigraph">epigraph</a> (带有属性行的块引用)</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#highlights">highlights</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#pull-quote">pull-quote</a> （带自己的类属性的块引用）</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#compound">compound</a> (组合段落)</li>
 </ul>
 </li>
-<li><p class="first">Special tables:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#table">table</a> (a table with title)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#csv-table">csv-table</a> (a table generated from comma-separated values)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#list-table">list-table</a> (a table generated from a list of lists)</li>
+<li>特色表格:<ul>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#table">table</a> （带标题的表格）</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#csv-table">csv-table</a> （由逗号分开的值生成的表格）</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#list-table">list-table</a> （由一系列列表生成的表格）</li>
 </ul>
 </li>
-<li><p class="first">Special directives:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#raw">raw</a> (include raw target-format markup)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#include">include</a> (include reStructuredText from another file)
-&#8211; in Sphinx, when given an absolute include file path, this directive takes
-it as relative to the source directory</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#class">class</a> (assign a class attribute to the next element) <a class="footnote-reference" href="#id3" id="id2">[1]</a></li>
+<li>特色指令（标识符）:<ul>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#raw">raw</a> （包括原生格式标记）</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#include">include</a> (包含其他文件的reStructuredText)
+&#8211; 在Sphinx中，当给定一个绝对的文件路径，该指令（标识符）将其作为相对于源目录来处理</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#class">class</a> (class属性赋给下一个元素) <a class="footnote-reference" href="#id21" id="id13">[1]</a></li>
 </ul>
 </li>
-<li><p class="first">HTML specifics:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#meta">meta</a> (generation of HTML <tt class="docutils literal"><span class="pre">&lt;meta&gt;</span></tt> tags)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#title">title</a> (override document title)</li>
+<li>HTML特性:<ul>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#meta">meta</a> (生成HTML <tt class="docutils literal"><span class="pre">&lt;meta&gt;</span></tt> 标签)</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#title">title</a> (覆盖文件的标题)</li>
 </ul>
 </li>
-<li><p class="first">Influencing markup:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#default-role">default-role</a> (set a new default role)</li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#role">role</a> (create a new role)</li>
+<li>Influencing markup:<ul>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#default-role">default-role</a> (设置一个新的默认role)</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#role">role</a> (创建一个新的role)</li>
 </ul>
-<p>Since these are only per-file, better use Sphinx&#8217; facilities for setting the
-<a class="reference internal" href="config.html#confval-default_role"><tt class="xref std std-confval docutils literal"><span class="pre">default_role</span></tt></a>.</p>
 </li>
 </ul>
-<p>Do <em>not</em> use the directives <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#sectnum">sectnum</a>, <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#header">header</a> and
-<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#footer">footer</a>.</p>
-<p>Directives added by Sphinx are described in <a class="reference internal" href="markup/index.html#sphinxmarkup"><em>Sphinx Markup Constructs</em></a>.</p>
-<p>Basically, a directive consists of a name, arguments, options and content. (Keep
-this terminology in mind, it is used in the next chapter describing custom
-directives.)  Looking at this example,</p>
+<p>请 <em>不要</em> 使用指令（标识符） <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#sectnum">sectnum</a>， <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#header">header</a> 以及
+<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#footer">footer</a>。</p>
+<p>Sphinx自己增加的指令（标识符）是在 <a class="reference internal" href="markup/index.html#sphinxmarkup"><em>Sphinx标记结构</em></a> 中描述的。</p>
+<p>基本上，指令（标识符）由一个名称，参数，选项和内容组成。（请记住这些术语，它被用来在接下来的章节描述了自定义指令或者标识符。）请看例子，:</p>
 <div class="highlight-rest"><div class="highlight"><pre><span class="p">..</span> <span class="ow">function</span><span class="p">::</span> foo(x)
               foo(y, z)
    <span class="nc">:module:</span> <span class="nf">some.module.name</span>
@@ -419,52 +361,33 @@ directives.)  Looking at this example,</p>
    Return a line of text input from the user.
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">function</span></tt> is the directive name.  It is given two arguments here, the
-remainder of the first line and the second line, as well as one option
-<tt class="docutils literal"><span class="pre">module</span></tt> (as you can see, options are given in the lines immediately following
-the arguments and indicated by the colons).  Options must be indented to the
-same level as the directive content.</p>
-<p>The directive content follows after a blank line and is indented relative to the
-directive start.</p>
+<p><tt class="docutils literal"><span class="pre">function</span></tt> 是指令（标识符）的名称。在这里它有两个参数，第一行其余的部分以及第二行，还有一个选项 <tt class="docutils literal"><span class="pre">module</span></tt>
+（正如可以看到的，选项是在参数的下一行以及以冒号开始以冒号结束）。选项必须跟指令的内容缩进到相同的水平。</p>
+<p>指令（标识符）的内容与选项之间空一行，需要相对于指令（标识符）的首行缩进（以指令的首行为缩进的对照点）。</p>
 </div>
-<div class="section" id="images">
-<h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
-<p>reST supports an image directive (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#image">ref</a>), used like so:</p>
+<div class="section" id="id14">
+<h2>图片<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>reST支持图片指令（标识符）(<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#image">ref</a>)，像这样使用:</p>
 <div class="highlight-rest"><div class="highlight"><pre><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> gnu.png
    (options)
 </pre></div>
 </div>
-<p>When used within Sphinx, the file name given (here <tt class="docutils literal"><span class="pre">gnu.png</span></tt>) must either be
-relative to the source file, or absolute which means that they are relative to
-the top source directory.  For example, the file <tt class="docutils literal"><span class="pre">sketch/spam.rst</span></tt> could refer
-to the image <tt class="docutils literal"><span class="pre">images/spam.png</span></tt> as <tt class="docutils literal"><span class="pre">../images/spam.png</span></tt> or
-<tt class="docutils literal"><span class="pre">/images/spam.png</span></tt>.</p>
-<p>Sphinx will automatically copy image files over to a subdirectory of the output
-directory on building (e.g. the <tt class="docutils literal"><span class="pre">_static</span></tt> directory for HTML output.)</p>
-<p>Interpretation of image size options (<tt class="docutils literal"><span class="pre">width</span></tt> and <tt class="docutils literal"><span class="pre">height</span></tt>) is as follows:
-if the size has no unit or the unit is pixels, the given size will only be
-respected for output channels that support pixels (i.e. not in LaTeX output).
-Other units (like <tt class="docutils literal"><span class="pre">pt</span></tt> for points) will be used for HTML and LaTeX output.</p>
-<p>Sphinx extends the standard docutils behavior by allowing an asterisk for the
-extension:</p>
+<p>在Sphinx中使用图片指令（标识符），文件名(这里是指 <tt class="docutils literal"><span class="pre">gnu.png</span></tt>)必须是相对于源文件，或者是绝对的但是相对于顶部的源目录。例如，在 <tt class="docutils literal"><span class="pre">sketch/spam.rst</span></tt> 文件中可以使用图片 <tt class="docutils literal"><span class="pre">images/spam.png</span></tt>，也可以使用 <tt class="docutils literal"><span class="pre">../images/spam.png</span></tt> 或者 <tt class="docutils literal"><span class="pre">/images/spam.png</span></tt>。</p>
+<p>Sphinx将会自动将图像文件拷贝到输出目录中（例如HTML格式输出，会拷贝到 <tt class="docutils literal"><span class="pre">_static</span></tt> 目录中。）</p>
+<p>对于图片尺寸选项（ <tt class="docutils literal"><span class="pre">width</span></tt> 和 <tt class="docutils literal"><span class="pre">height</span></tt>）的解释如下：如果大小没有单位或单位是像素，那图片大小将会被那些支持像素的输出格式关心（LaTeX格式就不在乎这种情况的图片大小）。HTML和LaTeX输出格式使用其他的单位（像 <tt class="docutils literal"><span class="pre">pt</span></tt> 表示像素点）。</p>
+<p>Sphinx扩展了标准的docutils的功能，允许文件扩展名为星号:</p>
 <div class="highlight-rest"><div class="highlight"><pre><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> gnu.*
 </pre></div>
 </div>
-<p>Sphinx then searches for all images matching the provided pattern and determines
-their type.  Each builder then chooses the best image out of these candidates.
-For instance, if the file name <tt class="docutils literal"><span class="pre">gnu.*</span></tt> was given and two files <tt class="file docutils literal"><span class="pre">gnu.pdf</span></tt>
-and <tt class="file docutils literal"><span class="pre">gnu.png</span></tt> existed in the source tree, the LaTeX builder would choose
-the former, while the HTML builder would prefer the latter.</p>
+<p>Sphinx搜索所有的图片匹配提供的模式，并确定其类型。每个生成器会从所有的候选者中选择最佳的图片。比如，如果给出 <tt class="docutils literal"><span class="pre">gnu.*</span></tt> 这样的文件名以及源代码树中存在 <tt class="file docutils literal"><span class="pre">gnu.pdf</span></tt> 和 <tt class="file docutils literal"><span class="pre">gnu.png</span></tt> 这两个文件，LaTeX 生成器会选择前者，HTML生成器则会选择后者。</p>
 <p class="versionchanged">
-<span class="versionmodified">Changed in version 0.4: </span>Added the support for file names ending in an asterisk.</p>
+<span class="versionmodified">Changed in version 0.4: </span>增加了支持以星号结尾的文件名。</p>
 <p class="versionchanged">
-<span class="versionmodified">Changed in version 0.6: </span>Image paths can now be absolute.</p>
+<span class="versionmodified">Changed in version 0.6: </span>图片的路径可以是绝对的。</p>
 </div>
-<div class="section" id="footnotes">
-<h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
-<p>For footnotes (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#footnotes">ref</a>), use <tt class="docutils literal"><span class="pre">[#name]_</span></tt> to mark the footnote
-location, and add the footnote body at the bottom of the document after a
-&#8220;Footnotes&#8221; rubric heading, like so:</p>
+<div class="section" id="id15">
+<h2>脚注<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>可以使用 <tt class="docutils literal"><span class="pre">[#name]_</span></tt> 标注在脚注的位置，在文档的最后的 <tt class="docutils literal"><span class="pre">..</span> <span class="pre">rubric::</span> <span class="pre">Footnotes</span></tt> 后添加脚注的内容，像这样:</p>
 <div class="highlight-rest"><div class="highlight"><pre>Lorem ipsum <span class="s">[#f1]_</span> dolor sit amet ... <span class="s">[#f2]_</span>
 
 <span class="p">..</span> <span class="ow">rubric</span><span class="p">::</span> Footnotes
@@ -473,53 +396,40 @@ location, and add the footnote body at the bottom of the document after a
 <span class="p">..</span> <span class="nt">[#f2]</span> Text of the second footnote.
 </pre></div>
 </div>
-<p>You can also explicitly number the footnotes (<tt class="docutils literal"><span class="pre">[1]_</span></tt>) or use auto-numbered
-footnotes without names (<tt class="docutils literal"><span class="pre">[#]_</span></tt>).</p>
+<p>你也可以明确用数字标注脚注或者通过不指定 <tt class="docutils literal"><span class="pre">name</span></tt> 使用自动数字标记脚注(<tt class="docutils literal"><span class="pre">[#]_</span></tt>)。</p>
 </div>
-<div class="section" id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h2>
-<p>Standard reST citations (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#citations">ref</a>) are supported, with the
-additional feature that they are &#8220;global&#8221;, i.e. all citations can be referenced
-from all files.  Use them like so:</p>
+<div class="section" id="id16">
+<h2>引文<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx支持标准reST引文(<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#citations">ref</a>)，增加了所有引文是“全局的”的特性，即：所有的文件可以使用所有的引文。这样使用它们:</p>
 <div class="highlight-rest"><div class="highlight"><pre>Lorem ipsum <span class="s">[Ref]_</span> dolor sit amet.
 
 <span class="p">..</span> <span class="nt">[Ref]</span> Book or article reference, URL or whatever.
 </pre></div>
 </div>
-<p>Citation usage is similar to footnote usage, but with a label that is not
-numeric or begins with <tt class="docutils literal"><span class="pre">#</span></tt>.</p>
+<p>引文用法是类似的脚注的用法，但带标签不是数字，或以``#``开始。</p>
 </div>
-<div class="section" id="substitutions">
-<h2>Substitutions<a class="headerlink" href="#substitutions" title="Permalink to this headline">¶</a></h2>
-<p>reST supports &#8220;substitutions&#8221; (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#substitution-definitions">ref</a>), which
-are pieces of text and/or markup referred to in the text by <tt class="docutils literal"><span class="pre">|name|</span></tt>.  They
-are defined like footnotes with explicit markup blocks, like this:</p>
+<div class="section" id="id17">
+<h2>替换<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<p>reST支持“替换”(<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#substitution-definitions">ref</a>)，这是文本和/或标记在文中 <tt class="docutils literal"><span class="pre">|name|</span></tt> 提到。它们是像脚注用显著的标记块，像这样:</p>
 <div class="highlight-rest"><div class="highlight"><pre><span class="p">..</span> <span class="nt">|name|</span> <span class="ow">replace</span><span class="p">::</span> replacement <span class="ge">*text*</span>
 </pre></div>
 </div>
-<p>or this:</p>
+<p>或者，这样:</p>
 <div class="highlight-rest"><div class="highlight"><pre><span class="p">..</span> <span class="nt">|caution|</span> <span class="ow">image</span><span class="p">::</span> warning.png
              <span class="nc">:alt:</span> <span class="nf">Warning!</span>
 </pre></div>
 </div>
-<p>See the <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#substitution-definitions">reST reference for substitutions</a>
-for details.</p>
-<p>If you want to use some substitutions for all documents, put them into
-<a class="reference internal" href="config.html#confval-rst_prolog"><tt class="xref std std-confval docutils literal"><span class="pre">rst_prolog</span></tt></a> or put them into a separate file and include it into all
-documents you want to use them in, using the <tt class="xref rst rst-dir docutils literal"><span class="pre">include</span></tt> directive.  (Be
-sure to give the include file a file name extension differing from that of other
-source files, to avoid Sphinx finding it as a standalone document.)</p>
-<p>Sphinx defines some default substitutions, see <a class="reference internal" href="markup/inline.html#default-substitutions"><em>Substitutions</em></a>.</p>
+<p>细节请看 <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#substitution-definitions">reST reference for substitutions</a>。</p>
+<p>如果你想在所有文件使用中一些替换，把它们写入 <a class="reference internal" href="config.html#confval-rst_prolog"><tt class="xref std std-confval docutils literal"><span class="pre">rst_prolog</span></tt></a> 或把它们放到一个单独的文件，要使用它们的所有文件中包含它，通过使用 <tt class="xref rst rst-dir docutils literal"><span class="pre">include</span></tt> 指令或者标识符。（务必使得include文件扩展名与其他的源文件不同，以免让Sphinx把它作为一个独立的文件。）</p>
+<p>Sphinx自定义了一些默认的替换, 请看 <a class="reference internal" href="markup/inline.html#default-substitutions"><em>Substitutions</em></a>。</p>
 </div>
-<div class="section" id="comments">
-<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
-<p>Every explicit markup block which isn&#8217;t a valid markup construct (like the
-footnotes above) is regarded as a comment (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#comments">ref</a>).  For
-example:</p>
+<div class="section" id="id18">
+<h2>评论<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<p>不是一个有效的标记结构（如上述的脚注）的每一个明确的标记块被视为一条评论（<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#comments">ref</a>）。例如:</p>
 <div class="highlight-rest"><div class="highlight"><pre><span class="cp">.. This is a comment.</span>
 </pre></div>
 </div>
-<p>You can indent text after a comment start to form multiline comments:</p>
+<p>您可以缩进文本在注释开始后，这样可以形成多行注释:</p>
 <div class="highlight-rest"><div class="highlight"><pre><span class="cp">..</span>
 <span class="cp">   This whole indented block</span>
 <span class="cp">   is a comment.</span>
@@ -528,30 +438,22 @@ example:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="source-encoding">
-<h2>Source encoding<a class="headerlink" href="#source-encoding" title="Permalink to this headline">¶</a></h2>
-<p>Since the easiest way to include special characters like em dashes or copyright
-signs in reST is to directly write them as Unicode characters, one has to
-specify an encoding.  Sphinx assumes source files to be encoded in UTF-8 by
-default; you can change this with the <a class="reference internal" href="config.html#confval-source_encoding"><tt class="xref std std-confval docutils literal"><span class="pre">source_encoding</span></tt></a> config value.</p>
+<div class="section" id="id19">
+<h2>源文件编码<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<p>由于包括特殊字符如在reST中的破折号或版权标志，最简单的方法是直接写为Unicode字符，指定编码。Sphinx假定源文件默认情况下是使用UTF-8编码；你可以改变 <a class="reference internal" href="config.html#confval-source_encoding"><tt class="xref std std-confval docutils literal"><span class="pre">source_encoding</span></tt></a> 这一配置值。</p>
 </div>
-<div class="section" id="gotchas">
-<h2>Gotchas<a class="headerlink" href="#gotchas" title="Permalink to this headline">¶</a></h2>
-<p>There are some problems one commonly runs into while authoring reST documents:</p>
+<div class="section" id="id20">
+<h2>陷阱<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<p>这有些问题通常发生在编写reST文档的时候：</p>
 <ul class="simple">
-<li><strong>Separation of inline markup:</strong> As said above, inline markup spans must be
-separated from the surrounding text by non-word characters, you have to use a
-backslash-escaped space to get around that.  See <a class="reference external" href="http://docutils.sf.net/docs/ref/rst/restructuredtext.html#inline-markup">the reference</a>
-for the details.</li>
-<li><strong>No nested inline markup:</strong> Something like <tt class="docutils literal"><span class="pre">*see</span> <span class="pre">:func:`foo`*</span></tt> is not
-possible.</li>
+<li><strong>分离的内嵌标记:</strong> 正如上面所说，行内标记的跨度必须用由非单词字符把周围的文字分开，可以使用转义的空格来避免。详情请看 <a class="reference external" href="http://docutils.sf.net/docs/ref/rst/restructuredtext.html#inline-markup">the reference</a>。</li>
+<li><strong>没有嵌套内联标记:</strong> 像 <tt class="docutils literal"><span class="pre">*see</span> <span class="pre">:func:`foo`*</span></tt> 是不可能存在的。</li>
 </ul>
 <p class="rubric">Footnotes</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
+<table class="docutils footnote" frame="void" id="id21" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>When the default domain contains a <tt class="xref rst rst-dir docutils literal"><span class="pre">class</span></tt> directive, this directive
-will be shadowed.  Therefore, Sphinx re-exports it as <tt class="xref rst rst-dir docutils literal"><span class="pre">rst-class</span></tt>.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id13">[1]</a></td><td>当默认域包含一个 <tt class="xref rst rst-dir docutils literal"><span class="pre">class</span></tt> 指令（标识符），该指令将被隐藏。因此，Sphinx将它转为 <tt class="xref rst rst-dir docutils literal"><span class="pre">rst-class</span></tt>。</td></tr>
 </tbody>
 </table>
 </div>
@@ -561,6 +463,26 @@ will be shadowed.  Therefore, Sphinx re-exports it as <tt class="xref rst rst-di
           </div>
         </div>
       </div>
+<div style="right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 评论上方 */
+google_ad_slot = "2110492886";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9adc7a1c86496c8e2bc61c4f8fc92d30' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
       <div class="clearer"></div>
     </div>
     <div class="related">
@@ -573,7 +495,7 @@ will be shadowed.  Therefore, Sphinx re-exports it as <tt class="xref rst rst-di
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="markup/index.html" title="Sphinx Markup Constructs"
+          <a href="markup/index.html" title="Sphinx标记结构"
              >next</a> |</li>
         <li class="right" >
           <a href="invocation.html" title="sphinx-build用法"

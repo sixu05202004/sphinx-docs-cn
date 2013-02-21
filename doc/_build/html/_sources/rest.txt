@@ -2,78 +2,62 @@
 
 .. _rst-primer:
 
-reStructuredText Primer
+reStructuredText入门
 =======================
 
-This section is a brief introduction to reStructuredText (reST) concepts and
-syntax, intended to provide authors with enough information to author documents
-productively.  Since reST was designed to be a simple, unobtrusive markup
-language, this will not take too long.
+本节简要介绍了reStructuredText (reST)的概念和语法，旨在提供足够的信息来高效地编写文档。因为reST是一个简单的，不显眼的标记语言，这不会花费太长时间来入门。
 
 .. seealso::
 
-   The authoritative `reStructuredText User Documentation
-   <http://docutils.sourceforge.net/rst.html>`_.  The "ref" links in this
-   document link to the description of the individual constructs in the reST
-   reference.
+   权威的 `reStructuredText用户文档 <http://docutils.sourceforge.net/rst.html>`_。  
 
 
-Paragraphs
+段落
 ----------
 
-The paragraph (:duref:`ref <paragraphs>`) is the most basic block in a reST
-document.  Paragraphs are simply chunks of text separated by one or more blank
-lines.  As in Python, indentation is significant in reST, so all lines of the
-same paragraph must be left-aligned to the same level of indentation.
+段落(:duref:`ref <paragraphs>`)是reST文档中最基本的块。段落是由一个或多个空白行分离的简单的文本块。在Python中，缩进在reST中是具有重要意义，所以同一段落的所有行必须左对齐而且是同一级缩进。
 
 
 .. _inlinemarkup:
 
-Inline markup
+行内标记
 -------------
+注：因为找不到合适的词语来翻译role，所以没有翻译！
 
-The standard reST inline markup is quite simple: use
+标准的行内标记相当简单：使用
 
-* one asterisk: ``*text*`` for emphasis (italics),
-* two asterisks: ``**text**`` for strong emphasis (boldface), and
-* backquotes: ````text```` for code samples.
+* 单星号： ``*text*`` 强调 (斜体),
+* 双星号： ``**text**`` 重点强调 (粗体)，以及
+* 反引号： ````text```` 代码示例。
 
-If asterisks or backquotes appear in running text and could be confused with
-inline markup delimiters, they have to be escaped with a backslash.
+如果星号或反引号出​​现在文本会对行内标记分隔符引起混淆，他们必须用一个反斜杠进行转义。
 
-Be aware of some restrictions of this markup:
+注意行内标记一些限制:
 
-* it may not be nested,
-* content may not start or end with whitespace: ``* text*`` is wrong,
-* it must be separated from surrounding text by non-word characters.  Use a
-  backslash escaped space to work around that: ``thisis\ *one*\ word``.
+* 不能嵌套，
+* 文本不能以空格开始或者结束： ``* text*`` 是不正确的，
+* 必须由空格从周围的文本中分离出来。可以通过使用转义的空格来规避这个限制：thisis\ *one*\ word。
 
-These restrictions may be lifted in future versions of the docutils.
+docutils以后的版本可能会取消上列出的这些限制。
 
-reST also allows for custom "interpreted text roles"', which signify that the
-enclosed text should be interpreted in a specific way.  Sphinx uses this to
-provide semantic markup and cross-referencing of identifiers, as described in
-the appropriate section.  The general syntax is ``:rolename:`content```.
+reST也允许自定义“文本解释role”，这就意味着所包含的文本应以一种特定的方式解释。Sphinx用它提供了语义标记和交叉引用的标识符。一般的语法格式是 ``:rolename:`content``` 。
 
-Standard reST provides the following roles:
+标准的reST提供了如下些roles：
 
-* :durole:`emphasis` -- alternate spelling for ``*emphasis*``
-* :durole:`strong` -- alternate spelling for ``**strong**``
-* :durole:`literal` -- alternate spelling for ````literal````
-* :durole:`subscript` -- subscript text
-* :durole:`superscript` -- superscript text
-* :durole:`title-reference` -- for titles of books, periodicals, and other
-  materials
+* :durole:`emphasis` -- 来替代 ``*emphasis*``
+* :durole:`strong` -- 代替 ``**strong**``
+* :durole:`literal` -- 代替 ````literal````
+* :durole:`subscript` -- 下标文本
+* :durole:`superscript` -- 上标文本
+* :durole:`title-reference` -- 书，期刊，以及其他材料的标题
 
-See :ref:`inline-markup` for roles added by Sphinx.
+Sphinx添加的roles请见 :ref:`inline-markup`。
 
 
-Lists and Quote-like blocks
+列表和“类”引用块
 ---------------------------
 
-List markup (:duref:`ref <bullet-lists>`) is natural: just place an asterisk at
-the start of a paragraph and indent properly.  The same goes for numbered lists;
-they can also be autonumbered using a ``#`` sign::
+列表标记(:duref:`ref <bullet-lists>`) 是自然的：只要在段落开头放置一个星号和缩进正常。带编号的列表同样适用；它们也可以自动编号通过使用标志 ``#``::
 
    * This is a bulleted list.
    * It has two items, the second
@@ -86,8 +70,7 @@ they can also be autonumbered using a ``#`` sign::
    #. It has two items too.
 
 
-Nested lists are possible, but be aware that they must be separated from the
-parent list items by blank lines::
+嵌套列表是可能的，但要知道，它们必须由空行从父列表中分隔::
 
    * this is
    * a list
@@ -97,7 +80,7 @@ parent list items by blank lines::
 
    * and here the parent list continues
 
-Definition lists (:duref:`ref <definition-lists>`) are created as follows::
+定义列表 (:duref:`ref <definition-lists>`) 的创建::
 
    term (up to a line of text)
       Definition of the term, which must be indented
@@ -107,18 +90,17 @@ Definition lists (:duref:`ref <definition-lists>`) are created as follows::
    next term
       Description.
 
-Note that the term cannot have more than one line of text.
+请注意，**term** 不能有一个以上的文本行。
 
-Quoted paragraphs (:duref:`ref <block-quotes>`) are created by just indenting
-them more than the surrounding paragraphs.
+引用段落(:duref:`ref <block-quotes>`) 可以通过比周围的段落更缩进来创建。
 
-Line blocks (:duref:`ref <line-blocks>`) are a way of preserving line breaks::
+行块元素 (:duref:`ref <line-blocks>`) 是防止行被破坏的方式（保留行原样的方式）::
 
    | These lines are
    | broken exactly like in
    | the source file.
 
-There are also several more special blocks available:
+还有其它几个特殊的功能块:
 
 * field lists (:duref:`ref <field-lists>`)
 * option lists (:duref:`ref <option-lists>`)
@@ -126,12 +108,10 @@ There are also several more special blocks available:
 * doctest blocks (:duref:`ref <doctest-blocks>`)
 
 
-Source Code
+源代码
 -----------
 
-Literal code blocks (:duref:`ref <literal-blocks>`) are introduced by ending a
-paragraph with the special marker ``::``.  The literal block must be indented
-(and, like all paragraphs, separated from the surrounding ones by blank lines)::
+文字代码块(:duref:`ref <literal-blocks>`)是在段尾加入特殊标记 ``::`` 引入的。文字代码块必须缩进（像所有的段落，是通过空行来分离的）::
 
    This is a normal text paragraph. The next paragraph is a code sample::
 
@@ -142,26 +122,21 @@ paragraph with the special marker ``::``.  The literal block must be indented
 
    This is a normal text paragraph again.
 
-The handling of the ``::`` marker is smart:
+``::`` 标记的处理非常聪明:
 
-* If it occurs as a paragraph of its own, that paragraph is completely left
-  out of the document.
-* If it is preceded by whitespace, the marker is removed.
-* If it is preceded by non-whitespace, the marker is replaced by a single
-  colon.
+* 如果出现在段落本身中，那么整个段落将会从文档中删除（也就是说不会出现在生成的文档中）。
+* 如果它前面的空白，标记将被删除。
+* 如果它的前面非空白，标记会被单个冒号取代。
 
-That way, the second sentence in the above example's first paragraph would be
-rendered as "The next paragraph is a code sample:".
+通过这种方式，上面第二句将呈现为 "The next paragraph is a code sample:"。
 
 
 .. _rst-tables:
 
-Tables
+表格
 ------
 
-Two forms of tables are supported.  For *grid tables* (:duref:`ref
-<grid-tables>`), you have to "paint" the cell grid yourself.  They look like
-this::
+Sphinx支持两种表格形式。对于 *格子表格* (:duref:`ref <grid-tables>`)，必须自己“画”自己的单元格。它们看起来像这样::
 
    +------------------------+------------+----------+----------+
    | Header row, column 1   | Header 2   | Header 3 | Header 4 |
@@ -172,9 +147,7 @@ this::
    | body row 2             | ...        | ...      |          |
    +------------------------+------------+----------+----------+
 
-*Simple tables* (:duref:`ref <simple-tables>`) are easier to write, but
-limited: they must contain more than one row, and the first column cannot
-contain multiple lines.  They look like this::
+*简单表格* (:duref:`ref <simple-tables>`) 更容易书写，但是有限制：表格必须是两行以及以上，而且第一列不能包含多行。它们看起来像这样::
 
    =====  =====  =======
    A      B      A and B
@@ -186,45 +159,37 @@ contain multiple lines.  They look like this::
    =====  =====  =======
 
 
-Hyperlinks
+超链接
 ----------
 
-External links
+外部链接
 ^^^^^^^^^^^^^^
 
-Use ```Link text <http://example.com/>`_`` for inline web links.  If the link
-text should be the web address, you don't need special markup at all, the parser
-finds links and mail addresses in ordinary text.
+使用 ```Link text <http://example.com/>`_`` 来实现内嵌的网页链接。如果链接文本是Web地址，你一点都不需要特殊标记，解析器可以识别在普通的文本的链接和邮件地址。
 
-You can also separate the link and the target definition (:duref:`ref
-<hyperlink-targets>`), like this::
+你也可以把链接和目标定义(:duref:`ref <hyperlink-targets>`)分开，像这样::
 
    This is a paragraph that contains `a link`_.
 
    .. _a link: http://example.com/
 
 
-Internal links
+内部链接
 ^^^^^^^^^^^^^^
 
-Internal linking is done via a special reST role provided by Sphinx, see the
-section on specific markup, :ref:`ref-role`.
+内部链接是通过Sphinx提供的一个特殊的reST role来实现的，请看 :ref:`ref-role`.
 
 
-Sections
+章节
 --------
 
-Section headers (:duref:`ref <sections>`) are created by underlining (and
-optionally overlining) the section title with a punctuation character, at least
-as long as the text::
+章节头 (:duref:`ref <sections>`) 是用特殊的标点符作为章节标题的下划线来创建的（上划线是可选的），只要文字::
 
    =================
    This is a heading
    =================
 
-Normally, there are no heading levels assigned to certain characters as the
-structure is determined from the succession of headings.  However, for the
-Python documentation, this convention is used which you may follow:
+通常，没有特定的字符指定给标题级别，因为结构是用从继承的标题来确定的。对于python文档，本公约您可以按照：
 
 * ``#`` with overline, for parts
 * ``*`` with overline, for chapters
@@ -233,95 +198,75 @@ Python documentation, this convention is used which you may follow:
 * ``^``, for subsubsections
 * ``"``, for paragraphs
 
-Of course, you are free to use your own marker characters (see the reST
-documentation), and use a deeper nesting level, but keep in mind that most
-target formats (HTML, LaTeX) have a limited supported nesting depth.
+当然，您可以自由使用自己的标记字符（参看reST文档），并使用一个更深层次的嵌套级别，但请记住，大多数的目标格式（HTML，LaTeX）有限地支持嵌套深度。
 
 
-Explicit Markup
+显式标记
 ---------------
 
-"Explicit markup" (:duref:`ref <explicit-markup-blocks>`) is used in reST for
-most constructs that need special handling, such as footnotes,
-specially-highlighted paragraphs, comments, and generic directives.
+"显式标记" (:duref:`ref <explicit-markup-blocks>`) 在reST中是用于需要进行特殊处理的结构，比如脚注，特别突出的段落，注释，和通用指令（标识符）。
 
-An explicit markup block begins with a line starting with ``..`` followed by
-whitespace and is terminated by the next paragraph at the same level of
-indentation.  (There needs to be a blank line between explicit markup and normal
-paragraphs.  This may all sound a bit complicated, but it is intuitive enough
-when you write it.)
+显式标记块的第一行是以 ``..`` 开始，接着是紧随着空格，被结束于同样层级缩进的下一段落。（显式标记和正常的段落之间需要有一个空行。当你写它的时候，可能听起来有点复杂，但它是直观的。）
 
 
 .. _directives:
 
-Directives
-----------
+指令（标识符）
+----------------
 
-A directive (:duref:`ref <directives>`) is a generic block of explicit markup.
-Besides roles, it is one of the extension mechanisms of reST, and Sphinx makes
-heavy use of it.
+指令或者标识符（:duref:`ref <directives>`）是一个通用的显式标记块。除了roles，指令或者标识符是reST的扩展机制，Sphinx大量地使用了它。
 
-Docutils supports the following directives:
+Docutils支持如下的指令（标识符）：
 
-* Admonitions: :dudir:`attention`, :dudir:`caution`, :dudir:`danger`,
+* 警告: :dudir:`attention`, :dudir:`caution`, :dudir:`danger`,
   :dudir:`error`, :dudir:`hint`, :dudir:`important`, :dudir:`note`,
-  :dudir:`tip`, :dudir:`warning` and the generic :dudir:`admonition`.
-  (Most themes style only "note" and "warning" specially.)
+  :dudir:`tip`, :dudir:`warning` 以及 :dudir:`admonition`。
 
-* Images:
+* 图片:
 
-  - :dudir:`image` (see also Images_ below)
-  - :dudir:`figure` (an image with caption and optional legend)
+  - :dudir:`image` (请见下面的 Images_ )
+  - :dudir:`figure` (带有标题和可选的图例的图片)
 
-* Additional body elements:
+* 其它内容元素:
 
-  - :dudir:`contents <table-of-contents>` (a local, i.e. for the current file
-    only, table of contents)
-  - :dudir:`container` (a container with a custom class, useful to generate an
-    outer ``<div>`` in HTML)
-  - :dudir:`rubric` (a heading without relation to the document sectioning)
-  - :dudir:`topic`, :dudir:`sidebar` (special highlighted body elements)
-  - :dudir:`parsed-literal` (literal block that supports inline markup)
-  - :dudir:`epigraph` (a block quote with optional attribution line)
-  - :dudir:`highlights`, :dudir:`pull-quote` (block quotes with their own
-    class attribute)
-  - :dudir:`compound` (a compound paragraph)
+  - :dudir:`contents <table-of-contents>` （一个局部的，即只对当前文件的，内容表）
+  - :dudir:`container` （具有特定类的容器，用于HTML生成 ``<div>`` ）
+  - :dudir:`rubric` (一个与文件章节无关的标题)
+  - :dudir:`topic`, :dudir:`sidebar` (特别强调了内容元素)
+  - :dudir:`parsed-literal` (支持行内标记的文字块)
+  - :dudir:`epigraph` (带有属性行的块引用)
+  - :dudir:`highlights`, :dudir:`pull-quote` （带自己的类属性的块引用）
+  - :dudir:`compound` (组合段落)
 
-* Special tables:
+* 特色表格:
 
-  - :dudir:`table` (a table with title)
-  - :dudir:`csv-table` (a table generated from comma-separated values)
-  - :dudir:`list-table` (a table generated from a list of lists)
+  - :dudir:`table` （带标题的表格）
+  - :dudir:`csv-table` （由逗号分开的值生成的表格）
+  - :dudir:`list-table` （由一系列列表生成的表格）
 
-* Special directives:
+* 特色指令（标识符）:
 
-  - :dudir:`raw` (include raw target-format markup)
-  - :dudir:`include` (include reStructuredText from another file)
-    -- in Sphinx, when given an absolute include file path, this directive takes
-    it as relative to the source directory
-  - :dudir:`class` (assign a class attribute to the next element) [1]_
+  - :dudir:`raw` （包括原生格式标记）
+  - :dudir:`include` (包含其他文件的reStructuredText)
+    -- 在Sphinx中，当给定一个绝对的文件路径，该指令（标识符）将其作为相对于源目录来处理 
+  - :dudir:`class` (class属性赋给下一个元素) [1]_
 
-* HTML specifics:
+* HTML特性:
 
-  - :dudir:`meta` (generation of HTML ``<meta>`` tags)
-  - :dudir:`title` (override document title)
+  - :dudir:`meta` (生成HTML ``<meta>`` 标签)
+  - :dudir:`title` (覆盖文件的标题)
 
 * Influencing markup:
 
-  - :dudir:`default-role` (set a new default role)
-  - :dudir:`role` (create a new role)
+  - :dudir:`default-role` (设置一个新的默认role)
+  - :dudir:`role` (创建一个新的role)
 
-  Since these are only per-file, better use Sphinx' facilities for setting the
-  :confval:`default_role`.
+请 *不要* 使用指令（标识符） :dudir:`sectnum`， :dudir:`header` 以及
+:dudir:`footer`。
 
-Do *not* use the directives :dudir:`sectnum`, :dudir:`header` and
-:dudir:`footer`.
+Sphinx自己增加的指令（标识符）是在 :ref:`sphinxmarkup` 中描述的。
 
-Directives added by Sphinx are described in :ref:`sphinxmarkup`.
-
-Basically, a directive consists of a name, arguments, options and content. (Keep
-this terminology in mind, it is used in the next chapter describing custom
-directives.)  Looking at this example, ::
+基本上，指令（标识符）由一个名称，参数，选项和内容组成。（请记住这些术语，它被用来在接下来的章节描述了自定义指令或者标识符。）请看例子，::
 
    .. function:: foo(x)
                  foo(y, z)
@@ -329,62 +274,43 @@ directives.)  Looking at this example, ::
 
       Return a line of text input from the user.
 
-``function`` is the directive name.  It is given two arguments here, the
-remainder of the first line and the second line, as well as one option
-``module`` (as you can see, options are given in the lines immediately following
-the arguments and indicated by the colons).  Options must be indented to the
-same level as the directive content.
+``function`` 是指令（标识符）的名称。在这里它有两个参数，第一行其余的部分以及第二行，还有一个选项 ``module``
+（正如可以看到的，选项是在参数的下一行以及以冒号开始以冒号结束）。选项必须跟指令的内容缩进到相同的水平。
 
-The directive content follows after a blank line and is indented relative to the
-directive start.
+指令（标识符）的内容与选项之间空一行，需要相对于指令（标识符）的首行缩进（以指令的首行为缩进的对照点）。
 
 
-Images
+图片
 ------
 
-reST supports an image directive (:dudir:`ref <image>`), used like so::
+reST支持图片指令（标识符）(:dudir:`ref <image>`)，像这样使用::
 
    .. image:: gnu.png
       (options)
 
-When used within Sphinx, the file name given (here ``gnu.png``) must either be
-relative to the source file, or absolute which means that they are relative to
-the top source directory.  For example, the file ``sketch/spam.rst`` could refer
-to the image ``images/spam.png`` as ``../images/spam.png`` or
-``/images/spam.png``.
+在Sphinx中使用图片指令（标识符），文件名(这里是指 ``gnu.png``)必须是相对于源文件，或者是绝对的但是相对于顶部的源目录。例如，在 ``sketch/spam.rst`` 文件中可以使用图片 ``images/spam.png``，也可以使用 ``../images/spam.png`` 或者 ``/images/spam.png``。
 
-Sphinx will automatically copy image files over to a subdirectory of the output
-directory on building (e.g. the ``_static`` directory for HTML output.)
+Sphinx将会自动将图像文件拷贝到输出目录中（例如HTML格式输出，会拷贝到 ``_static`` 目录中。）
 
-Interpretation of image size options (``width`` and ``height``) is as follows:
-if the size has no unit or the unit is pixels, the given size will only be
-respected for output channels that support pixels (i.e. not in LaTeX output).
-Other units (like ``pt`` for points) will be used for HTML and LaTeX output.
+对于图片尺寸选项（ ``width`` 和 ``height``）的解释如下：如果大小没有单位或单位是像素，那图片大小将会被那些支持像素的输出格式关心（LaTeX格式就不在乎这种情况的图片大小）。HTML和LaTeX输出格式使用其他的单位（像 ``pt`` 表示像素点）。
 
-Sphinx extends the standard docutils behavior by allowing an asterisk for the
-extension::
+Sphinx扩展了标准的docutils的功能，允许文件扩展名为星号::
 
    .. image:: gnu.*
 
-Sphinx then searches for all images matching the provided pattern and determines
-their type.  Each builder then chooses the best image out of these candidates.
-For instance, if the file name ``gnu.*`` was given and two files :file:`gnu.pdf`
-and :file:`gnu.png` existed in the source tree, the LaTeX builder would choose
-the former, while the HTML builder would prefer the latter.
+Sphinx搜索所有的图片匹配提供的模式，并确定其类型。每个生成器会从所有的候选者中选择最佳的图片。比如，如果给出 ``gnu.*`` 这样的文件名以及源代码树中存在 :file:`gnu.pdf` 和 :file:`gnu.png` 这两个文件，LaTeX 生成器会选择前者，HTML生成器则会选择后者。
 
 .. versionchanged:: 0.4
-   Added the support for file names ending in an asterisk.
+   增加了支持以星号结尾的文件名。
 
 .. versionchanged:: 0.6
-   Image paths can now be absolute.
+   图片的路径可以是绝对的。
 
 
-Footnotes
+脚注
 ---------
 
-For footnotes (:duref:`ref <footnotes>`), use ``[#name]_`` to mark the footnote
-location, and add the footnote body at the bottom of the document after a
-"Footnotes" rubric heading, like so::
+可以使用 ``[#name]_`` 标注在脚注的位置，在文档的最后的 ``.. rubric:: Footnotes`` 后添加脚注的内容，像这样::
 
    Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
 
@@ -393,61 +319,48 @@ location, and add the footnote body at the bottom of the document after a
    .. [#f1] Text of the first footnote.
    .. [#f2] Text of the second footnote.
 
-You can also explicitly number the footnotes (``[1]_``) or use auto-numbered
-footnotes without names (``[#]_``).
+你也可以明确用数字标注脚注或者通过不指定 ``name`` 使用自动数字标记脚注(``[#]_``)。
 
 
-Citations
+引文
 ---------
 
-Standard reST citations (:duref:`ref <citations>`) are supported, with the
-additional feature that they are "global", i.e. all citations can be referenced
-from all files.  Use them like so::
+Sphinx支持标准reST引文(:duref:`ref <citations>`)，增加了所有引文是“全局的”的特性，即：所有的文件可以使用所有的引文。这样使用它们::
 
    Lorem ipsum [Ref]_ dolor sit amet.
 
    .. [Ref] Book or article reference, URL or whatever.
 
-Citation usage is similar to footnote usage, but with a label that is not
-numeric or begins with ``#``.
+引文用法是类似的脚注的用法，但带标签不是数字，或以``#``开始。
 
 
-Substitutions
+替换
 -------------
 
-reST supports "substitutions" (:duref:`ref <substitution-definitions>`), which
-are pieces of text and/or markup referred to in the text by ``|name|``.  They
-are defined like footnotes with explicit markup blocks, like this::
+reST支持“替换”(:duref:`ref <substitution-definitions>`)，这是文本和/或标记在文中 ``|name|`` 提到。它们是像脚注用显著的标记块，像这样::
 
    .. |name| replace:: replacement *text*
 
-or this::
+或者，这样::
 
    .. |caution| image:: warning.png
                 :alt: Warning!
 
-See the :duref:`reST reference for substitutions <substitution-definitions>`
-for details.
+细节请看 :duref:`reST reference for substitutions <substitution-definitions>`。
 
-If you want to use some substitutions for all documents, put them into
-:confval:`rst_prolog` or put them into a separate file and include it into all
-documents you want to use them in, using the :rst:dir:`include` directive.  (Be
-sure to give the include file a file name extension differing from that of other
-source files, to avoid Sphinx finding it as a standalone document.)
+如果你想在所有文件使用中一些替换，把它们写入 :confval:`rst_prolog` 或把它们放到一个单独的文件，要使用它们的所有文件中包含它，通过使用 :rst:dir:`include` 指令或者标识符。（务必使得include文件扩展名与其他的源文件不同，以免让Sphinx把它作为一个独立的文件。）
 
-Sphinx defines some default substitutions, see :ref:`default-substitutions`.
+Sphinx自定义了一些默认的替换, 请看 :ref:`default-substitutions`。
 
 
-Comments
+评论
 --------
 
-Every explicit markup block which isn't a valid markup construct (like the
-footnotes above) is regarded as a comment (:duref:`ref <comments>`).  For
-example::
+不是一个有效的标记结构（如上述的脚注）的每一个明确的标记块被视为一条评论（:duref:`ref <comments>`）。例如::
 
    .. This is a comment.
 
-You can indent text after a comment start to form multiline comments::
+您可以缩进文本在注释开始后，这样可以形成多行注释::
 
    ..
       This whole indented block
@@ -456,31 +369,23 @@ You can indent text after a comment start to form multiline comments::
       Still in the comment.
 
 
-Source encoding
+源文件编码
 ---------------
 
-Since the easiest way to include special characters like em dashes or copyright
-signs in reST is to directly write them as Unicode characters, one has to
-specify an encoding.  Sphinx assumes source files to be encoded in UTF-8 by
-default; you can change this with the :confval:`source_encoding` config value.
+由于包括特殊字符如在reST中的破折号或版权标志，最简单的方法是直接写为Unicode字符，指定编码。Sphinx假定源文件默认情况下是使用UTF-8编码；你可以改变 :confval:`source_encoding` 这一配置值。
 
 
-Gotchas
+陷阱
 -------
 
-There are some problems one commonly runs into while authoring reST documents:
+这有些问题通常发生在编写reST文档的时候：
 
-* **Separation of inline markup:** As said above, inline markup spans must be
-  separated from the surrounding text by non-word characters, you have to use a
-  backslash-escaped space to get around that.  See `the reference
-  <http://docutils.sf.net/docs/ref/rst/restructuredtext.html#inline-markup>`_
-  for the details.
+* **分离的内嵌标记:** 正如上面所说，行内标记的跨度必须用由非单词字符把周围的文字分开，可以使用转义的空格来避免。详情请看 `the reference
+  <http://docutils.sf.net/docs/ref/rst/restructuredtext.html#inline-markup>`_。
 
-* **No nested inline markup:** Something like ``*see :func:`foo`*`` is not
-  possible.
+* **没有嵌套内联标记:** 像 ``*see :func:`foo`*`` 是不可能存在的。
 
 
 .. rubric:: Footnotes
 
-.. [1] When the default domain contains a :rst:dir:`class` directive, this directive
-       will be shadowed.  Therefore, Sphinx re-exports it as :rst:dir:`rst-class`.
+.. [1] 当默认域包含一个 :rst:dir:`class` 指令（标识符），该指令将被隐藏。因此，Sphinx将它转为 :rst:dir:`rst-class`。

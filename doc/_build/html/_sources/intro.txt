@@ -15,8 +15,7 @@ Sphinx注重的是人工的文档，而不是自动生成的API文档。尽管Sp
   `Python Package Index <http://pypi.python.org/pypi/html2rest>`_ 上被找到。
 
 * 为了转换旧的Python文档到Sphinx，“转换器”在 `the Python SVN repository
-  <http://svn.python.org/projects/doctools/converter>`_ 上。它包含了从python文档形式的
-  LaTeX标记到Sphinx reST的代码。
+  <http://svn.python.org/projects/doctools/converter>`_ 上。它包含了从python文档形式的LaTeX标记到Sphinx reST的代码。
 
 * Marcin Wojdyr写了一个从Docbook到带有Sphinx标记的reST；它位于 
   `Google Code <http://code.google.com/p/db2rst/>`_。
@@ -31,7 +30,7 @@ Sphinx注重的是人工的文档，而不是自动生成的API文档。尽管Sp
 使用其他系统（工具）
 ----------------------
 
-请参看 :ref:`相关的部分在常见问题列表`。
+请参看 :ref:`faq`。
 
 
 安装先决条件
@@ -41,7 +40,7 @@ Sphinx注重的是人工的文档，而不是自动生成的API文档。尽管Sp
 * 对于Python 3，需要  **Python 3.1** （或者以上版本）
 * docutils_ （0.7或者SVN上的trunk版本） 和  Jinja2_ 
 * Pygments_ （如果需要代码高亮）
-* uuid_ （如果使用**Python 2.4**）
+* uuid_ （如果使用 **Python 2.4** ）
 
 .. _reStructuredText: http://docutils.sf.net/rst.html
 .. _docutils: http://docutils.sf.net/

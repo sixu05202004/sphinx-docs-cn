@@ -1,10 +1,9 @@
 .. _sphinxmarkup:
 
-Sphinx Markup Constructs
+Sphinx标记结构
 ========================
 
-Sphinx adds a lot of new directives and interpreted text roles to `standard reST
-markup`_.  This section contains the reference material for these facilities.
+Sphinx在 `standard reST markup`_ 上增添了不少新的指令和解释文本的角色。
 
 .. toctree::
 
@@ -14,6 +13,6 @@ markup`_.  This section contains the reference material for these facilities.
    inline
    misc
 
-More markup is added by :ref:`domains`.
+:ref:`domains` 添加了更多的标记。
 
 .. _standard reST markup: http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html

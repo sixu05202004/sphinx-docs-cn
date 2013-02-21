@@ -29,7 +29,7 @@
           title="Search within Sphinx 1.1.3 documentation"
           href="_static/opensearch.xml"/>
     <link rel="top" title="Sphinx 1.1.3 documentation" href="index.html" />
-    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="next" title="术语" href="glossary.html" />
     <link rel="prev" title="Storage Backends" href="web/storagebackends.html" />
  
 <style type="text/css">
@@ -53,7 +53,7 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="glossary.html" title="Glossary"
+          <a href="glossary.html" title="术语"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="web/storagebackends.html" title="Storage Backends"
@@ -69,12 +69,11 @@
   <h3><a href="contents.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Sphinx FAQ</a><ul>
-<li><a class="reference internal" href="#how-do-i">How do I...</a></li>
-<li><a class="reference internal" href="#using-sphinx-with">Using Sphinx with...</a></li>
-<li><a class="reference internal" href="#epub-info">Epub info</a></li>
-<li><a class="reference internal" href="#texinfo-info">Texinfo info</a><ul>
-<li><a class="reference internal" href="#displaying-links">Displaying Links</a></li>
-<li><a class="reference internal" href="#notes">Notes</a></li>
+<li><a class="reference internal" href="#id1">我该怎么做...</a></li>
+<li><a class="reference internal" href="#sphinx">使用Sphinx在...</a></li>
+<li><a class="reference internal" href="#epub">Epub信息</a></li>
+<li><a class="reference internal" href="#texinfo">Texinfo信息</a><ul>
+<li><a class="reference internal" href="#id2">注意事项</a></li>
 </ul>
 </li>
 </ul>
@@ -86,7 +85,7 @@
                         title="previous chapter">Storage Backends</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="glossary.html"
-                        title="next chapter">Glossary</a></p>
+                        title="next chapter">术语</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/faq.txt"
@@ -115,62 +114,46 @@
             
   <div class="section" id="sphinx-faq">
 <span id="faq"></span><h1>Sphinx FAQ<a class="headerlink" href="#sphinx-faq" title="Permalink to this headline">¶</a></h1>
-<p>This is a list of Frequently Asked Questions about Sphinx.  Feel free to
-suggest new entries!</p>
-<div class="section" id="how-do-i">
-<h2>How do I...<a class="headerlink" href="#how-do-i" title="Permalink to this headline">¶</a></h2>
+<p>这是一个Sphinx的常见问题列表。欢迎随时提出新的问题！</p>
+<div class="section" id="id1">
+<h2>我该怎么做...<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>... create PDF files without LaTeX?</dt>
-<dd>You can use <a class="reference external" href="http://rst2pdf.googlecode.com">rst2pdf</a> version 0.12 or greater
-which comes with built-in Sphinx integration.  See the <a class="reference internal" href="builders.html#builders"><em>Available builders</em></a>
-section for details.</dd>
+<dd>你可以使用版本0.12或者更高（Sphinx内置整合的） <a class="reference external" href="http://rst2pdf.googlecode.com">rst2pdf</a> 。详情请见 <a class="reference internal" href="builders.html#builders"><em>Available builders</em></a>。</dd>
 <dt>... get section numbers?</dt>
-<dd>They are automatic in LaTeX output; for HTML, give a <tt class="docutils literal"><span class="pre">:numbered:</span></tt> option to
-the <a class="reference internal" href="markup/toctree.html#directive-toctree" title="toctree directive"><tt class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></tt></a> directive where you want to start numbering.</dd>
+<dd>在LaTeX输出中，它们是自动的；在HTML输出中，需要在 <a class="reference internal" href="markup/toctree.html#directive-toctree" title="toctree directive"><tt class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></tt></a> 指令（标识符）中添加选项 <tt class="docutils literal"><span class="pre">:numbered:</span></tt>。</dd>
 <dt>... customize the look of the built HTML files?</dt>
-<dd>Use themes, see <a class="reference internal" href="theming.html"><em>HTML theming support</em></a>.</dd>
+<dd>使用主题，请参看 <a class="reference internal" href="theming.html"><em>HTML theming support</em></a>。</dd>
 <dt>... add global substitutions or includes?</dt>
-<dd>Add them in the <a class="reference internal" href="config.html#confval-rst_epilog"><tt class="xref std std-confval docutils literal"><span class="pre">rst_epilog</span></tt></a> config value.</dd>
+<dd>请在 <a class="reference internal" href="config.html#confval-rst_epilog"><tt class="xref std std-confval docutils literal"><span class="pre">rst_epilog</span></tt></a> 配置中添加它们</dd>
 <dt>... display the whole TOC tree in the sidebar?</dt>
-<dd>Use the <a class="reference internal" href="templating.html#toctree" title="toctree"><tt class="xref py py-data docutils literal"><span class="pre">toctree</span></tt></a> callable in a custom layout template, probably in the
-<tt class="docutils literal"><span class="pre">sidebartoc</span></tt> block.</dd>
+<dd>使用 <a class="reference internal" href="templating.html#toctree" title="toctree"><tt class="xref py py-data docutils literal"><span class="pre">toctree</span></tt></a> 的调用在自定义布局模板，大概在 <tt class="docutils literal"><span class="pre">sidebartoc</span></tt> 块</dd>
 <dt>... write my own extension?</dt>
-<dd>See the <a class="reference internal" href="ext/tutorial.html#exttut"><em>extension tutorial</em></a>.</dd>
+<dd>请参看 <a class="reference internal" href="ext/tutorial.html#exttut"><em>extension tutorial</em></a>。</dd>
 <dt>... convert from my existing docs using MoinMoin markup?</dt>
-<dd>The easiest way is to convert to xhtml, then convert <a class="reference external" href="http://docutils.sourceforge.net/sandbox/xhtml2rest/xhtml2rest.py">xhtml to reST</a>.  You&#8217;ll
-still need to mark up classes and such, but the headings and code examples
-come through cleanly.</dd>
+<dd>最简单的方法是将其转换为XHTML，然后在转成 <a class="reference external" href="http://docutils.sourceforge.net/sandbox/xhtml2rest/xhtml2rest.py">xhtml to reST</a>。你仍然需要标记类等，但标题和代码示例可以不用标记。</dd>
 </dl>
 </div>
-<div class="section" id="using-sphinx-with">
-<span id="usingwith"></span><h2>Using Sphinx with...<a class="headerlink" href="#using-sphinx-with" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sphinx">
+<span id="usingwith"></span><h2>使用Sphinx在...<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>Read the Docs</dt>
-<dd><a class="reference external" href="http://readthedocs.org">http://readthedocs.org</a> is a documentation hosting service based around Sphinx.
-They will host sphinx documentation, along with supporting a number of other
-features including version support, PDF generation, and more. The <a class="reference external" href="http://read-the-docs.readthedocs.org/en/latest/getting_started.html">Getting
-Started</a>
-guide is a good place to start.</dd>
+<dd><a class="reference external" href="http://readthedocs.org">http://readthedocs.org</a> 是一个基于Sphinx文档托管服务。他们主要服务于sphinx文档，同时支持其他的特性：版本控制，PDF生成等等。 <a class="reference external" href="http://read-the-docs.readthedocs.org/en/latest/getting_started.html">Getting
+Started</a> 是最合适初学者文档。</dd>
 <dt>Epydoc</dt>
-<dd>There&#8217;s a third-party extension providing an <a class="reference external" href="http://git.savannah.gnu.org/cgit/kenozooid.git/tree/doc/extapi.py">api role</a> which refers to
-Epydoc&#8217;s API docs for a given identifier.</dd>
+<dd>提供一个 <a class="reference external" href="http://git.savannah.gnu.org/cgit/kenozooid.git/tree/doc/extapi.py">api role</a> 的第三方扩展，对于一个给定的标识符，它引用了Epydoc的API文档。</dd>
 <dt>Doxygen</dt>
-<dd>Michael Jones is developing a reST/Sphinx bridge to doxygen called <a class="reference external" href="http://github.com/michaeljones/breathe/tree/master">breathe</a>.</dd>
+<dd>Michael Jones正在开发一个reST/Sphinx与doxygen的桥梁，称为 <a class="reference external" href="http://github.com/michaeljones/breathe/tree/master">breathe</a>。</dd>
 <dt>SCons</dt>
-<dd>Glenn Hutchings has written a SCons build script to build Sphinx
-documentation; it is hosted here: <a class="reference external" href="https://bitbucket.org/zondo/sphinx-scons">https://bitbucket.org/zondo/sphinx-scons</a></dd>
+<dd>Glenn Hutchings写了一个使用SCons构建脚本生成Sphinx的文件；它存放在： <a class="reference external" href="https://bitbucket.org/zondo/sphinx-scons">https://bitbucket.org/zondo/sphinx-scons</a>。</dd>
 <dt>PyPI</dt>
-<dd>Jannis Leidel wrote a <a class="reference external" href="http://pypi.python.org/pypi/Sphinx-PyPI-upload">setuptools command</a> that automatically uploads
-Sphinx documentation to the PyPI package documentation area at
-<a class="reference external" href="http://packages.python.org/">http://packages.python.org/</a>.</dd>
+<dd>Jannis Leidel编写一个 <a class="reference external" href="http://pypi.python.org/pypi/Sphinx-PyPI-upload">setuptools command</a>，它能够自动地上传Sphinx文档到PyPI包文档区域：<a class="reference external" href="http://packages.python.org/">http://packages.python.org/</a>。</dd>
 <dt>GitHub Pages</dt>
-<dd>Directories starting with underscores are ignored by default which breaks
-static files in Sphinx.  GitHub&#8217;s preprocessor can be <a class="reference external" href="https://github.com/blog/572-bypassing-jekyll-on-github-pages">disabled</a> to support
-Sphinx HTML output properly.</dd>
+<dd>默认情况下，使用下划线的目录将被忽略，这将会破坏Sphinx的静态文件。GitHub的预处理为了支持Sphinx HTML输出能够 <a class="reference external" href="https://github.com/blog/572-bypassing-jekyll-on-github-pages">disabled</a> 。</dd>
 <dt>MediaWiki</dt>
-<dd>See <a class="reference external" href="https://bitbucket.org/kevindunn/sphinx-wiki">https://bitbucket.org/kevindunn/sphinx-wiki</a>, a project by Kevin Dunn.</dd>
+<dd>参见 <a class="reference external" href="https://bitbucket.org/kevindunn/sphinx-wiki">https://bitbucket.org/kevindunn/sphinx-wiki</a>。</dd>
 <dt>Google Analytics</dt>
-<dd><p class="first">You can use a custom <tt class="docutils literal"><span class="pre">layout.html</span></tt> template, like this:</p>
+<dd><p class="first">你可以定制化 <tt class="docutils literal"><span class="pre">layout.html</span></tt> 模版，像这样：</p>
 <div class="last highlight-html+django"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;!layout.html&quot;</span> <span class="cp">%}</span>
 
 <span class="cp">{%</span>- <span class="k">block</span> <span class="nv">extrahead</span> <span class="cp">%}</span>
@@ -203,126 +186,59 @@ the JavaScript coming from www.google-analytics.com.
 </dd>
 </dl>
 </div>
-<div class="section" id="epub-info">
-<span id="epub-faq"></span><h2>Epub info<a class="headerlink" href="#epub-info" title="Permalink to this headline">¶</a></h2>
-<p>The epub builder is currently in an experimental stage.  It has only been tested
-with the Sphinx documentation itself.  If you want to create epubs, here are
-some notes:</p>
+<div class="section" id="epub">
+<span id="epub-faq"></span><h2>Epub信息<a class="headerlink" href="#epub" title="Permalink to this headline">¶</a></h2>
+<p>epub生成器目前正处于测试阶段。仅仅完成与Sphinx文档本身的测试。如果你想要创建epubs，下面是一些提示：</p>
 <ul>
-<li><p class="first">Split the text into several files. The longer the individual HTML files are,
-the longer it takes the ebook reader to render them.  In extreme cases, the
-rendering can take up to one minute.</p>
+<li><p class="first">把文本分割到多个文件中。单个的HTML文件越长，ebook阅读器处理的时间就越长。在极端情况下，阅读器需要花费一分钟来渲染。</p>
 </li>
-<li><p class="first">Try to minimize the markup.  This also pays in rendering time.</p>
+<li><p class="first">应尽量减少的标记。这也花费的渲染时间。</p>
 </li>
-<li><p class="first">For some readers you can use embedded or external fonts using the CSS
-<tt class="docutils literal"><span class="pre">&#64;font-face</span></tt> directive.  This is <em>extremely</em> useful for code listings which
-are often cut at the right margin.  The default Courier font (or variant) is
-quite wide and you can only display up to 60 characters on a line.  If you
-replace it with a narrower font, you can get more characters on a line.  You
-may even use <a class="reference external" href="http://fontforge.sourceforge.net/">FontForge</a> and create
-narrow variants of some free font.  In my case I get up to 70 characters on a
-line.</p>
-<p>You may have to experiment a little until you get reasonable results.</p>
+<li><p class="first">对于一些阅读器，你可以使用内嵌或者外部的字体使用 CSS <tt class="docutils literal"><span class="pre">&#64;font-face</span></tt> 指令（标识符）。
+这对于代码是 <em>极其</em> 有用，它们经常被右边缘给截断。默认的Courier字体是相当的宽，一行只能显示60个字符。如果你用一个更窄的字体来替代的话，一行能够显示更多的字符。
+你可能甚至使用  <a class="reference external" href="http://fontforge.sourceforge.net/">FontForge</a> 以及创建些免费字体的窄变体。以我的情况，一行能够显示70个字符。</p>
+<p>您可能需要试验一下，直到你得到合理的结果。</p>
 </li>
-<li><p class="first">Test the created epubs. You can use several alternatives.  The ones I am aware
-of are <a class="reference external" href="http://code.google.com/p/epubcheck/">Epubcheck</a>, <a class="reference external" href="http://calibre-ebook.com/">Calibre</a>, <a class="reference external" href="http://www.fbreader.org/">FBreader</a> (although it does not render the CSS),
-and <a class="reference external" href="http://bookworm.oreilly.com/">Bookworm</a>.  For bookworm you can download the source from
-<a class="reference external" href="http://code.google.com/p/threepress/">http://code.google.com/p/threepress/</a> and run your own local server.</p>
+<li><p class="first">测试所创建的ePub文件。可以有多种选择。我所知道的一种是 <a class="reference external" href="http://code.google.com/p/epubcheck/">Epubcheck</a>, <a class="reference external" href="http://calibre-ebook.com/">Calibre</a>, <a class="reference external" href="http://www.fbreader.org/">FBreader</a> (虽然不支持CSS), 以及 <a class="reference external" href="http://bookworm.oreilly.com/">Bookworm</a>。你可以下载
+<a class="reference external" href="http://code.google.com/p/threepress/">http://code.google.com/p/threepress/</a>，在自己的服务器上运行。</p>
 </li>
-<li><p class="first">Large floating divs are not displayed properly.
-If they cover more than one page, the div is only shown on the first page.
-In that case you can copy the <tt class="file docutils literal"><span class="pre">epub.css</span></tt> from the
-<tt class="docutils literal"><span class="pre">sphinx/themes/epub/static/</span></tt> directory to your local <tt class="docutils literal"><span class="pre">_static/</span></tt>
-directory and remove the float settings.</p>
+<li><p class="first">大型浮动的div显示不正确。如果覆盖多个页面，只显示在第一页的div。
+这种情况，你可以从 <tt class="docutils literal"><span class="pre">sphinx/themes/epub/static/</span></tt> 拷贝 <tt class="file docutils literal"><span class="pre">epub.css</span></tt> 到你本地的 <tt class="docutils literal"><span class="pre">_static/</span></tt>  目录，并且删除浮动设置。</p>
 </li>
-<li><p class="first">Files that are inserted outside of the <tt class="docutils literal"><span class="pre">toctree</span></tt> directive must be manually
-included. This sometimes applies to appendixes, e.g. the glossary or
-the indices.  You can add them with the <a class="reference internal" href="config.html#confval-epub_post_files"><tt class="xref std std-confval docutils literal"><span class="pre">epub_post_files</span></tt></a> option.</p>
+<li><p class="first">在 <tt class="docutils literal"><span class="pre">toctree</span></tt> 指令（标识符）外的文件需要手动导入。有时候这也适用于附录，例如词汇表。你也可以添加它们在 <a class="reference internal" href="config.html#confval-epub_post_files"><tt class="xref std std-confval docutils literal"><span class="pre">epub_post_files</span></tt></a> 选项。</p>
 </li>
 </ul>
 </div>
-<div class="section" id="texinfo-info">
-<span id="texinfo-faq"></span><h2>Texinfo info<a class="headerlink" href="#texinfo-info" title="Permalink to this headline">¶</a></h2>
-<p>The Texinfo builder is currently in an experimental stage but has successfully
-been used to build the documentation for both Sphinx and Python.  The intended
-use of this builder is to generate Texinfo that is then processed into Info
-files.</p>
-<p>There are two main programs for reading Info files, <tt class="docutils literal"><span class="pre">info</span></tt> and GNU Emacs.  The
-<tt class="docutils literal"><span class="pre">info</span></tt> program has less features but is available in most Unix environments
-and can be quickly accessed from the terminal.  Emacs provides better font and
-color display and supports extensive customization (of course).</p>
-<div class="section" id="displaying-links">
-<span id="texinfo-links"></span><h3>Displaying Links<a class="headerlink" href="#displaying-links" title="Permalink to this headline">¶</a></h3>
-<p>One noticeable problem you may encounter with the generated Info files is how
-references are displayed.  If you read the source of an Info file, a reference
-to this section would look like:</p>
-<div class="highlight-python"><pre>* note Displaying Links: target-id</pre>
-</div>
-<p>In the stand-alone reader, <tt class="docutils literal"><span class="pre">info</span></tt>, references are displayed just as they
-appear in the source.  Emacs, on the other-hand, will by default replace
-<tt class="docutils literal"><span class="pre">\*note:</span></tt> with <tt class="docutils literal"><span class="pre">see</span></tt> and hide the <tt class="docutils literal"><span class="pre">target-id</span></tt>.  For example:</p>
-<blockquote>
-<div><a class="reference internal" href="#texinfo-links"><em>Displaying Links</em></a></div></blockquote>
-<p>The exact behavior of how Emacs displays references is dependent on the variable
-<tt class="docutils literal"><span class="pre">Info-hide-note-references</span></tt>.  If set to the value of <tt class="docutils literal"><span class="pre">hide</span></tt>, Emacs will hide
-both the <tt class="docutils literal"><span class="pre">\*note:</span></tt> part and the <tt class="docutils literal"><span class="pre">target-id</span></tt>.  This is generally the best way
-to view Sphinx-based documents since they often make frequent use of links and
-do not take this limitation into account.  However, changing this variable
-affects how all Info documents are displayed and most due take this behavior
-into account.</p>
-<p>If you want Emacs to display Info files produced by Sphinx using the value
-<tt class="docutils literal"><span class="pre">hide</span></tt> for <tt class="docutils literal"><span class="pre">Info-hide-note-references</span></tt> and the default value for all other
-Info files, try adding the following Emacs Lisp code to your start-up file,
-<tt class="docutils literal"><span class="pre">~/.emacs.d/init.el</span></tt>.</p>
-<div class="highlight-python"><pre>(defadvice info-insert-file-contents (after
-                                      sphinx-info-insert-file-contents
-                                      activate)
-  "Hack to make `Info-hide-note-references' buffer-local and
-automatically set to `hide' iff it can be determined that this file
-was created from a Texinfo file generated by Docutils or Sphinx."
-  (set (make-local-variable 'Info-hide-note-references)
-       (default-value 'Info-hide-note-references))
-  (save-excursion
-    (save-restriction
-      (widen) (goto-char (point-min))
-      (when (re-search-forward
-             "^Generated by \\(Sphinx\\|Docutils\\)"
-             (save-excursion (search-forward "\x1f" nil t)) t)
-        (set (make-local-variable 'Info-hide-note-references)
-             'hide)))))</pre>
-</div>
-</div>
-<div class="section" id="notes">
-<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
-<p>The following notes may be helpful if you want to create Texinfo files:</p>
+<div class="section" id="texinfo">
+<span id="texinfo-faq"></span><h2>Texinfo信息<a class="headerlink" href="#texinfo" title="Permalink to this headline">¶</a></h2>
+<p>Texinfo生成器目前处于试验阶段，但已成功地用于构建Sphinx和Python的文档。此生成器的设计用途是生成信息文件，然后将其加工成的Texinfo。</p>
+<p>有两个主要的程序读取信息的文件：<tt class="docutils literal"><span class="pre">info</span></tt> 和GNU Emacs。<tt class="docutils literal"><span class="pre">info</span></tt> 特点不多，但是适用大多数的Unix环境，并从终端可以快速访问。Emacs提供了更好的字体和颜色显示，并支持广泛的定制（当然）。</p>
+<div class="section" id="id2">
+<h3>注意事项<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>如果你需要创建Texinfo文件，下面这些提示也许是有帮助的:</p>
 <ul>
-<li><p class="first">Each section corresponds to a different <tt class="docutils literal"><span class="pre">node</span></tt> in the Info file.</p>
+<li><p class="first">每个部分对应于不同节点。</p>
 </li>
-<li><p class="first">Colons (<tt class="docutils literal"><span class="pre">:</span></tt>) cannot be properly escaped in menu entries and xrefs.
-They will be replaced with semicolons (<tt class="docutils literal"><span class="pre">;</span></tt>).</p>
+<li><p class="first">冒号（<tt class="docutils literal"><span class="pre">:</span></tt>）不能正确被转义在菜单项和交叉引用中。它们将被用分号替换。</p>
 </li>
-<li><p class="first">In the HTML and Tex output, the word <tt class="docutils literal"><span class="pre">see</span></tt> is automatically inserted before
-all xrefs.</p>
+<li><p class="first">在HTML和Tex的输出，<tt class="docutils literal"><span class="pre">see</span></tt> 会自动插入到所有的交叉引用的前面。</p>
 </li>
-<li><p class="first">Links to external Info files can be created using the somewhat official URI
-scheme <tt class="docutils literal"><span class="pre">info</span></tt>.  For example:</p>
-<div class="highlight-python"><pre>info:Texinfo#makeinfo_options</pre>
-</div>
-<p>which produces:</p>
+<li><p class="first">外部信息文件的链接可以使用的一些官方的URI方案 <tt class="docutils literal"><span class="pre">info</span></tt>。例如:</p>
+<blockquote>
+<div><p><a class="reference external" href="info:Texinfo#makeinfo_options">info:Texinfo#makeinfo_options</a></p>
+</div></blockquote>
+<p>将会:</p>
 <blockquote>
 <div><p><a class="reference external" href="info:Texinfo#makeinfo_options">info:Texinfo#makeinfo_options</a></p>
 </div></blockquote>
 </li>
-<li><p class="first">Inline markup appears as follows in Info:</p>
+<li><p class="first">行内标记会显示如下信息:</p>
 <ul class="simple">
 <li>strong &#8211; *strong*</li>
 <li>emphasis &#8211; _emphasis_</li>
 <li>literal &#8211; `literal&#8217;</li>
 </ul>
-<p>It is possible to change this behavior using the Texinfo command
-<tt class="docutils literal"><span class="pre">&#64;definfoenclose</span></tt>.  For example, to make inline markup more closely resemble
-reST, add the following to your <tt class="file docutils literal"><span class="pre">conf.py</span></tt>:</p>
+<p>可以使用Texinfo命令行 <tt class="docutils literal"><span class="pre">&#64;definfoenclose</span></tt> 来改变这种行为。例如，为了使行内标记更接近reST，增加如下内容到 <tt class="file docutils literal"><span class="pre">conf.py</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">texinfo_elements</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;preamble&#39;</span><span class="p">:</span> <span class="s">&quot;&quot;&quot;</span><span class="se">\</span>
 <span class="s">@definfoenclose strong,**,**</span>
 <span class="s">@definfoenclose emph,*,*</span>
@@ -340,6 +256,26 @@ reST, add the following to your <tt class="file docutils literal"><span class="p
           </div>
         </div>
       </div>
+<div style="right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 评论上方 */
+google_ad_slot = "2110492886";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9adc7a1c86496c8e2bc61c4f8fc92d30' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
       <div class="clearer"></div>
     </div>
     <div class="related">
@@ -352,7 +288,7 @@ reST, add the following to your <tt class="file docutils literal"><span class="p
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="glossary.html" title="Glossary"
+          <a href="glossary.html" title="术语"
              >next</a> |</li>
         <li class="right" >
           <a href="web/storagebackends.html" title="Storage Backends"

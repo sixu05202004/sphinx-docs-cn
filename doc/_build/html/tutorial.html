@@ -73,10 +73,10 @@
 <li><a class="reference internal" href="#id3">定义文档结构</a></li>
 <li><a class="reference internal" href="#id4">添加内容</a></li>
 <li><a class="reference internal" href="#id5">运行构建</a></li>
-<li><a class="reference internal" href="#id8">文档对象</a></li>
-<li><a class="reference internal" href="#id9">基本配置</a></li>
+<li><a class="reference internal" href="#id6">文档对象</a></li>
+<li><a class="reference internal" href="#id7">基本配置</a></li>
 <li><a class="reference internal" href="#autodoc">Autodoc</a></li>
-<li><a class="reference internal" href="#id16">更多的内容</a></li>
+<li><a class="reference internal" href="#id8">更多的内容</a></li>
 </ul>
 </li>
 </ul>
@@ -119,17 +119,17 @@
 <p>绿色的箭头指定“详细信息”链接，这些链接指向了关于描述的功能的高级话题的章节。</p>
 <div class="section" id="id1">
 <h2>设置文档来源<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>一个文档集合的根目录被称为 <em class="xref std std-term">源目录</em>。<em class="xref std std-term">源目录</em> 包含Sphinx配置文件 <tt class="file docutils literal"><span class="pre">conf.py</span></tt>，在配置文件里面可以配置Sphinx如何读取源文件以及如何生成文件等等各方面。 <a class="footnote-reference" href="#id17" id="id2">[1]</a></p>
-<p>Sphinx提供了一个脚本:program:<cite>sphinx-quickstart</cite>，该脚本能够设置一个源目录以及通过几个简单的问答设置一个默认的配置文件:file:<cite>conf.py</cite>。只需要运行:</p>
+<p>一个文档集合的根目录被称为 <em class="xref std std-term">源目录</em>。<em class="xref std std-term">源目录</em> 包含Sphinx配置文件 <tt class="file docutils literal"><span class="pre">conf.py</span></tt>，在配置文件里面可以配置Sphinx如何读取源文件以及如何生成文件等等各方面。 <a class="footnote-reference" href="#id9" id="id2">[1]</a></p>
+<p>Sphinx提供了一个脚本 <strong class="program">sphinx-quickstart</strong>，该脚本能够设置一个源目录以及通过几个简单的问答设置一个默认的配置文件 <tt class="file docutils literal"><span class="pre">conf.py</span></tt>。只需要运行:</p>
 <div class="highlight-rst"><div class="highlight"><pre>$ sphinx-quickstart
 </pre></div>
 </div>
 <p>接着回答问题。（务必选择&#8221;autodoc&#8221;扩展。）</p>
-<p>Sphinx提供的&#8221;API documentation&#8221;生成器称为 <strong class="program">sphinx-apidoc</strong>；更详细的内容参看 <a class="reference internal" href="invocation.html#invocation-apidoc"><em>Invocation of sphinx-apidoc</em></a>。</p>
+<p>Sphinx提供的&#8221;API documentation&#8221;生成器称为 <strong class="program">sphinx-apidoc</strong>；更详细的内容参看 <a class="reference internal" href="invocation.html#invocation-apidoc"><em>调用sphinx-apidoc</em></a>。</p>
 </div>
 <div class="section" id="id3">
 <h2>定义文档结构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>假设你已经执行了 <strong class="program">sphinx-quickstart</strong>。它创建了一个包含 <tt class="file docutils literal"><span class="pre">conf.py以及主文件</span> <span class="pre">:file:`index.rst`（如果你接受了默认选项）的文件夹。:term:`master</span> <span class="pre">document</span></tt> 的主要作用是一个欢迎页面以及包含了树状内容表的“根”（或者 <em>toctree</em>）。</p>
+<p>假设你已经执行了 <strong class="program">sphinx-quickstart</strong>。它创建了一个包含 <tt class="file docutils literal"><span class="pre">conf.py</span></tt> 以及主文件 <tt class="file docutils literal"><span class="pre">index.rst</span></tt>  （如果你接受了默认选项）的文件夹。<em class="xref std std-term">master document</em> 的主要作用是一个欢迎页面以及包含了树状内容表的“根”（或者 <em>toctree</em>）。</p>
 <p>连接多个文件到单个层次结构的文件的方式是Sphinx增强了reStructuredText的主要事情之一。</p>
 <div class="sidebar">
 <p class="first sidebar-title">reStructuredText标识符（指令集）</p>
@@ -161,7 +161,7 @@
 <h2>添加内容<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>在Sphinx的源文件中，你可以使用标准reStructuredText的大部分功能。Sphinx也增加一些新的功能。例如，你可以通过使用可移植的方式（适应于所有的输出类型）&#8211; <a class="reference internal" href="markup/inline.html#role-ref" title="ref role"><tt class="xref rst rst-role docutils literal"><span class="pre">ref</span></tt></a> 来实现跨文件间的引用。</p>
 <p>举个例子，如果您正在查看的HTML版本，你可以看看这个文件的源代码 - 在侧边栏使用“显示源代码”的链接。</p>
-<p><img alt="more info" class="align-middle" src="_images/more.png" /> 请参看 <a class="reference internal" href="rest.html#rst-primer"><em>reStructuredText Primer</em></a> 更加详细地学习reStructuredText，可以访问 <a class="reference internal" href="markup/index.html#sphinxmarkup"><em>Sphinx Markup Constructs</em></a> 了解Sphinx增加的标记（标识符）列表。</p>
+<p><img alt="more info" class="align-middle" src="_images/more.png" /> 请参看 <a class="reference internal" href="rest.html#rst-primer"><em>reStructuredText入门</em></a> 更加详细地学习reStructuredText，可以访问 <a class="reference internal" href="markup/index.html#sphinxmarkup"><em>Sphinx标记结构</em></a> 了解Sphinx增加的标记（标识符）列表。</p>
 </div>
 <div class="section" id="id5">
 <h2>运行构建<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
@@ -171,7 +171,7 @@
 </div>
 <p>上面提到的 <em>sourcedir</em> 是指 <em class="xref std std-term">源目录</em>，<em>builddir</em> 是指你想放置的生成文件的位置。<em class="xref std std-option">-b</em> 选择了生成器；在本例中Sphinx将会生成HTML格式的文件。</p>
 <p><img alt="more info" class="align-middle" src="_images/more.png" /> <a class="reference internal" href="invocation.html#invocation"><em>sphinx-build用法</em></a> 中列出了 <strong class="program">sphinx-build</strong> 所支持的选项。</p>
-<p>因为 <strong class="program">sphinx-quickstart</strong> 生成了 <tt class="file docutils literal"><span class="pre">Makefile</span></tt> 和 :file:<a href="#id6"><span class="problematic" id="id7">`</span></a>make.bat`文件，这些文件能够减少不少工作：有了它们你就可以运行</p>
+<p>因为 <strong class="program">sphinx-quickstart</strong> 生成了 <tt class="file docutils literal"><span class="pre">Makefile</span></tt> 和 <tt class="file docutils literal"><span class="pre">make.bat</span></tt> 文件，这些文件能够减少不少工作：有了它们你就可以运行</p>
 <div class="highlight-rst"><div class="highlight"><pre>$ make html
 </pre></div>
 </div>
@@ -181,8 +181,8 @@
 <p class="last"><tt class="docutils literal"><span class="pre">make</span> <span class="pre">latexpdf</span></tt> 运行 <a class="reference internal" href="builders.html#sphinx.builders.latex.LaTeXBuilder" title="sphinx.builders.latex.LaTeXBuilder"><tt class="xref py py-mod docutils literal"><span class="pre">LaTeX</span> <span class="pre">builder</span></tt></a> ，实际上是调用pdfTeX工具元件。</p>
 </div>
 </div>
-<div class="section" id="id8">
-<h2>文档对象<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>文档对象<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>注：在这里domain翻译成域，可以理解成不同的编程语言的集合对象，像python domain, java domain, C/C++ domain等。</p>
 <p>Sphinx一个主要目标是在任何 <em class="dfn">域</em> 中简单的 <em class="dfn">objects</em> 文档（从非常笼统的意义上说）。<em class="dfn">域</em> 是指一个集合对象类型属于一个整体，完整的标记来创建和引用这些对象的描述。</p>
 <p>Python是最突出的域。如记录python的内建函数 <tt class="docutils literal"><span class="pre">enumerate()</span></tt>，你只需要添加如下的内容到源文件中:</p>
@@ -213,22 +213,22 @@
 </pre></div>
 </div>
 <p>这就是结果: 链接到 <a class="reference internal" href="#enumerate" title="enumerate"><tt class="xref py py-func docutils literal"><span class="pre">enumerate()</span></tt></a>.</p>
-<p>再次提醒，如果使用默认域，<tt class="docutils literal"><span class="pre">py:``是可以不用添加的。不用关心真正包含</span> <span class="pre">``enumerate()</span></tt> 的文档的文件；Sphinx能够找到以及为它建立链接。</p>
+<p>再次提醒，如果使用默认域，<tt class="docutils literal"><span class="pre">py:</span></tt> 是可以不用添加的。不用关心真正包含 <tt class="docutils literal"><span class="pre">enumerate()</span></tt> 的文档的文件；Sphinx能够找到以及为它建立链接。</p>
 <p>每个域对说明（签名）样式有着特点的规定，并格式化输出显得漂亮些，或者增加些特性如链接到参数类型，像在C/C++域。</p>
 <p><img alt="more info" class="align-middle" src="_images/more.png" /> 请查看 <a class="reference internal" href="domains.html#domains"><em>Sphinx Domains</em></a> 获取所有可用的域以及指令（标识符）/角色。</p>
 </div>
-<div class="section" id="id9">
-<h2>基本配置<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>基本配置<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>前面我们提到了 <tt class="file docutils literal"><span class="pre">conf.py</span></tt> 文件控制着Sphinx如何处理文档。该文件，作为Python源文件执行，你可以在文件中赋予的配置值。 对高级用户：因为文件是通过Sphinx执行，用户可以做一些不平凡的任务，像增加 <tt class="xref py py-data docutils literal"><span class="pre">sys.path</span></tt> 的值或者导入一个模块找出记录文档的版本。</p>
-<p>你可能需要修改的配置值是已经通过 <strong class="program">sphinx-quickstart</strong> 写入到 <tt class="file docutils literal"><span class="pre">conf.py</span></tt> 中并且注释起来（使用标准python语法：<a href="#id10"><span class="problematic" id="id11">``</span></a>#``在行的开头）。如果要定制配置值而不是使用 <strong class="program">sphinx-quickstart</strong> 生成的值，只需要增加额外的赋值。</p>
-<p>请记住，配置文件使用的是Python的字符串，数字，列表等语法。文件默认情况下是以UTF-8的格式保存，在文件的首行声明编码格式。如果需要使用non-ASCII格式，需要使用python的Unicode字符串*（像``project = u&#8217;Exposé&#8217;<a href="#id12"><span class="problematic" id="id13">``</span></a>）。</p>
+<p>你可能需要修改的配置值是已经通过 <strong class="program">sphinx-quickstart</strong> 写入到 <tt class="file docutils literal"><span class="pre">conf.py</span></tt> 中并且注释起来（使用标准python语法： <tt class="docutils literal"><span class="pre">#</span></tt> 在行的开头）。如果要定制配置值而不是使用 <strong class="program">sphinx-quickstart</strong> 生成的值，只需要增加额外的赋值。</p>
+<p>请记住，配置文件使用的是Python的字符串，数字，列表等语法。文件默认情况下是以UTF-8的格式保存，在文件的首行声明编码格式。如果需要使用non-ASCII格式，需要使用python的Unicode字符串*（像 <tt class="docutils literal"><span class="pre">project</span> <span class="pre">=</span> <span class="pre">u'Exposé'</span></tt>）。</p>
 <p><img alt="more info" class="align-middle" src="_images/more.png" /> 所有可用的配置值请参看 <a class="reference internal" href="config.html#build-config"><em>The build configuration file</em></a> 。</p>
 </div>
 <div class="section" id="autodoc">
 <h2>Autodoc<a class="headerlink" href="#autodoc" title="Permalink to this headline">¶</a></h2>
 <p>注：无法找到合适的词语来表示autodoc，直接用英文代替。</p>
 <p>在记录python源代码的时候，通常需要在源文件，文档字符串中加入大量的记录（文字）。Sphinx支持直接使用python自身模块的文档字符创通过使用称为&#8221;autodoc&#8221;的 <em class="dfn">extension</em>。（这个扩展是python的一个模块，为Sphinx项目提供额外的特性。）</p>
-<p>为了能够使用autodoc，你需要通过在配置文件 <tt class="file docutils literal"><span class="pre">conf.py</span></tt> 中加入字符串``&#8217;sphinx.ext.autodoc&#8217;<a href="#id14"><span class="problematic" id="id15">``</span></a>到 <a class="reference internal" href="config.html#confval-extensions"><tt class="xref std std-confval docutils literal"><span class="pre">extensions</span></tt></a> 列表中来激活。接着，你就有一些额外的指令（标识符）可以任由支配了。</p>
+<p>为了能够使用autodoc，你需要通过在配置文件 <tt class="file docutils literal"><span class="pre">conf.py</span></tt> 中加入字符串 <tt class="docutils literal"><span class="pre">'sphinx.ext.autodoc'</span></tt> 到 <a class="reference internal" href="config.html#confval-extensions"><tt class="xref std std-confval docutils literal"><span class="pre">extensions</span></tt></a> 列表中来激活。接着，你就有一些额外的指令（标识符）可以任由支配了。</p>
 <p>例如，为了记录函数 <tt class="docutils literal"><span class="pre">io.open()</span></tt>，从源文件中读取它的说明（签名）以及文档字符串，你可以这些写:</p>
 <div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">autofunction</span><span class="p">::</span> io.open
 </pre></div>
@@ -241,8 +241,8 @@
 <p>autodoc需要导入模块以便提取文档字符串。因此，必须在配置文件 <tt class="file docutils literal"><span class="pre">conf.py</span></tt> 中添加模块所在的路径到 <tt class="xref py py-data docutils literal"><span class="pre">sys.path</span></tt>。</p>
 <p><img alt="more info" class="align-middle" src="_images/more.png" /> autodoc更多的特性请参考 <a class="reference internal" href="ext/autodoc.html#module-sphinx.ext.autodoc" title="sphinx.ext.autodoc: Include documentation from docstrings."><tt class="xref py py-mod docutils literal"><span class="pre">sphinx.ext.autodoc</span></tt></a>。</p>
 </div>
-<div class="section" id="id16">
-<h2>更多的内容<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>更多的内容<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>其它扩展 (math, intersphinx, viewcode, doctest)</li>
 <li>静态文件</li>
@@ -252,10 +252,10 @@
 <li>编写扩展</li>
 </ul>
 <p class="rubric">Footnotes</p>
-<table class="docutils footnote" frame="void" id="id17" rules="none">
+<table class="docutils footnote" frame="void" id="id9" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>这是最基本的结构（布局）。<tt class="file docutils literal"><span class="pre">conf.py</span></tt> 可以放在其他的文件夹， <a class="reference internal" href="glossary.html#term-configuration-directory"><em class="xref std std-term">configuration directory</em></a>。请参看
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>这是最基本的结构（布局）。<tt class="file docutils literal"><span class="pre">conf.py</span></tt> 可以放在其他的文件夹， <em class="xref std std-term">configuration directory</em>。请参看
 <a class="reference internal" href="invocation.html#invocation"><em>sphinx-build用法</em></a>.</td></tr>
 </tbody>
 </table>
@@ -266,6 +266,26 @@
           </div>
         </div>
       </div>
+<div style="right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 评论上方 */
+google_ad_slot = "2110492886";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9adc7a1c86496c8e2bc61c4f8fc92d30' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
       <div class="clearer"></div>
     </div>
     <div class="related">

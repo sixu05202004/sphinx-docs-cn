@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The TOC tree &mdash; Sphinx 1.1.3 documentation</title>
+    <title>TOC树 &mdash; Sphinx 1.1.3 documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -29,9 +29,9 @@
           title="Search within Sphinx 1.1.3 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="top" title="Sphinx 1.1.3 documentation" href="../index.html" />
-    <link rel="up" title="Sphinx Markup Constructs" href="index.html" />
-    <link rel="next" title="Paragraph-level markup" href="para.html" />
-    <link rel="prev" title="Sphinx Markup Constructs" href="index.html" />
+    <link rel="up" title="Sphinx标记结构" href="index.html" />
+    <link rel="next" title="段落级标记" href="para.html" />
+    <link rel="prev" title="Sphinx标记结构" href="index.html" />
  
 <style type="text/css">
   table.right { float: right; margin-left: 20px; }
@@ -54,34 +54,34 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="para.html" title="Paragraph-level markup"
+          <a href="para.html" title="段落级标记"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Sphinx Markup Constructs"
+          <a href="index.html" title="Sphinx标记结构"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Sphinx主页</a>&nbsp;|&nbsp;</li>
         <li><a href="../contents.html">文档</a>
           &raquo;</li>
 
-          <li><a href="index.html" accesskey="U">Sphinx Markup Constructs</a> &raquo;</li> 
+          <li><a href="index.html" accesskey="U">Sphinx标记结构</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../contents.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">The TOC tree</a><ul>
-<li><a class="reference internal" href="#special-names">Special names</a></li>
+<li><a class="reference internal" href="#">TOC树</a><ul>
+<li><a class="reference internal" href="#id7">特殊名称</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
-                        title="previous chapter">Sphinx Markup Constructs</a></p>
+                        title="previous chapter">Sphinx标记结构</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="para.html"
-                        title="next chapter">Paragraph-level markup</a></p>
+                        title="next chapter">段落级标记</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/markup/toctree.txt"
@@ -108,27 +108,18 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="the-toc-tree">
-<span id="toctree-directive"></span><h1>The TOC tree<a class="headerlink" href="#the-toc-tree" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">Since reST does not have facilities to interconnect several documents, or split
-documents into multiple output files, Sphinx uses a custom directive to add
-relations between the single files the documentation is made of, as well as
-tables of contents.  The <tt class="docutils literal"><span class="pre">toctree</span></tt> directive is the central element.</p>
+  <div class="section" id="toc">
+<span id="toctree-directive"></span><h1>TOC树<a class="headerlink" href="#toc" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">由于reST不便于多个文件相互关联或者分割文件到多个输出文件中，Sphinx通过使用自定义的指令（标识符）来处理构成文档的单个文件的关系，这同样使用与内容表。<tt class="docutils literal"><span class="pre">toctree</span></tt> 指令（标识符）就是核心要素。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Simple &#8220;inclusion&#8221; of one file in another can be done with the
-<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#include">include</a> directive.</p>
+<p class="last">使用 <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#include">include</a> 指令（标识符）能够实现简单的一个文件在另一个文件的“包含”。</p>
 </div>
 <dl class="directive">
 <dt id="directive-toctree">
 <tt class="descname">.. toctree::</tt><a class="headerlink" href="#directive-toctree" title="Permalink to this definition">¶</a></dt>
-<dd><p>This directive inserts a &#8220;TOC tree&#8221; at the current location, using the
-individual TOCs (including &#8220;sub-TOC trees&#8221;) of the documents given in the
-directive body.  Relative document names (not beginning with a slash) are
-relative to the document the directive occurs in, absolute names are relative
-to the source directory.  A numeric <tt class="docutils literal"><span class="pre">maxdepth</span></tt> option may be given to
-indicate the depth of the tree; by default, all levels are included. <a class="footnote-reference" href="#id3" id="id1">[1]</a></p>
-<p>Consider this example (taken from the Python docs&#8217; library reference index):</p>
+<dd><p>该指令（标识符）使用在指令（标识符）主体中给出的文件作为单个TOCs(包含&#8221;sub-TOC树&#8221;)，在当前位置插入一个&#8221;TOC树&#8221;。相对文件名 ​​（不以斜杠开始）是相对于指令（标识符）所在文件，绝对名称是相对于源目录。一个数字的 <tt class="docutils literal"><span class="pre">maxdepth</span></tt> 选项表示的树的深度 。默认情况下，所有级别是包含的。 <a class="footnote-reference" href="#id8" id="id1">[1]</a></p>
+<p>仔细看看下面这个例子 (来自于的Python文档库参考页):</p>
 <div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
    <span class="nc">:maxdepth:</span> <span class="nf">2</span>
 
@@ -139,22 +130,13 @@ indicate the depth of the tree; by default, all levels are included. <a class="f
    (many more documents listed here)
 </pre></div>
 </div>
-<p>This accomplishes two things:</p>
+<p>这将会完成两件事情:</p>
 <ul class="simple">
-<li>Tables of contents from all those documents are inserted, with a maximum
-depth of two, that means one nested heading.  <tt class="docutils literal"><span class="pre">toctree</span></tt> directives in
-those documents are also taken into account.</li>
-<li>Sphinx knows that the relative order of the documents <tt class="docutils literal"><span class="pre">intro</span></tt>,
-<tt class="docutils literal"><span class="pre">strings</span></tt> and so forth, and it knows that they are children of the shown
-document, the library index.  From this information it generates &#8220;next
-chapter&#8221;, &#8220;previous chapter&#8221; and &#8220;parent chapter&#8221; links.</li>
+<li>所有这些文件的内容表被加入，最大的深度为2，这意味着一个嵌套标题。在这些文件中的 <tt class="docutils literal"><span class="pre">toctree</span></tt> 指令（标识符）也会被考虑到（识别）。</li>
+<li>Sphinx知道文档  <tt class="docutils literal"><span class="pre">intro</span></tt>，<tt class="docutils literal"><span class="pre">strings</span></tt> 等等的顺序，当然也清楚它们是索引页的子页。通过这些信息能够生成“下一章”，“前一章”以及“主章节”的链接。</li>
 </ul>
-<p><strong>Entries</strong></p>
-<p>Document titles in the <a class="reference internal" href="#directive-toctree" title="toctree directive"><tt class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></tt></a> will be automatically read from the
-title of the referenced document. If that isn&#8217;t what you want, you can
-specify an explicit title and target using a similar syntax to reST
-hyperlinks (and Sphinx&#8217;s <a class="reference internal" href="inline.html#xref-syntax"><em>cross-referencing syntax</em></a>). This
-looks like:</p>
+<p><strong>条目</strong></p>
+<p>在 <a class="reference internal" href="#directive-toctree" title="toctree directive"><tt class="xref rst rst-dir docutils literal"><span class="pre">toctree</span></tt></a> 中的文件标题会自动读取自引用的文件。如果这不是你想要的，你可以通过使用一个类似于reST超链接的语法（ <a class="reference internal" href="inline.html#xref-syntax"><em>cross-referencing syntax</em></a> ）指定一个明确的标题和目标。这就像:</p>
 <div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
 
    intro
@@ -162,13 +144,10 @@ looks like:</p>
    datatypes
 </pre></div>
 </div>
-<p>The second line above will link to the <tt class="docutils literal"><span class="pre">strings</span></tt> document, but will use the
-title &#8220;All about strings&#8221; instead of the title of the <tt class="docutils literal"><span class="pre">strings</span></tt> document.</p>
-<p>You can also add external links, by giving an HTTP URL instead of a document
-name.</p>
-<p><strong>Section numbering</strong></p>
-<p>If you want to have section numbers even in HTML output, give the toctree a
-<tt class="docutils literal"><span class="pre">numbered</span></tt> option.  For example:</p>
+<p>上面的第二行，将链接到 <tt class="docutils literal"><span class="pre">strings</span></tt> 文件，但将使用的标题是“All about strings”，而不是 <tt class="docutils literal"><span class="pre">strings</span></tt> 文件的标题。</p>
+<p>您还可以添加外部链接，使用一个HTTP地址，而不是一个文件名。</p>
+<p><strong>章节编号</strong></p>
+<p>如果你想要在HTML输出格式中有章节编号，可以在 rst:directive:: toctree 中添加 <tt class="docutils literal"><span class="pre">numbered</span></tt> 选项。例如:</p>
 <div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
    <span class="nc">:numbered:</span>
 
@@ -176,13 +155,10 @@ name.</p>
    bar
 </pre></div>
 </div>
-<p>Numbering then starts at the heading of <tt class="docutils literal"><span class="pre">foo</span></tt>.  Sub-toctrees are
-automatically numbered (don&#8217;t give the <tt class="docutils literal"><span class="pre">numbered</span></tt> flag to those).</p>
-<p>Numbering up to a specific depth is also possible, by giving the depth as a
-numeric argument to <tt class="docutils literal"><span class="pre">numbered</span></tt>.</p>
-<p><strong>Additional options</strong></p>
-<p>If you want only the titles of documents in the tree to show up, not other
-headings of the same level, you can use the <tt class="docutils literal"><span class="pre">titlesonly</span></tt> option:</p>
+<p>编号开始于 <tt class="docutils literal"><span class="pre">foo</span></tt> 的标题。Sub-toctrees自动编号（不给Sub-toctrees <tt class="docutils literal"><span class="pre">numbered</span></tt> 的标志）。</p>
+<p>编号到一个特定的深度也是可以的，给予深度为一个参数: <tt class="docutils literal"><span class="pre">numbered</span></tt> 。</p>
+<p><strong>附加选项</strong></p>
+<p>如果你想仅显示在树中的文件的标题，而不是其他的同级别的标题，你可以用 <tt class="docutils literal"><span class="pre">titlesonly</span></tt> 选项:</p>
 <div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
    <span class="nc">:titlesonly:</span>
 
@@ -190,9 +166,7 @@ headings of the same level, you can use the <tt class="docutils literal"><span c
    bar
 </pre></div>
 </div>
-<p>You can use &#8220;globbing&#8221; in toctree directives, by giving the <tt class="docutils literal"><span class="pre">glob</span></tt> flag
-option.  All entries are then matched against the list of available
-documents, and matches are inserted into the list alphabetically.  Example:</p>
+<p>你可以在toctree指令（标识符）中使用“匹配”，使用 <tt class="docutils literal"><span class="pre">glob</span></tt> 选项。所有的条目都将进行匹配而不是直接按照列出的条目，匹配的结果将会按照字母表顺序插入。例如:</p>
 <div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
    <span class="nc">:glob:</span>
 
@@ -201,13 +175,9 @@ documents, and matches are inserted into the list alphabetically.  Example:</p>
    *
 </pre></div>
 </div>
-<p>This includes first all documents whose names start with <tt class="docutils literal"><span class="pre">intro</span></tt>, then all
-documents in the <tt class="docutils literal"><span class="pre">recipe</span></tt> folder, then all remaining documents (except the
-one containing the directive, of course.) <a class="footnote-reference" href="#id4" id="id2">[2]</a></p>
-<p>The special entry name <tt class="docutils literal"><span class="pre">self</span></tt> stands for the document containing the
-toctree directive.  This is useful if you want to generate a &#8220;sitemap&#8221; from
-the toctree.</p>
-<p>You can also give a &#8220;hidden&#8221; option to the directive, like this:</p>
+<p>这将首先包含文件名开始是 <tt class="docutils literal"><span class="pre">intro</span></tt> 的文件，接着包含 <tt class="docutils literal"><span class="pre">recipe</span></tt> 文件夹下所有的文件，最后是剩余的文件（显然，不包含主指令（标识符）的文件。） <a class="footnote-reference" href="#id9" id="id2">[2]</a></p>
+<p>特殊的条目 <tt class="docutils literal"><span class="pre">self</span></tt> 表示包含toctree指令（标识符）的文件。如果想要从toctree生成&#8221;sitemap&#8221;的话，这是非常有用的。</p>
+<p>你也能使用“隐藏”选项，像这样:</p>
 <div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
    <span class="nc">:hidden:</span>
 
@@ -215,71 +185,45 @@ the toctree.</p>
    doc_2
 </pre></div>
 </div>
-<p>This will still notify Sphinx of the document hierarchy, but not insert links
-into the document at the location of the directive &#8211; this makes sense if you
-intend to insert these links yourself, in a different style, or in the HTML
-sidebar.</p>
-<p>In the end, all documents in the <a class="reference internal" href="../glossary.html#term-source-directory"><em class="xref std std-term">source directory</em></a> (or subdirectories)
-must occur in some <tt class="docutils literal"><span class="pre">toctree</span></tt> directive; Sphinx will emit a warning if it
-finds a file that is not included, because that means that this file will not
-be reachable through standard navigation.  Use <a class="reference internal" href="../config.html#confval-unused_docs"><tt class="xref std std-confval docutils literal"><span class="pre">unused_docs</span></tt></a> to
-explicitly exclude documents from building, and <a class="reference internal" href="../config.html#confval-exclude_trees"><tt class="xref std std-confval docutils literal"><span class="pre">exclude_trees</span></tt></a> to
-exclude whole directories.</p>
-<p>The &#8220;master document&#8221; (selected by <a class="reference internal" href="../config.html#confval-master_doc"><tt class="xref std std-confval docutils literal"><span class="pre">master_doc</span></tt></a>) is the &#8220;root&#8221; of
-the TOC tree hierarchy.  It can be used as the documentation&#8217;s main page, or
-as a &#8220;full table of contents&#8221; if you don&#8217;t give a <tt class="docutils literal"><span class="pre">maxdepth</span></tt> option.</p>
+<p>这将仍然会告知Sphinx文档的层次结构，但是不会插入链接到指令（标识符）所在的文件&#8211;在不同风格或者HTML侧边栏，如果想要自己插入链接，这是非常有意义的。</p>
+<p>最后，所有在 <em class="xref std std-term">源目录</em> （或者其子目录）必须出现在 <tt class="docutils literal"><span class="pre">toctree</span></tt> 中；如果发现文件不在 <tt class="docutils literal"><span class="pre">toctree</span></tt> 中，Sphinx将会抛出警告，因为这意味着，通过标准的导航，这个文件将是不可到达的。使用 <a class="reference internal" href="../config.html#confval-unused_docs"><tt class="xref std std-confval docutils literal"><span class="pre">unused_docs</span></tt></a> 明确构建时候忽略的文件，使用 <a class="reference internal" href="../config.html#confval-exclude_trees"><tt class="xref std std-confval docutils literal"><span class="pre">exclude_trees</span></tt></a> 明确构建时间忽略的目录。</p>
+<p>&#8220;主文件&#8221; ( <a class="reference internal" href="../config.html#confval-master_doc"><tt class="xref std std-confval docutils literal"><span class="pre">master_doc</span></tt></a> )是TOC属结构的“根”。它能够被用于文件的主要页面，或者作为一个“完整的目录”如果你不给 <a href="#id3"><span class="problematic" id="id4">``</span></a>maxdepth` <a href="#id5"><span class="problematic" id="id6">`</span></a>的选项。</p>
 <p class="versionchanged">
-<span class="versionmodified">Changed in version 0.3: </span>Added &#8220;globbing&#8221; option.</p>
+<span class="versionmodified">Changed in version 0.3: </span>添加 &#8220;globbing&#8221; 选项。</p>
 <p class="versionchanged">
-<span class="versionmodified">Changed in version 0.6: </span>Added &#8220;numbered&#8221; and &#8220;hidden&#8221; options as well as external links and
-support for &#8220;self&#8221; references.</p>
+<span class="versionmodified">Changed in version 0.6: </span>添加选项&#8221;numbered&#8221; 和 &#8220;hidden&#8221;，支持外部链接和&#8221;self&#8221;选项。</p>
 <p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Added &#8220;titlesonly&#8221; option.</p>
+<span class="versionmodified">Changed in version 1.0: </span>添加 &#8220;titlesonly&#8221; 选项。</p>
 <p class="versionchanged">
-<span class="versionmodified">Changed in version 1.1: </span>Added numeric argument to &#8220;numbered&#8221;.</p>
+<span class="versionmodified">Changed in version 1.1: </span>添加编号选项参数&#8221;numbered&#8221;。</p>
 </dd></dl>
 
-<div class="section" id="special-names">
-<h2>Special names<a class="headerlink" href="#special-names" title="Permalink to this headline">¶</a></h2>
-<p>Sphinx reserves some document names for its own use; you should not try to
-create documents with these names &#8211; it will cause problems.</p>
-<p>The special document names (and pages generated for them) are:</p>
+<div class="section" id="id7">
+<h2>特殊名称<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx保留了一些供自己使用的文件名，你不应该试图创建具有这些名称的文件 - 这将导致问题。</p>
+<p>特殊的文件名（和他们生成的页面名）是：</p>
 <ul>
 <li><p class="first"><tt class="docutils literal"><span class="pre">genindex</span></tt>, <tt class="docutils literal"><span class="pre">modindex</span></tt>, <tt class="docutils literal"><span class="pre">search</span></tt></p>
-<p>These are used for the general index, the Python module index, and the search
-page, respectively.</p>
-<p>The general index is populated with entries from modules, all index-generating
-<a class="reference internal" href="../domains.html#basic-domain-markup"><em>object descriptions</em></a>, and from <a class="reference internal" href="misc.html#directive-index" title="index directive"><tt class="xref rst rst-dir docutils literal"><span class="pre">index</span></tt></a>
-directives.</p>
-<p>The Python module index contains one entry per <a class="reference internal" href="../domains.html#directive-py:module" title="py:module directive"><tt class="xref rst rst-dir docutils literal"><span class="pre">py:module</span></tt></a> directive.</p>
-<p>The search page contains a form that uses the generated JSON search index and
-JavaScript to full-text search the generated documents for search words; it
-should work on every major browser that supports modern JavaScript.</p>
+<p>这些都是分别用于总索引，Python模块索引，和搜索页。</p>
+<p>总索引用于模块和所有的生成索引 <a class="reference internal" href="../domains.html#basic-domain-markup"><em>object descriptions</em></a> 的条目，以及 <a class="reference internal" href="misc.html#directive-index" title="index directive"><tt class="xref rst rst-dir docutils literal"><span class="pre">index</span></tt></a> 指令（标识符）。</p>
+<p>Python模块索引包含了每一个 <a class="reference internal" href="../domains.html#directive-py:module" title="py:module directive"><tt class="xref rst rst-dir docutils literal"><span class="pre">py:module</span></tt></a> 指令（标识符）条目。</p>
+<p>搜索页包含一个生成的JSON搜索索引和JavaScript的形式，它使用全文搜索在生成的文件中搜索关键词，它应该兼容每一个主要的浏览器，支持最新的JavaScript。</p>
 </li>
-<li><p class="first">every name beginning with <tt class="docutils literal"><span class="pre">_</span></tt></p>
-<p>Though only few such names are currently used by Sphinx, you should not create
-documents or document-containing directories with such names.  (Using <tt class="docutils literal"><span class="pre">_</span></tt> as
-a prefix for a custom template directory is fine.)</p>
+<li><p class="first">以 <tt class="docutils literal"><span class="pre">_</span></tt> 开头的名称</p>
+<p>尽管目前Sphinx只使用少数带 <tt class="docutils literal"><span class="pre">_</span></tt> 开头的名称，你应该不要创建这样的文件名或者目录名。</p>
 </li>
 </ul>
 <p class="rubric">Footnotes</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
+<table class="docutils footnote" frame="void" id="id8" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The <tt class="docutils literal"><span class="pre">maxdepth</span></tt> option does not apply to the LaTeX writer, where the
-whole table of contents will always be presented at the begin of the
-document, and its depth is controlled by the <tt class="docutils literal"><span class="pre">tocdepth</span></tt> counter, which
-you can reset in your <a class="reference internal" href="../config.html#confval-latex_preamble"><tt class="xref std std-confval docutils literal"><span class="pre">latex_preamble</span></tt></a> config value using
-e.g. <tt class="docutils literal"><span class="pre">\setcounter{tocdepth}{2}</span></tt>.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><tt class="docutils literal"><span class="pre">maxdepth</span></tt> 选项对LaTeX不起作用，内容始终是在文档的最前面，它的深度可以通过 <tt class="docutils literal"><span class="pre">tocdepth</span></tt> 来控制，你可以重设 <a class="reference internal" href="../config.html#confval-latex_preamble"><tt class="xref std std-confval docutils literal"><span class="pre">latex_preamble</span></tt></a> 配置值。例如：  <tt class="docutils literal"><span class="pre">\setcounter{tocdepth}{2}</span></tt>。</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
+<table class="docutils footnote" frame="void" id="id9" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>A note on available globbing syntax: you can use the standard shell
-constructs <tt class="docutils literal"><span class="pre">*</span></tt>, <tt class="docutils literal"><span class="pre">?</span></tt>, <tt class="docutils literal"><span class="pre">[...]</span></tt> and <tt class="docutils literal"><span class="pre">[!...]</span></tt> with the feature that
-these all don&#8217;t match slashes.  A double star <tt class="docutils literal"><span class="pre">**</span></tt> can be used to match
-any sequence of characters <em>including</em> slashes.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>可用的匹配格式提示：你可以用标准的shell格式 <tt class="docutils literal"><span class="pre">*</span></tt>, <tt class="docutils literal"><span class="pre">?</span></tt>, <tt class="docutils literal"><span class="pre">[...]</span></tt> and <tt class="docutils literal"><span class="pre">[!...]</span></tt>。</td></tr>
 </tbody>
 </table>
 </div>
@@ -289,6 +233,26 @@ any sequence of characters <em>including</em> slashes.</td></tr>
           </div>
         </div>
       </div>
+<div style="right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 评论上方 */
+google_ad_slot = "2110492886";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9adc7a1c86496c8e2bc61c4f8fc92d30' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
       <div class="clearer"></div>
     </div>
     <div class="related">
@@ -301,16 +265,16 @@ any sequence of characters <em>including</em> slashes.</td></tr>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="para.html" title="Paragraph-level markup"
+          <a href="para.html" title="段落级标记"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Sphinx Markup Constructs"
+          <a href="index.html" title="Sphinx标记结构"
              >previous</a> |</li>
         <li><a href="../index.html">Sphinx主页</a>&nbsp;|&nbsp;</li>
         <li><a href="../contents.html">文档</a>
           &raquo;</li>
 
-          <li><a href="index.html" >Sphinx Markup Constructs</a> &raquo;</li> 
+          <li><a href="index.html" >Sphinx标记结构</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

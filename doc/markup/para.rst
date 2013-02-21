@@ -1,20 +1,16 @@
 .. highlight:: rest
 
-Paragraph-level markup
+段落级标记
 ----------------------
 
 .. index:: note, warning
            pair: changes; in version
 
-These directives create short paragraphs and can be used inside information
-units as well as normal text:
+这些指令（标识符）创建简短的段落，可用于内部信息的单位以及普通的文本：
 
 .. rst:directive:: .. note::
-
-   An especially important bit of information about an API that a user should be
-   aware of when using whatever bit of API the note pertains to.  The content of
-   the directive should be written in complete sentences and include all
-   appropriate punctuation.
+   
+   一个API特别重要的提示信息：用户需要注意当使用API的时候所涉及到的信息，指令（标识符）的内容应该写完整的句子，包括所有适当的标点符号。
 
    Example::
 
@@ -24,39 +20,28 @@ units as well as normal text:
 
 .. rst:directive:: .. warning::
 
-   An important bit of information about an API that a user should be very aware
-   of when using whatever bit of API the warning pertains to.  The content of
-   the directive should be written in complete sentences and include all
-   appropriate punctuation. This differs from :rst:dir:`note` in that it is
-   recommended over :rst:dir:`note` for information regarding security.
+   一个API重要的提示信息：用户需要注意当使用API的时候所涉及到的警告信息。指令（标识符）的内容应该写完整的句子，包括所有适当的标点符号。这是不同于 :rst:dir:`note`，因为它更多的关注于有关安全的信息。 
 
 .. rst:directive:: .. versionadded:: version
 
-   This directive documents the version of the project which added the described
-   feature to the library or C API. When this applies to an entire module, it
-   should be placed at the top of the module section before any prose.
+   本指令（标识符）记录项目的版本信息，把所描述的功能添加到库或C API。当适用于整个模块，它应该被放置在模块部分的顶部之前。
 
-   The first argument must be given and is the version in question; you can add
-   a second argument consisting of a *brief* explanation of the change.
+   第一个参数必须给出，它是在问答中的版本号（使用sphinx-quickstart时候的问答），你可以添加第二个参数，包含一个 *简短* 的变化原因。
 
    Example::
 
       .. versionadded:: 2.5
          The *spam* parameter.
 
-   Note that there must be no blank line between the directive head and the
-   explanation; this is to make these blocks visually continuous in the markup.
+   需要注意的是指令（标识符）和解释之间是没有空行，这是为了让这些块在视觉上看起来像连续的标记。
 
 .. rst:directive:: .. versionchanged:: version
 
-   Similar to :rst:dir:`versionadded`, but describes when and what changed in
-   the named feature in some way (new parameters, changed side effects, etc.).
+   类似于 :rst:dir:`versionadded`，但是说明了何时和如何以某种方式改变命名特征（新参数，改变后的影响等等。）。
 
 .. rst:directive:: .. deprecated:: version
 
-   Similar to :rst:dir:`versionchanged`, but describes when the feature was
-   deprecated.  An explanation can also be given, for example to inform the
-   reader what should be used instead.  Example::
+   类似于 :rst:dir:`versionchanged`，但是说明了什么场合功能不推荐使用。解释可以这样给出::
 
       .. deprecated:: 3.1
          Use :func:`spam` instead.
@@ -66,15 +51,12 @@ units as well as normal text:
 
 .. rst:directive:: seealso
 
-   Many sections include a list of references to module documentation or
-   external documents.  These lists are created using the :rst:dir:`seealso`
-   directive.
+   许多章节包括了一系列的模块文件或外部文件的引用。这些列表是使用 :rst:dir:`seealso` 指令（标识符）创建的。
 
-   The :rst:dir:`seealso` directive is typically placed in a section just before any
-   sub-sections.  For the HTML output, it is shown boxed off from the main flow
-   of the text.
+   :rst:dir:`seealso` 指令（标识符）通常是在任何子章节之前的位置。对于HTML格式输出，它一般远离文本的主要信息显示。
 
-   The content of the :rst:dir:`seealso` directive should be a reST definition list.
+   :rst:dir:`seealso` 指令（标识符）的内容应该是一个reST定义列表。
+
    Example::
 
       .. seealso::
@@ -85,46 +67,34 @@ units as well as normal text:
          `GNU tar manual, Basic Tar Format <http://link>`_
             Documentation for tar archive files, including GNU tar extensions.
 
-   There's also a "short form" allowed that looks like this::
+   还有一种“简短形式”允许像这样的::
 
       .. seealso:: modules :py:mod:`zipfile`, :py:mod:`tarfile`
 
    .. versionadded:: 0.5
-      The short form.
+      简短形式。
 
 .. rst:directive:: .. rubric:: title
 
-   This directive creates a paragraph heading that is not used to create a
-   table of contents node.
+   该指令（标识符）创建一个段落，标题，不使用节点创建一个表的内容。
 
    .. note::
 
-      If the *title* of the rubric is "Footnotes" (or the selected language's
-      equivalent), this rubric is ignored by the LaTeX writer, since it is
-      assumed to only contain footnote definitions and therefore would create an
-      empty heading.
+      如果rubric的 *标题* 是“脚注”(或者是在所选择的语言中含义等价的)，LaTeX会忽略它。因为它被假定为仅包含脚注的定义以及将创建一个空的标题。
 
 
 .. rst:directive:: centered
 
-   This directive creates a centered boldfaced line of text.  Use it as
-   follows::
+   该指令（标识符）创建一个居中粗体显示的文本行。使用如下::
 
       .. centered:: LICENSE AGREEMENT
-
-   .. deprecated:: 1.1
-      This presentation-only directive is a legacy from older versions.  Use a
-      :rst:dir:`rst-class` directive instead and add an appropriate style.
 
 
 .. rst:directive:: hlist
 
-   This directive must contain a bullet list.  It will transform it into a more
-   compact list by either distributing more than one item horizontally, or
-   reducing spacing between items, depending on the builder.
+   该指令（标识符）必须包含一个项目符号列表。根据生成器，通过分发多个项目的水平，或减少项目之间的间距，将它改造成一个更紧凑的列表。
 
-   For builders that support the horizontal distribution, there is a ``columns``
-   option that specifies the number of columns; it defaults to 2.  Example::
+   对于支持的水平分布的生成器，有一个 ``columns`` 选项，用于指定的列数，默认为2。示例::
 
       .. hlist::
          :columns: 3
@@ -138,24 +108,21 @@ units as well as normal text:
    .. versionadded:: 0.6
 
 
-Table-of-contents markup
+内容表标记 
 ------------------------
 
-The :rst:dir:`toctree` directive, which generates tables of contents of
-subdocuments, is described in :ref:`toctree-directive`.
+:rst:dir:`toctree` 指令（标识符）是描述在 :ref:`toctree-directive` ，它生成子文件的内容表。
 
-For local tables of contents, use the standard reST :dudir:`contents directive
-<table-of-contents>`.
+对于本地内容表，可以用标准的reST :dudir:`contents directive
+<table-of-contents>`。
 
 
-Glossary
+词汇表
 --------
 
 .. rst:directive:: .. glossary::
 
-   This directive must contain a reST definition-list-like markup with terms and
-   definitions.  The definitions will then be referencable with the
-   :rst:role:`term` role.  Example::
+   该指令（标识符）必须包含一个带有术语和定义的REST的类似定义列表的标记。定义将会被 :rst:role:`term` 引用。例如::
 
       .. glossary::
 
@@ -169,9 +136,7 @@ Glossary
             The directory which, including its subdirectories, contains all
             source files for one Sphinx project.
 
-   In contrast to regular definition lists, *multiple* terms per entry are
-   allowed, and inline markup is allowed in terms.  You can link to all of the
-   terms.  For example::
+   相比正常定义列表，每个条目的 *多个* 术语是允许的，行内标记是允许出现在术语中。您可以链接到所有的术语。例如::
 
       .. glossary::
 
@@ -179,19 +144,19 @@ Glossary
          term 2
             Definition of both terms.
 
-   (When the glossary is sorted, the first term determines the sort order.)
+   (词汇​​表进行排序的时候，第一项确定排序的顺序。)
 
    .. versionadded:: 0.6
-      You can now give the glossary directive a ``:sorted:`` flag that will
-      automatically sort the entries alphabetically.
+      你可以在glossary指令（标识符）中用  ``:sorted:`` ，它将按字母对条目进行排序。 
 
    .. versionchanged:: 1.1
-      Now supports multiple terms and inline markup in terms.
+      支持多术语以及术语中出现行内标记。
 
 
-Grammar production displays
+语法解释器
 ---------------------------
 
+特别标记是用于显示
 Special markup is available for displaying the productions of a formal grammar.
 The markup is simple and does not attempt to model all aspects of BNF (or any
 derived forms), but provides enough to allow context-free grammars to be
@@ -219,7 +184,7 @@ the definition of the symbol.  There is this directive:
    Note that no further reST parsing is done in the production, so that you
    don't have to escape ``*`` or ``|`` characters.
 
-The following is an example taken from the Python Reference Manual::
+下面是一个来自Python参考手册的例子::
 
    .. productionlist::
       try_stmt: try1_stmt | try2_stmt

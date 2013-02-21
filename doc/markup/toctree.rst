@@ -1,31 +1,22 @@
 .. highlight:: rst
 .. _toctree-directive:
 
-The TOC tree
+TOC树
 ============
 
 .. index:: pair: table of; contents
 
-Since reST does not have facilities to interconnect several documents, or split
-documents into multiple output files, Sphinx uses a custom directive to add
-relations between the single files the documentation is made of, as well as
-tables of contents.  The ``toctree`` directive is the central element.
+由于reST不便于多个文件相互关联或者分割文件到多个输出文件中，Sphinx通过使用自定义的指令（标识符）来处理构成文档的单个文件的关系，这同样使用与内容表。``toctree`` 指令（标识符）就是核心要素。
 
 .. note::
 
-   Simple "inclusion" of one file in another can be done with the
-   :dudir:`include` directive.
+   使用 :dudir:`include` 指令（标识符）能够实现简单的一个文件在另一个文件的“包含”。
 
 .. rst:directive:: toctree
 
-   This directive inserts a "TOC tree" at the current location, using the
-   individual TOCs (including "sub-TOC trees") of the documents given in the
-   directive body.  Relative document names (not beginning with a slash) are
-   relative to the document the directive occurs in, absolute names are relative
-   to the source directory.  A numeric ``maxdepth`` option may be given to
-   indicate the depth of the tree; by default, all levels are included. [#]_
+   该指令（标识符）使用在指令（标识符）主体中给出的文件作为单个TOCs(包含"sub-TOC树")，在当前位置插入一个"TOC树"。相对文件名 ​​（不以斜杠开始）是相对于指令（标识符）所在文件，绝对名称是相对于源目录。一个数字的 ``maxdepth`` 选项表示的树的深度 。默认情况下，所有级别是包含的。 [#]_
 
-   Consider this example (taken from the Python docs' library reference index)::
+   仔细看看下面这个例子 (来自于的Python文档库参考页)::
 
       .. toctree::
          :maxdepth: 2
@@ -36,23 +27,14 @@ tables of contents.  The ``toctree`` directive is the central element.
          numeric
          (many more documents listed here)
 
-   This accomplishes two things:
+   这将会完成两件事情:
 
-   * Tables of contents from all those documents are inserted, with a maximum
-     depth of two, that means one nested heading.  ``toctree`` directives in
-     those documents are also taken into account.
-   * Sphinx knows that the relative order of the documents ``intro``,
-     ``strings`` and so forth, and it knows that they are children of the shown
-     document, the library index.  From this information it generates "next
-     chapter", "previous chapter" and "parent chapter" links.
+   * 所有这些文件的内容表被加入，最大的深度为2，这意味着一个嵌套标题。在这些文件中的 ``toctree`` 指令（标识符）也会被考虑到（识别）。
+   * Sphinx知道文档  ``intro``，``strings`` 等等的顺序，当然也清楚它们是索引页的子页。通过这些信息能够生成“下一章”，“前一章”以及“主章节”的链接。
 
-   **Entries**
+   **条目**
 
-   Document titles in the :rst:dir:`toctree` will be automatically read from the
-   title of the referenced document. If that isn't what you want, you can
-   specify an explicit title and target using a similar syntax to reST
-   hyperlinks (and Sphinx's :ref:`cross-referencing syntax <xref-syntax>`). This
-   looks like::
+   在 :rst:dir:`toctree` 中的文件标题会自动读取自引用的文件。如果这不是你想要的，你可以通过使用一个类似于reST超链接的语法（ :ref:`cross-referencing syntax <xref-syntax>` ）指定一个明确的标题和目标。这就像::
 
        .. toctree::
 
@@ -60,16 +42,13 @@ tables of contents.  The ``toctree`` directive is the central element.
           All about strings <strings>
           datatypes
 
-   The second line above will link to the ``strings`` document, but will use the
-   title "All about strings" instead of the title of the ``strings`` document.
+   上面的第二行，将链接到 ``strings`` 文件，但将使用的标题是“All about strings”，而不是 ``strings`` 文件的标题。
 
-   You can also add external links, by giving an HTTP URL instead of a document
-   name.
+   您还可以添加外部链接，使用一个HTTP地址，而不是一个文件名。
 
-   **Section numbering**
+   **章节编号**
 
-   If you want to have section numbers even in HTML output, give the toctree a
-   ``numbered`` option.  For example::
+   如果你想要在HTML输出格式中有章节编号，可以在 rst:directive:: toctree 中添加 ``numbered`` 选项。例如::
 
       .. toctree::
          :numbered:
@@ -77,26 +56,21 @@ tables of contents.  The ``toctree`` directive is the central element.
          foo
          bar
 
-   Numbering then starts at the heading of ``foo``.  Sub-toctrees are
-   automatically numbered (don't give the ``numbered`` flag to those).
+   编号开始于 ``foo`` 的标题。Sub-toctrees自动编号（不给Sub-toctrees ``numbered`` 的标志）。
 
-   Numbering up to a specific depth is also possible, by giving the depth as a
-   numeric argument to ``numbered``.
+   编号到一个特定的深度也是可以的，给予深度为一个参数: ``numbered`` 。
 
-   **Additional options**
+   **附加选项**
 
-   If you want only the titles of documents in the tree to show up, not other
-   headings of the same level, you can use the ``titlesonly`` option::
+   如果你想仅显示在树中的文件的标题，而不是其他的同级别的标题，你可以用 ``titlesonly`` 选项::
 
       .. toctree::
          :titlesonly:
 
          foo
          bar
-
-   You can use "globbing" in toctree directives, by giving the ``glob`` flag
-   option.  All entries are then matched against the list of available
-   documents, and matches are inserted into the list alphabetically.  Example::
+   
+   你可以在toctree指令（标识符）中使用“匹配”，使用 ``glob`` 选项。所有的条目都将进行匹配而不是直接按照列出的条目，匹配的结果将会按照字母表顺序插入。例如::
 
       .. toctree::
          :glob:
@@ -104,16 +78,12 @@ tables of contents.  The ``toctree`` directive is the central element.
          intro*
          recipe/*
          *
+   
+   这将首先包含文件名开始是 ``intro`` 的文件，接着包含 ``recipe`` 文件夹下所有的文件，最后是剩余的文件（显然，不包含主指令（标识符）的文件。） [#]_
 
-   This includes first all documents whose names start with ``intro``, then all
-   documents in the ``recipe`` folder, then all remaining documents (except the
-   one containing the directive, of course.) [#]_
+   特殊的条目 ``self`` 表示包含toctree指令（标识符）的文件。如果想要从toctree生成"sitemap"的话，这是非常有用的。
 
-   The special entry name ``self`` stands for the document containing the
-   toctree directive.  This is useful if you want to generate a "sitemap" from
-   the toctree.
-
-   You can also give a "hidden" option to the directive, like this::
+   你也能使用“隐藏”选项，像这样::
 
       .. toctree::
          :hidden:
@@ -121,75 +91,50 @@ tables of contents.  The ``toctree`` directive is the central element.
          doc_1
          doc_2
 
-   This will still notify Sphinx of the document hierarchy, but not insert links
-   into the document at the location of the directive -- this makes sense if you
-   intend to insert these links yourself, in a different style, or in the HTML
-   sidebar.
+   这将仍然会告知Sphinx文档的层次结构，但是不会插入链接到指令（标识符）所在的文件--在不同风格或者HTML侧边栏，如果想要自己插入链接，这是非常有意义的。
+   
+   最后，所有在 :term:`源目录` （或者其子目录）必须出现在 ``toctree`` 中；如果发现文件不在 ``toctree`` 中，Sphinx将会抛出警告，因为这意味着，通过标准的导航，这个文件将是不可到达的。使用 :confval:`unused_docs` 明确构建时候忽略的文件，使用 :confval:`exclude_trees` 明确构建时间忽略的目录。
 
-   In the end, all documents in the :term:`source directory` (or subdirectories)
-   must occur in some ``toctree`` directive; Sphinx will emit a warning if it
-   finds a file that is not included, because that means that this file will not
-   be reachable through standard navigation.  Use :confval:`unused_docs` to
-   explicitly exclude documents from building, and :confval:`exclude_trees` to
-   exclude whole directories.
-
-   The "master document" (selected by :confval:`master_doc`) is the "root" of
-   the TOC tree hierarchy.  It can be used as the documentation's main page, or
-   as a "full table of contents" if you don't give a ``maxdepth`` option.
+   
+   "主文件" ( :confval:`master_doc` )是TOC属结构的“根”。它能够被用于文件的主要页面，或者作为一个“完整的目录”如果你不给 ``maxdepth` `的选项。
 
    .. versionchanged:: 0.3
-      Added "globbing" option.
+      添加 "globbing" 选项。
 
    .. versionchanged:: 0.6
-      Added "numbered" and "hidden" options as well as external links and
-      support for "self" references.
+      添加选项"numbered" 和 "hidden"，支持外部链接和"self"选项。
 
    .. versionchanged:: 1.0
-      Added "titlesonly" option.
+      添加 "titlesonly" 选项。
 
    .. versionchanged:: 1.1
-      Added numeric argument to "numbered".
+      添加编号选项参数"numbered"。
 
 
-Special names
+特殊名称
 -------------
 
-Sphinx reserves some document names for its own use; you should not try to
-create documents with these names -- it will cause problems.
+Sphinx保留了一些供自己使用的文件名，你不应该试图创建具有这些名称的文件 - 这将导致问题。
 
-The special document names (and pages generated for them) are:
+特殊的文件名（和他们生成的页面名）是：
 
 * ``genindex``, ``modindex``, ``search``
 
-  These are used for the general index, the Python module index, and the search
-  page, respectively.
+  这些都是分别用于总索引，Python模块索引，和搜索页。
 
-  The general index is populated with entries from modules, all index-generating
-  :ref:`object descriptions <basic-domain-markup>`, and from :rst:dir:`index`
-  directives.
+  总索引用于模块和所有的生成索引 :ref:`object descriptions <basic-domain-markup>` 的条目，以及 :rst:dir:`index` 指令（标识符）。
+  
+  Python模块索引包含了每一个 :rst:dir:`py:module` 指令（标识符）条目。
 
-  The Python module index contains one entry per :rst:dir:`py:module` directive.
+  搜索页包含一个生成的JSON搜索索引和JavaScript的形式，它使用全文搜索在生成的文件中搜索关键词，它应该兼容每一个主要的浏览器，支持最新的JavaScript。
 
-  The search page contains a form that uses the generated JSON search index and
-  JavaScript to full-text search the generated documents for search words; it
-  should work on every major browser that supports modern JavaScript.
+* 以 ``_`` 开头的名称
 
-* every name beginning with ``_``
-
-  Though only few such names are currently used by Sphinx, you should not create
-  documents or document-containing directories with such names.  (Using ``_`` as
-  a prefix for a custom template directory is fine.)
+  尽管目前Sphinx只使用少数带 ``_`` 开头的名称，你应该不要创建这样的文件名或者目录名。
 
 
 .. rubric:: Footnotes
 
-.. [#] The ``maxdepth`` option does not apply to the LaTeX writer, where the
-       whole table of contents will always be presented at the begin of the
-       document, and its depth is controlled by the ``tocdepth`` counter, which
-       you can reset in your :confval:`latex_preamble` config value using
-       e.g. ``\setcounter{tocdepth}{2}``.
+.. [#] ``maxdepth`` 选项对LaTeX不起作用，内容始终是在文档的最前面，它的深度可以通过 ``tocdepth`` 来控制，你可以重设 :confval:`latex_preamble` 配置值。例如：  ``\setcounter{tocdepth}{2}``。
 
-.. [#] A note on available globbing syntax: you can use the standard shell
-       constructs ``*``, ``?``, ``[...]`` and ``[!...]`` with the feature that
-       these all don't match slashes.  A double star ``**`` can be used to match
-       any sequence of characters *including* slashes.
+.. [#] 可用的匹配格式提示：你可以用标准的shell格式 ``*``, ``?``, ``[...]`` and ``[!...]``。 

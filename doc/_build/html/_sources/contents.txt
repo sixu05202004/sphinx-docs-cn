@@ -22,8 +22,6 @@ Sphinx documentation contents
 
    faq
    glossary
-   changes
-   examples
 
 
 Indices and tables
