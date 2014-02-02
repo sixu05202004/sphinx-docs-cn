@@ -40,6 +40,8 @@ Important points to note:
   delete them from the namespace with ``del`` if appropriate.  Modules are
   removed automatically, so you don't need to ``del`` your imports after use.
 
+.. _conf-tags:
+
 * There is a special object named ``tags`` available in the config file.
   It can be used to query and change the tags (see :ref:`tags`).  Use
   ``tags.has('tag')`` to query, ``tags.add('tag')`` and ``tags.remove('tag')``
@@ -236,7 +238,8 @@ General configuration
 
    A list of ``(type, target)`` tuples (by default empty) that should be ignored
    when generating warnings in "nitpicky mode".  Note that ``type`` should
-   include the domain name.  An example entry would be ``('py:func', 'int')``.
+   include the domain name if present.  Example entries would be ``('py:func',
+   'int')`` or ``('envvar', 'LD_LIBRARY_PATH')``.
 
    .. versionadded:: 1.1
 
@@ -277,7 +280,7 @@ Project information
      the format given in :confval:`today_fmt`.
 
    The default is no :confval:`today` and a :confval:`today_fmt` of ``'%B %d,
-   %Y'`` (or, if translation is enabled with :confval:`language`, am equivalent
+   %Y'`` (or, if translation is enabled with :confval:`language`, an equivalent
    %format for the selected locale).
 
 .. confval:: highlight_language
@@ -373,20 +376,27 @@ documentation on :ref:`intl` for details.
    * ``en`` -- English
    * ``es`` -- Spanish
    * ``et`` -- Estonian
+   * ``eu`` -- Basque
    * ``fa`` -- Iranian
    * ``fi`` -- Finnish
    * ``fr`` -- French
    * ``hr`` -- Croatian
+   * ``hu`` -- Hungarian
+   * ``id`` -- Indonesian
    * ``it`` -- Italian
    * ``ja`` -- Japanese
    * ``ko`` -- Korean
    * ``lt`` -- Lithuanian
    * ``lv`` -- Latvian
+   * ``mk`` -- Macedonian
+   * ``nb_NO`` -- Norwegian Bokmal
    * ``ne`` -- Nepali
    * ``nl`` -- Dutch
    * ``pl`` -- Polish
    * ``pt_BR`` -- Brazilian Portuguese
    * ``ru`` -- Russian
+   * ``si`` -- Sinhala
+   * ``sk`` -- Slovak
    * ``sl`` -- Slovenian
    * ``sv`` -- Swedish
    * ``tr`` -- Turkish
@@ -465,8 +475,8 @@ that use Sphinx' HTMLWriter class.
    The "title" for HTML documentation generated with Sphinx' own templates.
    This is appended to the ``<title>`` tag of individual pages, and used in the
    navigation bar as the "topmost" element.  It defaults to :samp:`'{<project>}
-   v{<revision>} documentation'`, where the placeholders are replaced by the
-   config values of the same name.
+   v{<revision>} documentation'` (with the values coming from the config
+   values).
 
 .. confval:: html_short_title
 
@@ -505,10 +515,11 @@ that use Sphinx' HTMLWriter class.
 
 .. confval:: html_static_path
 
-   A list of paths that contain custom static files (such as style sheets or
-   script files).  Relative paths are taken as relative to the configuration
-   directory.  They are copied to the output directory after the theme's static
-   files, so a file named :file:`default.css` will overwrite the theme's
+   A list of paths that contain custom static files (such as style
+   sheets or script files).  Relative paths are taken as relative to
+   the configuration directory.  They are copied to the output's
+   :file:`_static` directory after the theme's static files, so a file
+   named :file:`default.css` will overwrite the theme's
    :file:`default.css`.
 
    .. versionchanged:: 0.4
@@ -516,6 +527,19 @@ that use Sphinx' HTMLWriter class.
 
    .. versionchanged:: 1.0
       The entries in :confval:`html_static_path` can now be single files.
+
+.. confval:: html_extra_path
+
+   A list of paths that contain extra files not directly related to
+   the documentation, such as :file:`robots.txt` or :file:`.htaccess`.
+   Relative paths are taken as relative to the configuration
+   directory.  They are copied to the output directory.  They will
+   overwrite any existing file of the same name.
+
+   As these files are not meant to be built, they are automatically added to
+   :confval:`exclude_patterns`.
+
+   .. versionadded:: 1.2
 
 .. confval:: html_last_updated_fmt
 
@@ -757,6 +781,15 @@ that use Sphinx' HTMLWriter class.
 
    .. versionadded:: 1.1
 
+.. confval:: html_search_scorer
+
+   The name of a javascript file (relative to the configuration directory) that
+   implements a search results scorer.  If empty, the default will be used.
+
+   .. XXX describe interface for scorer here
+
+   .. versionadded:: 1.2
+
 .. confval:: htmlhelp_basename
 
    Output file base name for HTML help builder.  Default is ``'pydoc'``.
@@ -782,6 +815,14 @@ the `Dublin Core metadata <http://dublincore.org/>`_.
    optimized for small screen space, using the same theme for HTML and epub
    output is usually not wise.  This defaults to ``'epub'``, a theme designed to
    save visual space.
+
+.. confval:: epub_theme_options
+
+   A dictionary of options that influence the look and feel of the selected
+   theme.  These are theme-specific.  For the options understood by the builtin
+   themes, see :ref:`this section <builtin-themes>`.
+
+   .. versionadded:: 1.2
 
 .. confval:: epub_title
 
@@ -844,6 +885,20 @@ the `Dublin Core metadata <http://dublincore.org/>`_.
 
    .. versionadded:: 1.1
 
+.. confval:: epub_guide
+
+   Meta data for the guide element of :file:`content.opf`. This is a
+   sequence of tuples containing the *type*, the *uri* and the *title* of
+   the optional guide information. See the OPF documentation
+   at `<http://idpf.org/epub>`_ for details. If possible, default entries
+   for the *cover* and *toc* types are automatically inserted. However,
+   the types can be explicitely overwritten if the default entries are not
+   appropriate. Example::
+
+      epub_guide = (('cover', 'cover.html', u'Cover Page'),)
+
+   The default value is ``()``.
+
 .. confval:: epub_pre_files
 
    Additional files that should be inserted before the text generated by
@@ -881,6 +936,58 @@ the `Dublin Core metadata <http://dublincore.org/>`_.
    a chapter, but can be confusing because it mixes entries of differnet
    depth in one list.  The default value is ``True``.
 
+.. confval:: epub_tocscope
+
+   This setting control the scope of the epub table of contents.  The setting
+   can have the following values:
+
+   * ``'default'`` -- include all toc entries that are not hidden (default)
+   * ``'includehidden'`` -- include all toc entries
+
+   .. versionadded:: 1.2
+
+.. confval:: epub_fix_images
+
+   This flag determines if sphinx should try to fix image formats that are not
+   supported by some epub readers.  At the moment palette images with a small
+   color table are upgraded.  You need the Python Image Library (PIL) installed
+   to use this option.  The default value is ``False`` because the automatic
+   conversion may lose information.
+
+   .. versionadded:: 1.2
+
+.. confval:: epub_max_image_width
+
+   This option specifies the maximum width of images.  If it is set to a value
+   greater than zero, images with a width larger than the given value are
+   scaled accordingly.  If it is zero, no scaling is performed. The default
+   value is ``0``.  You need the Python Image Library (PIL) installed to use
+   this option.
+
+   .. versionadded:: 1.2
+
+.. confval:: epub_show_urls
+
+   Control whether to display URL addresses. This is very useful for
+   readers that have no other means to display the linked URL. The
+   settings can have the following values:
+
+   * ``'inline'`` -- display URLs inline in parentheses (default)
+   * ``'footnote'`` -- display URLs in footnotes
+   * ``'no'`` -- do not display URLs
+
+   The display of inline URLs can be customized by adding CSS rules for the
+   class ``link-target``.
+
+   .. versionadded:: 1.2
+
+.. confval:: epub_use_index
+
+   If true, add an index to the epub document.  It defaults to the
+   :confval:`html_use_index` option but can be set independently for epub
+   creation.
+
+   .. versionadded:: 1.2
 
 .. _latex-options:
 
@@ -912,10 +1019,16 @@ These options influence LaTeX output.
      "sphinx" package in order to define Sphinx' custom LaTeX commands.
      "howto" documents will not get appendices.  Also, howtos will have a simpler
      title page.
+
    * *toctree_only*: Must be ``True`` or ``False``.  If ``True``, the *startdoc*
      document itself is not included in the output, only the documents
      referenced by it via TOC trees.  With this option, you can put extra stuff
      in the master document that shows up in the HTML, but not the LaTeX output.
+
+   .. versionadded:: 1.2
+      In the past including your own document class required you to prepend the
+      document class name with the string "sphinx". This is not necessary
+      anymore.
 
    .. versionadded:: 0.3
       The 6th item ``toctree_only``.  Tuples with 5 items are still accepted.
@@ -1001,6 +1114,10 @@ These options influence LaTeX output.
         Font package inclusion, default ``'\\usepackage{times}'`` (which uses
         Times and Helvetica).  You can set this to ``''`` to use the Computer
         Modern fonts.
+
+        .. versionchanged:: 1.2
+           Defaults to ``''`` when the :confval:`language` uses the Cyrillic
+           script.
      ``'fncychap'``
         Inclusion of the "fncychap" package (which makes fancy chapter titles),
         default ``'\\usepackage[Bjarne]{fncychap}'`` for English documentation,
@@ -1010,7 +1127,7 @@ These options influence LaTeX output.
         "Rejne".  You can also set this to ``''`` to disable fncychap.
      ``'preamble'``
         Additional preamble content, default empty.
-     ``'footer'```
+     ``'footer'``
         Additional footer content (before the indices), default empty.
 
    * Keys that don't need be overridden unless in special cases are:
@@ -1018,6 +1135,10 @@ These options influence LaTeX output.
      ``'inputenc'``
         "inputenc" package inclusion, default
         ``'\\usepackage[utf8]{inputenc}'``.
+     ``'cmappkg'``
+        "cmap" package inclusion, default ``'\\usepackage{cmap}'``.
+
+        .. versionadded:: 1.2
      ``'fontenc'``
         "fontenc" package inclusion, default ``'\\usepackage[T1]{fontenc}'``.
      ``'maketitle'``
@@ -1027,6 +1148,12 @@ These options influence LaTeX output.
         "tableofcontents" call, default ``'\\tableofcontents'``.  Override if
         you want to generate a different table of contents or put content
         between the title page and the TOC.
+     ``'transition'``
+        Commands used to display transitions, default
+        ``'\n\n\\bigskip\\hrule{}\\bigskip\n\n'``.  Override if you want to
+        display transitions differently.
+
+        .. versionadded:: 1.2
      ``'printindex'``
         "printindex" call, the last thing in the file, default
         ``'\\printindex'``.  Override if you want to generate the index
@@ -1065,6 +1192,9 @@ These options influence LaTeX output.
    any automatically copied files.
 
    .. versionadded:: 0.6
+
+   .. versionchanged:: 1.2
+      This overrides the files which is provided from Sphinx such as sphinx.sty.
 
 .. confval:: latex_preamble
 
@@ -1221,6 +1351,13 @@ These options influence Texinfo output.
 
    .. versionadded:: 1.1
 
+.. confval:: texinfo_no_detailmenu
+
+   If true, do not generate a ``@detailmenu`` in the "Top" node's menu
+   containing entries for each sub-node in the document.  Default is ``False``.
+
+   .. versionadded:: 1.2
+
 .. confval:: texinfo_elements
 
    A dictionary that contains Texinfo snippets that override those Sphinx
@@ -1286,6 +1423,24 @@ Options for the linkcheck builder
    threads.
 
    .. versionadded:: 1.1
+
+.. confval:: linkcheck_anchors
+
+   True or false, whether to check the validity of ``#anchor``\ s in links.
+   Since this requires downloading the whole document, it's considerably slower
+   when enabled.  Default is ``True``.
+
+   .. versionadded:: 1.2
+
+
+Options for the XML builder
+---------------------------
+
+.. confval:: xml_pretty
+
+   If True, pretty-print the XML.  Default is ``True``.
+
+   .. versionadded:: 1.2
 
 
 .. rubric:: Footnotes

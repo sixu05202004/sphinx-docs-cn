@@ -64,13 +64,13 @@ The builder's "name" must be given to the **-b** command-line option of
 
    Its name is ``qthelp``.
 
-   .. _Qt help: http://doc.trolltech.com/4.6/qthelp-framework.html
+   .. _Qt help: http://qt-project.org/doc/qt-4.8/qthelp-framework.html
 
 .. module:: sphinx.builders.devhelp
 .. class:: DevhelpBuilder
 
    This builder produces the same output as the standalone HTML builder, but
-   also generates `GNOME Devhelp <http://live.gnome.org/devhelp>`__
+   also generates `GNOME Devhelp <https://wiki.gnome.org/Apps/Devhelp>`__
    support file that allows the GNOME Devhelp reader to view them.
 
    Its name is ``devhelp``.
@@ -81,12 +81,8 @@ The builder's "name" must be given to the **-b** command-line option of
    This builder produces the same output as the standalone HTML builder, but
    also generates an *epub* file for ebook readers.  See :ref:`epub-faq` for
    details about it.  For definition of the epub format, have a look at
-   `<http://www.idpf.org/specs.htm>`_ or `<http://en.wikipedia.org/wiki/EPUB>`_.
-
-   Some ebook readers do not show the link targets of references.  Therefore
-   this builder adds the targets after the link when necessary.  The display
-   of the URLs can be customized by adding CSS rules for the class
-   ``link-target``.
+   `<http://idpf.org/epub>`_ or `<http://en.wikipedia.org/wiki/EPUB>`_.
+   The builder creates *EPUB 2* files.
 
    Its name is ``epub``.
 
@@ -114,8 +110,8 @@ The builder's "name" must be given to the **-b** command-line option of
 Note that a direct PDF builder using ReportLab is available in `rst2pdf
 <http://rst2pdf.googlecode.com>`_ version 0.12 or greater.  You need to add
 ``'rst2pdf.pdfbuilder'`` to your :confval:`extensions` to enable it, its name is
-``pdf``.  Refer to the `rst2pdf manual
-<http://lateral.netmanagers.com.ar/static/manual.pdf>`_ for details.
+``pdf``.  Refer to the `rst2pdf manual <http://ralsina.me/static/manual.pdf>`_
+for details.
 
 .. module:: sphinx.builders.text
 .. class:: TextBuilder
@@ -183,7 +179,7 @@ Note that a direct PDF builder using ReportLab is available in `rst2pdf
             globalcontext_filename = 'globalcontext.phpdump'
             searchindex_filename = 'searchindex.phpdump'
 
-   .. _PHP serialization: http://pypi.python.org/pypi/phpserialize
+   .. _PHP serialization: https://pypi.python.org/pypi/phpserialize
 
    .. attribute:: implementation
 
@@ -270,6 +266,29 @@ Note that a direct PDF builder using ReportLab is available in `rst2pdf
    to standard output and to :file:`output.txt` in the output directory.
 
    Its name is ``linkcheck``.
+
+.. module:: sphinx.builders.xml
+.. class:: XMLBuilder
+
+   This builder produces Docutils-native XML files.  The output can be
+   transformed with standard XML tools such as XSLT processors into arbitrary
+   final forms.
+
+   Its name is ``xml``.
+
+   .. versionadded:: 1.2
+
+.. class:: PseudoXMLBuilder
+
+   This builder is used for debugging the Sphinx/Docutils "Reader to Transform
+   to Writer" pipeline. It produces compact pretty-printed "pseudo-XML", files
+   where nesting is indicated by indentation (no end-tags). External
+   attributes for all elements are output, and internal attributes for any
+   leftover "pending" elements are also given.
+
+   Its name is ``pseudoxml``.
+
+   .. versionadded:: 1.2
 
 
 Built-in Sphinx extensions that offer more builders are:

@@ -251,7 +251,8 @@ in the future.
 
 .. data:: docstitle
 
-   The title of the documentation (the value of :confval:`html_title`).
+   The title of the documentation (the value of :confval:`html_title`), except
+   when the "single-file" builder is used, when it is set to ``None``.
 
 .. data:: embedded
 
@@ -391,3 +392,6 @@ are in HTML form), these variables are also available:
 
    * ``titles_only`` (false by default): if true, put only toplevel document
      titles in the tree
+
+   * ``includehidden`` (false by default): if true, the TOC tree will also
+     contain hidden entries.
