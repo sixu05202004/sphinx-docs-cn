@@ -1,9 +1,9 @@
 .. _invocation:
 
-sphinx-build用法
+sphinx-build 用法
 ==========================
 
-:program:`sphinx-build` 脚本构建了一个Sphinx文档集。用法如下::
+:program:`sphinx-build` 脚本构建了一个 Sphinx 文档集。用法如下::
 
      $ sphinx-build [options] sourcedir builddir [filenames]
 
@@ -21,36 +21,36 @@ sphinx-build用法
       生成HTML页面。这是默认生成器。
 
    **dirhtml**
-      生成HTML页面，但是每个文件单独一个目录。如果web服务器提供服务，能够生成漂亮的URLs(没有 ``.html`` 后缀)。
+      生成HTML页面，但是每个文件单独一个目录。如果 web 服务器提供服务，能够生成漂亮的 URLs(没有 ``.html`` 后缀)。
 
    **singlehtml**
-      整个内容生成一个HTML页面。
+      整个内容生成一个 HTML 页面。
 
    **htmlhelp**, **qthelp**, **devhelp**, **epub**
-      生成HTML文件，包含了生成上述格式的文档集合的其他信息。
+      生成 HTML 文件，包含了生成上述格式的文档集合的其他信息。
 
    **latex**
-      生成可以被编译成PDF文件的LaTeX源文件通过使用 :program:`pdflatex`。
+      生成可以被编译成 PDF 文件的 LaTeX 源文件通过使用 :program:`pdflatex`。
 
    **man**
-      生成UNIX操作系统的groff格式的手册。
+      生成 UNIX 操作系统的 groff 格式的手册。
 
    **texinfo**
-      生成Texinfo文件，它能够通过 :program:`makeinfo` 处理成 Info 文件。
+      生成 Texinfo 文件，它能够通过 :program:`makeinfo` 处理成 Info 文件。
 
    **text**
       生成纯文本文件。
 
    **gettext**
-      生成gettext的风格的消息目录（``.pot`` 后缀的文件）。
+      生成 gettext 的风格的消息目录（``.pot`` 后缀的文件）。
 
    **doctest**
-      如果 :mod:`~sphinx.ext.doctest` 激活，执行文件中所有的doctests。
+      如果 :mod:`~sphinx.ext.doctest` 激活，执行文件中所有的 doctests。
 
    **linkcheck**
       检查所有的外部链接的完整性。
 
-   请参看 :ref:`builders`，里面列出了Sphinx自身附带的所有的生成器。用户可以添加自己的生成器扩展。
+   请参看 :ref:`builders`，里面列出了 Sphinx 自身附带的所有的生成器。用户可以添加自己的生成器扩展。
 
 .. option:: -a
 
@@ -68,7 +68,7 @@ sphinx-build用法
 
 .. option:: -d path
 
-   因为Sphinx在生成输出文件之前，必须读取和解析所有的源文件，被解析过的源文件会被缓存为"doctree pickles"。通常，这些缓存文件会被放入于生成目录中的名为 :file:`.doctrees` 的文件夹里；使用该选项可以选择不同的缓存文件夹（所有生成器都可以共享doctrees文件夹）。
+   因为 Sphinx 在生成输出文件之前，必须读取和解析所有的源文件，被解析过的源文件会被缓存为"doctree pickles"。通常，这些缓存文件会被放入于生成目录中的名为 :file:`.doctrees` 的文件夹里；使用该选项可以选择不同的缓存文件夹（所有生成器都可以共享 doctrees 文件夹）。
 
 .. option:: -c path
 
@@ -121,7 +121,7 @@ sphinx-build用法
 
 .. option:: -P
 
-   （仅调试时有用。）构建时候，如果出现未处理的遗产，运行python调试器，:mod:`pdb`。
+   （仅调试时有用。）构建时候，如果出现未处理的遗产，运行 python 调试器，:mod:`pdb`。
 
 
 在命令行中，你可以在源目录以及生成目录后给出一个或者多个文件名。Sphinx 将会尝试构建给出的这些文件的输出（以及它们的依赖。） 
@@ -154,7 +154,7 @@ Makefile选项
 调用sphinx-apidoc
 ===========================
 
-:program:`sphinx-apidoc` 能够对一个python包生成完全的自动的API文档。调用它像这样::
+:program:`sphinx-apidoc` 能够对一个 python 包生成完全的自动的API文档。调用它像这样::
 
      $ sphinx-apidoc [options] -o outputdir packagedir [pathnames]
 
@@ -190,7 +190,7 @@ Makefile选项
 
 .. option:: -F, --full
 
-   此选项使得sphinx-apidoc创建一个完整的Sphinx项目，与 :program:`sphinx-quickstart` 使用同样的机制。大部分的配置值是设置成默认的值，但是你可以通过如下选项修改一些重要的配置值。
+   此选项使得 sphinx-apidoc 创建一个完整的 Sphinx 项目，与 :program:`sphinx-quickstart` 使用同样的机制。大部分的配置值是设置成默认的值，但是你可以通过如下选项修改一些重要的配置值。
 
 .. option:: -H project
 

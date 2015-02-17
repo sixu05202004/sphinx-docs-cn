@@ -10,7 +10,7 @@
 
 .. rst:directive:: .. note::
    
-   一个API特别重要的提示信息：用户需要注意当使用API的时候所涉及到的信息，指令（标识符）的内容应该写完整的句子，包括所有适当的标点符号。
+   一个 API 特别重要的提示信息：用户需要注意当使用 API 的时候所涉及到的信息，指令（标识符）的内容应该写完整的句子，包括所有适当的标点符号。
 
    Example::
 
@@ -20,13 +20,13 @@
 
 .. rst:directive:: .. warning::
 
-   一个API重要的提示信息：用户需要注意当使用API的时候所涉及到的警告信息。指令（标识符）的内容应该写完整的句子，包括所有适当的标点符号。这是不同于 :rst:dir:`note`，因为它更多的关注于有关安全的信息。 
+   一个 API 重要的提示信息：用户需要注意当使用 API 的时候所涉及到的警告信息。指令（标识符）的内容应该写完整的句子，包括所有适当的标点符号。这是不同于 :rst:dir:`note`，因为它更多的关注于有关安全的信息。 
 
 .. rst:directive:: .. versionadded:: version
 
-   本指令（标识符）记录项目的版本信息，把所描述的功能添加到库或C API。当适用于整个模块，它应该被放置在模块部分的顶部之前。
+   本指令（标识符）记录项目的版本信息，把所描述的功能添加到库或 C API。当适用于整个模块，它应该被放置在模块部分的顶部之前。
 
-   第一个参数必须给出，它是在问答中的版本号（使用sphinx-quickstart时候的问答），你可以添加第二个参数，包含一个 *简短* 的变化原因。
+   第一个参数必须给出，它是在问答中的版本号（使用 sphinx-quickstart 时候的问答），你可以添加第二个参数，包含一个 *简短* 的变化原因。
 
    Example::
 
@@ -53,9 +53,9 @@
 
    许多章节包括了一系列的模块文件或外部文件的引用。这些列表是使用 :rst:dir:`seealso` 指令（标识符）创建的。
 
-   :rst:dir:`seealso` 指令（标识符）通常是在任何子章节之前的位置。对于HTML格式输出，它一般远离文本的主要信息显示。
+   :rst:dir:`seealso` 指令（标识符）通常是在任何子章节之前的位置。对于 HTML 格式输出，它一般远离文本的主要信息显示。
 
-   :rst:dir:`seealso` 指令（标识符）的内容应该是一个reST定义列表。
+   :rst:dir:`seealso` 指令（标识符）的内容应该是一个 reST 定义列表。
 
    Example::
 
@@ -67,7 +67,7 @@
          `GNU tar manual, Basic Tar Format <http://link>`_
             Documentation for tar archive files, including GNU tar extensions.
 
-   还有一种“简短形式”允许像这样的::
+   还有一种 “简短形式” 允许像这样的::
 
       .. seealso:: modules :py:mod:`zipfile`, :py:mod:`tarfile`
 
@@ -80,7 +80,7 @@
 
    .. note::
 
-      如果rubric的 *标题* 是“脚注”(或者是在所选择的语言中含义等价的)，LaTeX会忽略它。因为它被假定为仅包含脚注的定义以及将创建一个空的标题。
+      如果rubric的 *标题* 是“脚注”(或者是在所选择的语言中含义等价的)，LaTeX 会忽略它。因为它被假定为仅包含脚注的定义以及将创建一个空的标题。
 
 
 .. rst:directive:: centered
@@ -113,7 +113,7 @@
 
 :rst:dir:`toctree` 指令（标识符）是描述在 :ref:`toctree-directive` ，它生成子文件的内容表。
 
-对于本地内容表，可以用标准的reST :dudir:`contents directive
+对于本地内容表，可以用标准的 reST :dudir:`contents directive
 <table-of-contents>`。
 
 
@@ -147,7 +147,7 @@
    (词汇​​表进行排序的时候，第一项确定排序的顺序。)
 
    .. versionadded:: 0.6
-      你可以在glossary指令（标识符）中用  ``:sorted:`` ，它将按字母对条目进行排序。 
+      你可以在 glossary 指令（标识符）中用  ``:sorted:`` ，它将按字母对条目进行排序。 
 
    .. versionchanged:: 1.1
       支持多术语以及术语中出现行内标记。
@@ -156,7 +156,7 @@
 语法解释器
 ---------------------------
 
-特别标记是用于显示
+特殊标记可用于显示形式文法的(productions)。
 Special markup is available for displaying the productions of a formal grammar.
 The markup is simple and does not attempt to model all aspects of BNF (or any
 derived forms), but provides enough to allow context-free grammars to be

@@ -2,10 +2,10 @@
 
 .. _rst-primer:
 
-reStructuredText入门
+reStructuredText 入门
 =======================
 
-本节简要介绍了reStructuredText (reST)的概念和语法，旨在提供足够的信息来高效地编写文档。因为reST是一个简单的，不显眼的标记语言，这不会花费太长时间来入门。
+本节简要介绍了 reStructuredText (reST)的概念和语法，旨在提供足够的信息来高效地编写文档。因为 reST 是一个简单的，不显眼的标记语言，这不会花费太长时间来入门。
 
 .. seealso::
 
@@ -15,14 +15,14 @@ reStructuredText入门
 段落
 ----------
 
-段落(:duref:`ref <paragraphs>`)是reST文档中最基本的块。段落是由一个或多个空白行分离的简单的文本块。在Python中，缩进在reST中是具有重要意义，所以同一段落的所有行必须左对齐而且是同一级缩进。
+段落(:duref:`ref <paragraphs>`)是 reST 文档中最基本的块。段落是由一个或多个空白行分离的简单的文本块。在 Python 中，缩进在 reST 中是具有重要意义，所以同一段落的所有行必须左对齐而且是同一级缩进。
 
 
 .. _inlinemarkup:
 
 行内标记
 -------------
-注：因为找不到合适的词语来翻译role，所以没有翻译！
+注：因为找不到合适的词语来翻译 role，所以没有翻译！
 
 标准的行内标记相当简单：使用
 
@@ -38,11 +38,11 @@ reStructuredText入门
 * 文本不能以空格开始或者结束： ``* text*`` 是不正确的，
 * 必须由空格从周围的文本中分离出来。可以通过使用转义的空格来规避这个限制：thisis\ *one*\ word。
 
-docutils以后的版本可能会取消上列出的这些限制。
+docutils 以后的版本可能会取消上列出的这些限制。
 
-reST也允许自定义“文本解释role”，这就意味着所包含的文本应以一种特定的方式解释。Sphinx用它提供了语义标记和交叉引用的标识符。一般的语法格式是 ``:rolename:`content``` 。
+reST 也允许自定义“文本解释role”，这就意味着所包含的文本应以一种特定的方式解释。Sphinx 用它提供了语义标记和交叉引用的标识符。一般的语法格式是 ``:rolename:`content``` 。
 
-标准的reST提供了如下些roles：
+标准的 reST 提供了如下些 roles：
 
 * :durole:`emphasis` -- 来替代 ``*emphasis*``
 * :durole:`strong` -- 代替 ``**strong**``
@@ -51,7 +51,7 @@ reST也允许自定义“文本解释role”，这就意味着所包含的文本
 * :durole:`superscript` -- 上标文本
 * :durole:`title-reference` -- 书，期刊，以及其他材料的标题
 
-Sphinx添加的roles请见 :ref:`inline-markup`。
+Sphinx 添加的 roles 请见 :ref:`inline-markup`。
 
 
 列表和“类”引用块
@@ -136,7 +136,7 @@ Sphinx添加的roles请见 :ref:`inline-markup`。
 表格
 ------
 
-Sphinx支持两种表格形式。对于 *格子表格* (:duref:`ref <grid-tables>`)，必须自己“画”自己的单元格。它们看起来像这样::
+Sphinx 支持两种表格形式。对于 *格子表格* (:duref:`ref <grid-tables>`)，必须自己“画”自己的单元格。它们看起来像这样::
 
    +------------------------+------------+----------+----------+
    | Header row, column 1   | Header 2   | Header 3 | Header 4 |
@@ -177,19 +177,19 @@ Sphinx支持两种表格形式。对于 *格子表格* (:duref:`ref <grid-tables
 内部链接
 ^^^^^^^^^^^^^^
 
-内部链接是通过Sphinx提供的一个特殊的reST role来实现的，请看 :ref:`ref-role`.
+内部链接是通过 Sphinx 提供的一个特殊的 reST role 来实现的，请看 :ref:`ref-role`.
 
 
 章节
 --------
 
-章节头 (:duref:`ref <sections>`) 是用特殊的标点符作为章节标题的下划线来创建的（上划线是可选的），只要文字::
+章节头部 (:duref:`ref <sections>`) 是用特殊的标点符作为章节标题的下划线来创建的（上划线是可选的），只要文字::
 
    =================
    This is a heading
    =================
 
-通常，没有特定的字符指定给标题级别，因为结构是用从继承的标题来确定的。对于python文档，本公约您可以按照：
+通常，没有特定的字符指定给标题级别，因为结构是用从继承的标题来确定的。对于 python 文档，您可以按照如下的公约：
 
 * ``#`` with overline, for parts
 * ``*`` with overline, for chapters
@@ -198,13 +198,13 @@ Sphinx支持两种表格形式。对于 *格子表格* (:duref:`ref <grid-tables
 * ``^``, for subsubsections
 * ``"``, for paragraphs
 
-当然，您可以自由使用自己的标记字符（参看reST文档），并使用一个更深层次的嵌套级别，但请记住，大多数的目标格式（HTML，LaTeX）有限地支持嵌套深度。
+当然，您可以自由使用自己的标记字符（参看 reST 文档），并使用一个更深层次的嵌套级别，但请记住，大多数的目标格式（HTML，LaTeX）有限地支持嵌套深度。
 
 
 显式标记
 ---------------
 
-"显式标记" (:duref:`ref <explicit-markup-blocks>`) 在reST中是用于需要进行特殊处理的结构，比如脚注，特别突出的段落，注释，和通用指令（标识符）。
+"显式标记" (:duref:`ref <explicit-markup-blocks>`) 在 reST 中是用于需要进行特殊处理的结构，比如脚注，特别突出的段落，注释，和通用指令（标识符）。
 
 显式标记块的第一行是以 ``..`` 开始，接着是紧随着空格，被结束于同样层级缩进的下一段落。（显式标记和正常的段落之间需要有一个空行。当你写它的时候，可能听起来有点复杂，但它是直观的。）
 
@@ -214,9 +214,9 @@ Sphinx支持两种表格形式。对于 *格子表格* (:duref:`ref <grid-tables
 指令（标识符）
 ----------------
 
-指令或者标识符（:duref:`ref <directives>`）是一个通用的显式标记块。除了roles，指令或者标识符是reST的扩展机制，Sphinx大量地使用了它。
+指令或者标识符（:duref:`ref <directives>`）是一个通用的显式标记块。除了 roles，指令或者标识符是 reST 的扩展机制，Sphinx 大量地使用了它。
 
-Docutils支持如下的指令（标识符）：
+Docutils 支持如下的指令（标识符）：
 
 * 警告: :dudir:`attention`, :dudir:`caution`, :dudir:`danger`,
   :dudir:`error`, :dudir:`hint`, :dudir:`important`, :dudir:`note`,
@@ -248,7 +248,7 @@ Docutils支持如下的指令（标识符）：
 
   - :dudir:`raw` （包括原生格式标记）
   - :dudir:`include` (包含其他文件的reStructuredText)
-    -- 在Sphinx中，当给定一个绝对的文件路径，该指令（标识符）将其作为相对于源目录来处理 
+    -- 在 Sphinx 中，当给定一个绝对的文件路径，该指令（标识符）将其作为相对于源目录来处理 
   - :dudir:`class` (class属性赋给下一个元素) [1]_
 
 * HTML特性:
@@ -264,7 +264,7 @@ Docutils支持如下的指令（标识符）：
 请 *不要* 使用指令（标识符） :dudir:`sectnum`， :dudir:`header` 以及
 :dudir:`footer`。
 
-Sphinx自己增加的指令（标识符）是在 :ref:`sphinxmarkup` 中描述的。
+Sphinx 自己增加的指令（标识符）是在 :ref:`sphinxmarkup` 中描述的。
 
 基本上，指令（标识符）由一个名称，参数，选项和内容组成。（请记住这些术语，它被用来在接下来的章节描述了自定义指令或者标识符。）请看例子，::
 
@@ -283,22 +283,22 @@ Sphinx自己增加的指令（标识符）是在 :ref:`sphinxmarkup` 中描述�
 图片
 ------
 
-reST支持图片指令（标识符）(:dudir:`ref <image>`)，像这样使用::
+reST 支持图片指令（标识符）(:dudir:`ref <image>`)，像这样使用::
 
    .. image:: gnu.png
       (options)
 
-在Sphinx中使用图片指令（标识符），文件名(这里是指 ``gnu.png``)必须是相对于源文件，或者是绝对的但是相对于顶部的源目录。例如，在 ``sketch/spam.rst`` 文件中可以使用图片 ``images/spam.png``，也可以使用 ``../images/spam.png`` 或者 ``/images/spam.png``。
+在 Sphinx 中使用图片指令（标识符），文件名(这里是指 ``gnu.png``)必须是相对于源文件，或者是绝对的但是相对于顶部的源目录。例如，在 ``sketch/spam.rst`` 文件中可以使用图片 ``images/spam.png``，也可以使用 ``../images/spam.png`` 或者 ``/images/spam.png``。
 
-Sphinx将会自动将图像文件拷贝到输出目录中（例如HTML格式输出，会拷贝到 ``_static`` 目录中。）
+Sphinx 将会自动将图像文件拷贝到输出目录中（例如 HTML 格式输出，会拷贝到 ``_static`` 目录中。）
 
-对于图片尺寸选项（ ``width`` 和 ``height``）的解释如下：如果大小没有单位或单位是像素，那图片大小将会被那些支持像素的输出格式关心（LaTeX格式就不在乎这种情况的图片大小）。HTML和LaTeX输出格式使用其他的单位（像 ``pt`` 表示像素点）。
+对于图片尺寸选项（ ``width`` 和 ``height``）的解释如下：如果大小没有单位或单位是像素，那图片大小将会被那些支持像素的输出格式关心（ LaTeX 格式就不在乎这种情况的图片大小）。HTML 和 LaTeX 输出格式使用其他的单位（像 ``pt`` 表示像素点）。
 
-Sphinx扩展了标准的docutils的功能，允许文件扩展名为星号::
+Sphinx 扩展了标准的 docutils 的功能，允许文件扩展名为星号::
 
    .. image:: gnu.*
 
-Sphinx搜索所有的图片匹配提供的模式，并确定其类型。每个生成器会从所有的候选者中选择最佳的图片。比如，如果给出 ``gnu.*`` 这样的文件名以及源代码树中存在 :file:`gnu.pdf` 和 :file:`gnu.png` 这两个文件，LaTeX 生成器会选择前者，HTML生成器则会选择后者。
+Sphinx 搜索所有的图片匹配提供的模式，并确定其类型。每个生成器会从所有的候选者中选择最佳的图片。比如，如果给出 ``gnu.*`` 这样的文件名以及源代码树中存在 :file:`gnu.pdf` 和 :file:`gnu.png` 这两个文件，LaTeX 生成器会选择前者，HTML 生成器则会选择后者。
 
 .. versionchanged:: 0.4
    增加了支持以星号结尾的文件名。
@@ -325,7 +325,7 @@ Sphinx搜索所有的图片匹配提供的模式，并确定其类型。每个�
 引文
 ---------
 
-Sphinx支持标准reST引文(:duref:`ref <citations>`)，增加了所有引文是“全局的”的特性，即：所有的文件可以使用所有的引文。这样使用它们::
+Sphinx 支持标准 reST 引文(:duref:`ref <citations>`)，增加了所有引文是“全局的”的特性，即：所有的文件可以使用所有的引文。这样使用它们::
 
    Lorem ipsum [Ref]_ dolor sit amet.
 
@@ -337,7 +337,7 @@ Sphinx支持标准reST引文(:duref:`ref <citations>`)，增加了所有引文�
 替换
 -------------
 
-reST支持“替换”(:duref:`ref <substitution-definitions>`)，这是文本和/或标记在文中 ``|name|`` 提到。它们是像脚注用显著的标记块，像这样::
+reST 支持“替换”(:duref:`ref <substitution-definitions>`)，这是文本和/或标记在文中 ``|name|`` 提到。它们是像脚注用显著的标记块，像这样::
 
    .. |name| replace:: replacement *text*
 
@@ -350,7 +350,7 @@ reST支持“替换”(:duref:`ref <substitution-definitions>`)，这是文本�
 
 如果你想在所有文件使用中一些替换，把它们写入 :confval:`rst_prolog` 或把它们放到一个单独的文件，要使用它们的所有文件中包含它，通过使用 :rst:dir:`include` 指令或者标识符。（务必使得include文件扩展名与其他的源文件不同，以免让Sphinx把它作为一个独立的文件。）
 
-Sphinx自定义了一些默认的替换, 请看 :ref:`default-substitutions`。
+Sphinx 自定义了一些默认的替换, 请看 :ref:`default-substitutions`。
 
 
 评论
@@ -372,13 +372,13 @@ Sphinx自定义了一些默认的替换, 请看 :ref:`default-substitutions`。
 源文件编码
 ---------------
 
-由于包括特殊字符如在reST中的破折号或版权标志，最简单的方法是直接写为Unicode字符，指定编码。Sphinx假定源文件默认情况下是使用UTF-8编码；你可以改变 :confval:`source_encoding` 这一配置值。
+由于包括特殊字符如在reST中的破折号或版权标志，最简单的方法是直接写为 Unicode 字符，指定编码。Sphinx 假定源文件默认情况下是使用 UTF-8 编码；你可以改变 :confval:`source_encoding` 这一配置值。
 
 
 陷阱
 -------
 
-这有些问题通常发生在编写reST文档的时候：
+这有些问题通常发生在编写 reST 文档的时候：
 
 * **分离的内嵌标记:** 正如上面所说，行内标记的跨度必须用由非单词字符把周围的文字分开，可以使用转义的空格来避免。详情请看 `the reference
   <http://docutils.sf.net/docs/ref/rst/restructuredtext.html#inline-markup>`_。
