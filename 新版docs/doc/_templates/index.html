@@ -4,110 +4,82 @@
   <h1>{{ _('Welcome') }}</h1>
 
   <div class="quotebar">
-    <p><em>{%trans%}What users say:{%endtrans%}</em></p>
-    <p>{%trans%}&ldquo;Cheers for a great tool that actually makes programmers <b>want</b>
-      to write documentation!&rdquo;{%endtrans%}</p>
+    <p><em>{%trans%}使用者说:{%endtrans%}</em></p>
+    <p>{%trans%}&ldquo;为这个伟大的工具而干杯，因为她让所有的程序员们 <b>愿意</b>
+      编写文档！&rdquo;{%endtrans%}</p>
   </div>
 
   <p>{%trans%}
-    Sphinx is a tool that makes it easy to create intelligent and beautiful
-    documentation, written by Georg Brandl and licensed under the BSD license.{%endtrans%}</p>
-  <p>{%trans%}It was originally created for <a href="https://docs.python.org/">the
-    new Python documentation</a>, and it has excellent facilities for the
-    documentation of Python projects, but C/C++ is already supported as well,
-    and it is planned to add special support for other languages as well.  Of
-    course, this site is also created from reStructuredText sources using
-    Sphinx!  The following features should be highlighted:{%endtrans%}
+    Sphinx 是一个工具，她能够轻易地创建智慧和优雅的文档，她是出自 Georg Brandl 之手，在 BSD 许可证下授权。{%endtrans%}</p>
+  <p>{%trans%}她最初是为了新版的<a href="http://docs.python.org/">python 文档</a>， 因此在 python 项目的文档具有完美的特性，但是同样支持 c/c++，目前正在计划增加对其他的语言的支持。
+  理所当然，本页面也是使用 Sphinx 创造自 reStructuredText 格式源！Sphinx 具有如下的特点：{%endtrans%}
   </p>
   <ul>
-    <li>{%trans%}<b>Output formats:</b> HTML (including Windows HTML Help), LaTeX (for
-      printable PDF versions), ePub, Texinfo, manual pages, plain text{%endtrans%}</li>
-    <li>{%trans%}<b>Extensive cross-references:</b> semantic markup and automatic links
-      for functions, classes, citations, glossary terms and similar pieces of
-      information{%endtrans%}</li>
-    <li>{%trans%}<b>Hierarchical structure:</b> easy definition of a document tree, with
-      automatic links to siblings, parents and children{%endtrans%}</li>
-    <li>{%trans%}<b>Automatic indices:</b> general index as well as a language-specific
-      module indices{%endtrans%}</li>
-    <li>{%trans%}<b>Code handling:</b> automatic highlighting using the <a
-      href="http://pygments.org">Pygments</a> highlighter{%endtrans%}</li>
-    <li>{%trans path=pathto('extensions')%}<b>Extensions:</b> automatic testing of code snippets, inclusion of
-      docstrings from Python modules (API docs), and
-      <a href="{{ path }}#builtin-sphinx-extensions">more</a>{%endtrans%}</li>
-    <li>{%trans path=pathto('develop')%}<b>Contributed extensions:</b> more than
-      50 extensions <a href="{{ path }}#extensions">contributed by users</a>
-      in a second repository; most of them installable from PyPI{%endtrans%}</li>
+    <li>{%trans%}<b>输出格式：</b> 超文本标记语言 (包括 Windows HTML 帮助)，LaTeX (可打印的PDF版本)，手册页，纯文本{%endtrans%}</li>
+    <li>{%trans%}<b>丰富的交叉引用：</b> 语义标记以及针对函数，类，引用，词汇表（术语）和相似的信息块的自动链接{%endtrans%}</li>
+    <li>{%trans%}<b>层次结构：</b> 简单的文本树定义，就能自动地链接到同层（兄弟姐妹）、上一层（父母）以及下一层（子女）的文本位置{%endtrans%}</li>
+    <li>{%trans%}<b>自动生成目录：</b> 通用索引以及语言模块的目录{%endtrans%}</li>
+    <li>{%trans%}<b>代码高亮：</b> 代码自动高亮，通过使用 <a href="http://pygments.org">Pygments</a>{%endtrans%}</li>
+    <li>{%trans path=pathto('extensions')%}<b>扩展功能：</b> 自动测试的代码片段，包括从 Python 模块（API文档）的文档字符串，以及
+      <a href="{{ path }}#builtin-sphinx-extensions">更多</a>{%endtrans%}</li>
+    <li>{%trans path=pathto('develop')%}<b>贡献扩展：</b> 在另一个版本库含有超过 50 个 <a href="{{ path }}#extensions">用户贡献的扩展</a>；它们中的大部分可以通过 PyPI 安装 {%endtrans%}</li>
   </ul>
   <p>{%trans%}
-    Sphinx uses <a href="http://docutils.sf.net/rst.html">reStructuredText</a>
-    as its markup language, and many of its strengths come from the power and
-    straightforwardness of reStructuredText and its parsing and translating
-    suite, the <a href="http://docutils.sf.net/">Docutils</a>.{%endtrans%}
+    Sphinx 使用 <a href="http://docutils.sf.net/rst.html">reStructuredText</a>
+    作为她的标记语言，她的优点大部分是来自于 reStructuredText 以及 reStructuredText 的解析和转换工具（套件）<a href="http://docutils.sf.net/">Docutils</a>的强大以及简单明了。{%endtrans%}
   </p>
 
-  <h2 style="margin-bottom: 0">{%trans%}Documentation{%endtrans%}</h2>
+  <h2 style="margin-bottom: 0">{%trans%}文档{%endtrans%}</h2>
 
   <table class="contentstable" align="center" style="margin-left: 30px"><tr>
     <td width="50%">
-      <p class="biglink"><a class="biglink" href="{{ pathto("tutorial") }}">{%trans%}First steps with Sphinx{%endtrans%}</a><br/>
-         <span class="linkdescr">{%trans%}overview of basic tasks{%endtrans%}</span></p>
-      <p class="biglink"><a class="biglink" href="{{ pathto("contents") }}">{%trans%}Contents{%endtrans%}</a><br/>
-         <span class="linkdescr">{%trans%}for a complete overview{%endtrans%}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("tutorial") }}">{%trans%}初入 Sphinx{%endtrans%}</a><br/>
+         <span class="linkdescr">{%trans%}基本功能的概述{%endtrans%}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("contents") }}">{%trans%}目录{%endtrans%}</a><br/>
+         <span class="linkdescr">{%trans%}全部的内容{%endtrans%}</span></p>
     </td><td width="50%">
-      <p class="biglink"><a class="biglink" href="{{ pathto("search") }}">{%trans%}Search page{%endtrans%}</a><br/>
-         <span class="linkdescr">{%trans%}search the documentation{%endtrans%}</span></p>
-      <p class="biglink"><a class="biglink" href="{{ pathto("genindex") }}">{%trans%}General Index{%endtrans%}</a><br/>
-         <span class="linkdescr">{%trans%}all functions, classes, terms{%endtrans%}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("search") }}">{%trans%}搜索页{%endtrans%}</a><br/>
+         <span class="linkdescr">{%trans%}搜索全文{%endtrans%}</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("genindex") }}">{%trans%}通用索引{%endtrans%}</a><br/>
+         <span class="linkdescr">{%trans%}所有的函数，类，词条{%endtrans%}</span></p>
     </td></tr>
   </table>
 
   <p>{%trans%}
-    You can also download PDF versions of the Sphinx documentation:
-    a <a href="http://sphinx-doc.org/sphinx.pdf">version</a> generated from
-    the LaTeX Sphinx produces, and
-    a <a href="http://sphinx-doc.org/sphinx-rst2pdf.pdf">version</a> generated
-    by rst2pdf.{%endtrans%}
+    你也能下载 PDF 格式的 Sphinx 文档：一种 PDF <a href="http://sphinx.pocoo.org/sphinx.pdf">版本</a> 是由 LaTeX Sphinx 生成，另一种 PDF
+     <a href="http://sphinx.pocoo.org/sphinx-rst2pdf.pdf">版本</a> 是由 rst2pdf 生成。{%endtrans%}
   </p>
 
-  <h2>{%trans%}Examples{%endtrans%}</h2>
-  <p>{%trans path=pathto("examples")%}Links to documentation generated with Sphinx can be found on the
-    <a href="{{ path }}">Projects using Sphinx</a> page.{%endtrans%}
+  <h2>{%trans%}例子{%endtrans%}</h2>
+  <p>{%trans path=pathto("examples")%}用 Sphinx 生成文档的项目能够在
+    <a href="{{ path }}">Projects using Sphinx</a> 上找到。{%endtrans%}
   </p>
   <p>{%trans%}
-    For examples of how Sphinx source files look, use the &#8220;Show
-    source&#8221; links on all pages of the documentation apart from this
-    welcome page.{%endtrans%}
+    想要查看 Sphinx 源文件长得什么样的话，可以在除本欢迎页外的任何页面上使用&#8220;显示网页源代码&#8221;。{%endtrans%}
   </p>
 
-  <p>{%trans%}You may also be interested in the very nice
-    <a href="http://matplotlib.sourceforge.net/sampledoc/">tutorial</a> on how to
-    create a customized documentation using Sphinx written by the matplotlib
-    developers.{%endtrans%}</p>
+  <p>{%trans%}你也许对这份十分不错
+    <a href="http://matplotlib.sourceforge.net/sampledoc/">教程</a>感兴趣，它是由 matplotlib 的开发者编写，是使用了 Sphinx 创建地自定义的文档。{%endtrans%}</p>
 
-  <p>{%trans%}There is a <a href="http://docs.sphinx-users.jp/">Japanese translation</a>
-    of this documentation, thanks to the Japanese Sphinx user group.{%endtrans%}</p>
-  <p>{%trans%}A Japanese book about Sphinx has been published by O'Reilly:
+  <p>{%trans%}已经有日语翻译的版本<a href="http://docs.sphinx-users.jp/">，多谢日本的 Sphinx 用户组的工作。</a> {%endtrans%}</p>
+  <p>{%trans%}一本日语关于 Sphinx 的书籍已经由 O'Reilly 出版了：
     <a href="http://www.oreilly.co.jp/books/9784873116488/">Sphinxをはじめよう /
       Learning Sphinx</a>.{%endtrans%}</p>
   <!-- <p><img src="{{ pathto("_static/bookcover.png", 1) }}"/></p> -->
 
 
-  <h2>{%trans%}Hosting{%endtrans%}</h2>
+  <h2>{%trans%}托管{%endtrans%}</h2>
 
-  <p>{%trans%}Need a place to host your Sphinx docs?
-    <a href="http://readthedocs.org">readthedocs.org</a> hosts a lot of Sphinx docs
-    already, and integrates well with projects' source control.  It also features a
-    powerful built-in search that exceeds the possibilities of Sphinx' JavaScript-based
-    offline search.{%endtrans%}</p>
+  <p>{%trans%}需要一个地方托管你的 Sphinx 文档吗？
+    <a href="http://readthedocs.org">readthedocs.org</a> 已经托管了大量的 Sphinx 文档，并且与版本控制很好地结合。它也具有一个强大的内置的搜索，这个搜索超过了 Sphinx 的基于 JavaScript 离线的搜索的可能。{%endtrans%}</p>
 
-  <h2>{%trans%}Contributor Guide{%endtrans%}</h2>
+  <h2>{%trans%}贡献指南{%endtrans%}</h2>
 
-  <p>{%trans%}If you want to contribute to the project,
-    this part of the documentation is for you.{%endtrans%}</p>
+  <p>{%trans%}如果你想要为这个项目做一些贡献，这部分文档是为你准备的。{%endtrans%}</p>
 
     <ul>
-      <li>{%trans path=pathto("devguide")%}<a href="{{ path }}">Sphinx Developer’s Guide</a></li>{%endtrans%}
-      <li>{%trans path=pathto("authors")%}<a href="{{ path }}">Sphinx Authors</a></li>{%endtrans%}
+      <li>{%trans path=pathto("devguide")%}<a href="{{ path }}">Sphinx 开发者指南</a></li>{%endtrans%}
+      <li>{%trans path=pathto("authors")%}<a href="{{ path }}">Sphinx 作者们</a></li>{%endtrans%}
     </ul>
 
 {% endblock %}

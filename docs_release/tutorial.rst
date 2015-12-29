@@ -1,33 +1,42 @@
 .. highlight:: rst
 
-初入Sphinx
+初入 Sphinx
 =======================
 
-本文给出了Sphinx所有基本功能的快速教程。
+本文给出了 Sphinx 所有基本功能的快速教程。
 
 绿色的箭头指定“详细信息”链接，这些链接指向了关于描述的功能的高级话题的章节。
 
 
-设置文档来源
-------------------------------------
 
-一个文档集合的根目录被称为 :term:`源目录`。:term:`源目录` 包含Sphinx配置文件 :file:`conf.py`，在配置文件里面可以配置Sphinx如何读取源文件以及如何生成文件等等各方面。 [#]_
+安装 Sphinx
+--------------
+
+安装 Sphinx，要么从一个发布包，或者要么从 `PyPI <https://pypi.python.org/pypi/Sphinx>`_ 使用::
+
+   $ pip install Sphinx
+
+
+设置文档来源
+------------------
+
+一个文档集合的根目录被称为 :term:`源目录`。:term:`源目录` 包含 Sphinx 配置文件 :file:`conf.py`，在配置文件里面可以配置 Sphinx 如何读取源文件以及如何生成文件等等各方面。 [#]_
 
 Sphinx提供了一个脚本 :program:`sphinx-quickstart`，该脚本能够设置一个源目录以及通过几个简单的问答设置一个默认的配置文件 :file:`conf.py`。只需要运行::
 
    $ sphinx-quickstart
 
-接着回答问题。（务必选择"autodoc"扩展。）
+接着回答问题。（务必选择 "autodoc" 扩展。）
 
-Sphinx提供的"API documentation"生成器称为 :program:`sphinx-apidoc`；更详细的内容参看 :ref:`invocation-apidoc`。
+Sphinx 提供的 "API documentation" 生成器称为 :program:`sphinx-apidoc`；更详细的内容参看 :ref:`invocation-apidoc`。
 
 
 定义文档结构
----------------------------
+----------------------
 
 假设你已经执行了 :program:`sphinx-quickstart`。它创建了一个包含 :file:`conf.py` 以及主文件 :file:`index.rst`  （如果你接受了默认选项）的文件夹。:term:`master document` 的主要作用是一个欢迎页面以及包含了树状内容表的“根”（或者 *toctree*）。
 
-连接多个文件到单个层次结构的文件的方式是Sphinx增强了reStructuredText的主要事情之一。
+连接多个文件到单个层次结构的文件的方式是 Sphinx 增强了 reStructuredText 的主要事情之一。
 
 .. sidebar:: reStructuredText标识符（指令集）
 

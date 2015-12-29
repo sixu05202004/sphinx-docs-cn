@@ -2,38 +2,52 @@
   <img src="{{ pathto("_static/pocoo.png", 1) }}" alt="Pocoo" /></a>
   {%trans%}project{%endtrans%}</p>
 
-<h3>Download</h3>
+<h3>下载</h3>
 {% if version.endswith('a0') %}
-<p>{%trans%}This documentation is for version <b>{{ version }}</b>, which is
-  not released yet.{%endtrans%}</p>
-<p>{%trans%}You can use it from the
-  <a href="https://github.com/sphinx-doc/sphinx/">Git repo</a> or look for
-  released versions in the <a href="https://pypi.python.org/pypi/Sphinx">Python
-    Package Index</a>.{%endtrans%}</p>
+<p>{%trans%}本文档仅限于版本 <b>{{ version }}</b>, 其它的暂未发布。{%endtrans%}</p>
+<p>{%trans%}你能够从
+  <a href="https://github.com/sphinx-doc/sphinx/">获取 Git repo</a> 
+  或者从 <a href="http://pypi.python.org/pypi/Sphinx"> Python
+    Package Index 找到发布的版本</a>。{%endtrans%}</p>
 {% else %}
-<p>{%trans%}Current version: <b>{{ version }}</b>{%endtrans%}</p>
-<p>{%trans%}Get Sphinx from the <a href="https://pypi.python.org/pypi/Sphinx">Python Package
-Index</a>, or install it with:{%endtrans%}</p>
+<p>{%trans%}目前版本: <b>{{ version }}</b>{%endtrans%}</p>
+<p>{%trans%}获得 Sphinx 从 <a href="http://pypi.python.org/pypi/Sphinx">Python Package
+Index</a>, 或者使用如下命令安装:{%endtrans%}</p>
 {% if version.split('b')|length > 1 %}
 <pre>pip install Sphinx=={{ version }}</pre>
-<p>{%trans%}<a href="http://sphinx-doc.org/">Stable version docs</a>
-are also available.{%endtrans%}</p>
+<p>{%trans%}<a href="http://sphinx-doc.org/">稳定版本的文档</a>
+也是可用的。{%endtrans%}</p>
 {% else %}
 <pre>pip install -U Sphinx</pre>
-<p>{%trans%}Latest <a href="http://sphinx-doc.org/latest/">development version docs</a>
-are also available.{%endtrans%}</p>
+<p>{%trans%}Latest <a href="http://sphinx-doc.org/latest/">开发版本文档</a>
+也是可用的。{%endtrans%}</p>
 {% endif %}
 {% endif %}
 
-<h3>{%trans%}Questions? Suggestions?{%endtrans%}</h3>
+<h3>{%trans%}问题？ 建议？{%endtrans%}</h3>
 
-<p>{%trans%}Join the <a href="http://groups.google.com/group/sphinx-users">sphinx-users</a> mailing list on Google Groups:{%endtrans%}</p>
+<p>{%trans%}加入<a href="http://groups.google.com/group/sphinx-users">sphinx-users</a>在 Google Groups 上的邮件列表：{%endtrans%}</p>
 <form action="http://groups.google.com/group/sphinx-users/boxsubscribe"
       style="padding-left: 0.5em">
   <input type="text" name="email" value="your@email" style="font-size: 90%; width: 120px"
          onfocus="$(this).val('');"/>
   <input type="submit" name="sub" value="Subscribe" style="font-size: 90%; width: 70px"/>
 </form>
-<p>{%trans%}or come to the <tt>#sphinx-doc</tt> channel on FreeNode.{%endtrans%}</p>
-<p>{%trans%}You can also open an issue at the
-  <a href="https://github.com/sphinx-doc/sphinx/issues">tracker</a>.{%endtrans%}</p>
+<p>{%trans%}或者加入<tt>#sphinx-doc</tt> 在 FreeNode 上的频道。{%endtrans%}</p>
+<p>{%trans%}你可以新建或者加入
+  <a href="https://github.com/sphinx-doc/sphinx/issues">话题</a>。{%endtrans%}</p>
+<br>
+<div style="right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 首页侧边 */
+google_ad_slot = "3551838308";
+google_ad_width = 200;
+google_ad_height = 200;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<br>
